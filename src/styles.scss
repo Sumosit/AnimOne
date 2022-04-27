@@ -1,0 +1,42 @@
+body {
+  background: #F3F6FB;
+  color: #1E2230;
+}
+
+html {
+  overflow-y: auto;
+}
+
+* {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-style: normal;
+  font-family: "Open Sans", "sans-serif" !important;
+  transition: all 0.15s ease 0s;
+}
+
+.middle-content {
+  position: relative;
+  overflow: initial;
+  width: 1248px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@import "assets/scss/header.scss";
+@import "assets/scss/animation.scss";
+@import "assets/scss/animation-mobile.scss";
+@import "assets/scss/animation-change-theme.scss";
+@import "assets/scss/rates.scss";
+@import "assets/scss/trial-form.scss";
+@import "assets/scss/copyright.scss";
