@@ -4,10 +4,13 @@
     display: initial;
   }
   .with-you {
-    padding: 200px 0 16px;
+    padding: 120px 0 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 1440px) {
+      padding: 60px 0 16px;
+    }
     span {
       &:nth-child(1) {
         font-weight: 800;
@@ -74,6 +77,9 @@
           font-size: 36px;
           line-height: 100%;
           color: #1E2230;
+          @media screen and (max-width: 1440px) {
+            margin-top: 0;
+          }
         }
 
         &:nth-child(2) {
