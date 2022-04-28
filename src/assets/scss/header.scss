@@ -117,7 +117,7 @@
       }
 
       .hr-button {
-        display: none;
+        z-index: 1001;
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
@@ -125,6 +125,7 @@
       }
 
       .hr-button-primary {
+        z-index: 1001;
         flex: none;
         cursor: pointer;
         padding: 12px 24px;
@@ -159,8 +160,9 @@
 
 
     .hb-left {
+      z-index: 1001;
       margin-top: 111px;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 400px) {
         margin-top: 50px;
         width: 100%;
       }
@@ -170,12 +172,12 @@
         width: 500px;
         display: flex;
         flex-direction: column;
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 400px) {
           width: 100%;
         }
 
         span {
-          @media screen and (max-width: 1024px) {
+          @media screen and (max-width: 400px) {
             text-align: center;
           }
 
@@ -212,13 +214,14 @@
       }
 
       .button {
+        position: relative;
         margin-top: 80px;
         width: fit-content;
         padding: 12px 20px;
         border: 1px solid #FFFFFF;
         border-radius: 8px;
         color: #FFFFFF;
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 400px) {
           font-weight: 600;
           font-size: 16px;
           line-height: 24px;
@@ -228,6 +231,9 @@
         }
         @media screen and (max-width: 400px) {
           margin-top: 80px;
+        }
+        a {
+
         }
       }
     }

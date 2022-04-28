@@ -4,7 +4,6 @@ setTimeout(() => {
   if (animItems.length > 0) {
     changeThemeOn()
     window.addEventListener('scroll', changeThemeOn);
-    console.log(123);
 
     function changeThemeOn() {
       // console.log(animItems)
@@ -29,10 +28,9 @@ setTimeout(() => {
   if (rateItems.length > 0) {
     ratesOn()
     window.addEventListener('scroll', ratesOn);
-    console.log(123);
 
     function ratesOn() {
-      console.log(rateItems)
+      // console.log(rateItems)
       for (let i = 0; i < rateItems.length; i++) {
         const animItemHeight = rateItems[i].offsetHeight;
         const animItemOffset = offset(rateItems[i]).top;

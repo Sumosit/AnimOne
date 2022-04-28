@@ -1,9 +1,10 @@
 setTimeout(() => {
-  window.addEventListener('scroll', headerImgOnScroll);
-// setInterval(() => {
-//   headerImgOnScroll()
-// })
+  // window.addEventListener('scroll', headerImgOnScroll);
+setInterval(() => {
+  headerImgOnScroll()
+})
   function headerImgOnScroll() {
+    console.log('headerImgOnScroll')
     let hbRightImg = document.getElementById('hb_right-img');
     let formula = 0;
     let scr = scrollY;

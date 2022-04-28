@@ -33,6 +33,15 @@ html {
   }
 }
 
+html {
+  //scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(white, 0.9);
+}
+
 @import "assets/scss/header.scss";
 @import "assets/scss/animation.scss";
 @import "assets/scss/animation-mobile.scss";
