@@ -237,7 +237,7 @@
       //right: 0;
       //top: 88px;
       //width: 45%;
-      margin-top: 45px;
+      padding-top: 100px;
       height: fit-content;
       flex: auto;
       display: flex;
@@ -246,7 +246,7 @@
         margin-left: auto;
         width: 90%;
         animation: scaleIn 1s linear;
-        transition: 0s linear;
+        transition: all 0s linear;
       }
     }
   }

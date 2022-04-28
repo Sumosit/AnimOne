@@ -217,24 +217,45 @@ setTimeout(() => {
     //     formula = -20;
     //   }
     // let formula = 0, min = -20;
-    if (scrollY < 100) {
-      let scr = scrollY;
-      formula = Number.parseFloat(scr.toString()[0] +'.'+ scr.toString()[1]) * (-1)
-      if (Number.parseFloat(scr.toString()[0]) < 0) {
-        formula = Number.parseFloat(scr.toString()[0] +'.'+ scr.toString()[1])
-      }
-      formula = formula * 2
+    let formula = 0;
+    let scr = scrollY;
+    let maxScroll = 400;
+    // maxScroll 100%
+    // scrollY ?
+
+    // 15 100%
+    // ?  prev ? %
+    if (scrollY < maxScroll) {
+      formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1);
+
+      // if (Number.parseFloat(scr.toString()[0]) < 0) {
+      //   formula = Number.parseFloat(scr.toString()[0] +'.'+ scr.toString()[1])
+      // }
+      // formula = formula * 2
     }
-    // console.log(formula + ' ' + hbRightImg.style.marginTop)
+    console.log(formula)
+    if (formula !== 0) {
+      hbRightImg.style.marginTop = formula+'%';
+    }
+    // if (scrollY < maxScroll)
+    // if (formula < 15) {
+    //   formula = 15;
+    // }
+    // if (formula < -15) {
+    //   formula = -15;
+    // }
+    // console.log(maxScroll + ' ' + scrollY + ' ' + scr)
 
     // if (formula > Number.parseFloat(hbRightImg.style.marginTop) + 0.1) {
     //   console.log(formula + ' ' + hbRightImg.style.marginTop)
     //   return
     // }
-    if (formula < -15) {
-      return
-    }
-      hbRightImg.style.marginTop = formula+'%';
+    // if (formula < -15) {
+    //   formula = 15;
+    // }
+    // if (formula > 15) {
+    //   formula = -15;
+    // }
     // }
     // 0   - 0
     // 100 -20%
