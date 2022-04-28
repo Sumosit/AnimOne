@@ -2,22 +2,23 @@ html, body, main, .left, .animation {
   overflow: initial;
 }
 
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-1 {
+  opacity: 1 !important;
+}
+
+
 .animation-comp {
   display: none;
   padding: 0 26px;
   @media screen and (min-width: 1441px) {
     display: block;
   }
-
-  .opacity-0 {
-    opacity: 0 !important;
-  }
-
-  .opacity-1 {
-    opacity: 1 !important;
-  }
-
   .with-you {
+    opacity: 0;
     position: sticky;
     top: -60px;
     padding: 120px 0 60px;
@@ -132,7 +133,6 @@ html, body, main, .left, .animation {
       width: 448px;
 
       .r-info {
-        //opacity: 0;
         margin-top: 64px;
         position: sticky;
         top: 260px;
@@ -141,6 +141,7 @@ html, body, main, .left, .animation {
         justify-content: center;
 
         .r-info-text {
+          opacity: 0;
           position: absolute;
           top: 25%;
           display: flex;
@@ -148,7 +149,7 @@ html, body, main, .left, .animation {
           justify-content: center;
           align-items: flex-start;
           gap: 24px;
-          transition: all 0.15s ease 0.3s;
+          transition: all 0.15s ease 0.15s;
         }
 
         span {

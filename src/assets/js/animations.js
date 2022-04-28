@@ -227,7 +227,7 @@ setTimeout(() => {
         let animItemPoint2 = -400;
         let animItemPoint3 = -700;
         let animItemPoint4 = -1000;
-        let animItemPoint5 = -1500;
+        let animItemPoint5 = -1250;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
@@ -245,13 +245,14 @@ setTimeout(() => {
           document.getElementById('tr-header').classList.add('tr-header')
           document.getElementById('table').classList.add('table-zebra')
 
-          rInfo.style.top = '200px';
+          rInfo.style.top = '20 0px';
 
           rInfoText1.innerHTML = texts[0]
-          rInfoText1.style.opacity = '1';
-          rInfoText2.style.opacity = '0';
-          rInfoText3.style.opacity = '0';
-          rInfoText4.style.opacity = '0';
+
+          rInfoText1.classList.add('opacity-1');
+          rInfoText2.classList.remove('opacity-1');
+          rInfoText3.classList.remove('opacity-1');
+          rInfoText4.classList.remove('opacity-1')
 
           td[0].textContent = firstArray[0][0];
           td[1].textContent = firstArray[0][1];
@@ -368,6 +369,10 @@ setTimeout(() => {
 
         } else {
           // animField.classList.remove('first');
+          // rInfoText1.classList.remove('opacity-1');
+          // rInfoText2.classList.add('opacity-1');
+          // rInfoText3.classList.remove('opacity-1');
+          // rInfoText4.classList.remove('opacity-1')
         }
 
         if ((scrollY > animItemOffset - animItemPoint2) && scrollY < (animItemOffset + animItemHeight)) {
@@ -377,10 +382,10 @@ setTimeout(() => {
           animField.classList.remove('third');
           cupTable.classList.remove('table-zebra');
 
-          rInfoText1.style.opacity = '0';
-          rInfoText2.style.opacity = '1';
-          rInfoText3.style.opacity = '0';
-          rInfoText4.style.opacity = '0';
+          rInfoText1.classList.remove('opacity-1');
+          rInfoText2.classList.add('opacity-1');
+          rInfoText3.classList.remove('opacity-1');
+          rInfoText4.classList.remove('opacity-1');
           document.getElementById('tabs').innerHTML = tabs[0];
           document.getElementById('tr-header').classList.remove('tr-header')
           document.getElementById('table').classList.remove('table-zebra')
@@ -445,6 +450,11 @@ setTimeout(() => {
           }
         } else {
           animField.classList.remove('second');
+
+          // rInfoText1.classList.remove('opacity-1');
+          // rInfoText2.classList.remove('opacity-1');
+          // rInfoText3.classList.add('opacity-1');
+          // rInfoText4.classList.remove('opacity-1')
         }
 
         if ((scrollY > animItemOffset - animItemPoint3) && scrollY < (animItemOffset + animItemHeight)) {
@@ -455,12 +465,12 @@ setTimeout(() => {
           // document.getElementById('index-change').style.display = 'none';
 
 
-          rInfoText1.style.opacity = '0';
-          rInfoText2.style.opacity = '0';
-          rInfoText3.style.opacity = '1';
-          rInfoText4.style.opacity = '0';
-          withYou.style.opacity = '1';
-          document.getElementById('with-you').style.opacity = '1'
+          rInfoText1.classList.remove('opacity-1');
+          rInfoText2.classList.remove('opacity-1');
+          rInfoText3.classList.add('opacity-1');
+          rInfoText4.classList.remove('opacity-1');
+          // withYou.style.opacity = '1';
+          // document.getElementById('with-you').style.opacity = '1'
           document.getElementById('tabs').innerHTML = tabs[1];
 
           rInfoText3.innerHTML = texts[2];
@@ -588,21 +598,25 @@ setTimeout(() => {
           td[109].innerHTML = thirdArray[11][9];
         } else {
           animField.classList.remove('third');
+
+          // rInfoText1.classList.remove('opacity-1');
+          // rInfoText2.classList.remove('opacity-1');
+          // rInfoText3.classList.remove('opacity-1');
+          // rInfoText4.classList.add('opacity-1');
         }
 
         if ((scrollY > animItemOffset - animItemPoint4) && scrollY < (animItemOffset + animItemHeight)) {
           animField.classList.remove('second');
           animField.classList.add('fourth');
           animField.classList.remove('third');
-          // document.getElementById('with-you').classList.remove('opacity-0');
+          // withYou.classList.remove('opacity-0')
           // document.getElementById('with-you').classList.add('opacity-1');
           rInfo.style.top = '240px';
 
-          rInfoText1.style.opacity = '0';
-          rInfoText2.style.opacity = '0';
-          rInfoText3.style.opacity = '0';
-          rInfoText4.style.opacity = '1';
-          withYou.style.opacity = '0';
+          rInfoText1.classList.remove('opacity-1');
+          rInfoText2.classList.remove('opacity-1');
+          rInfoText3.classList.remove('opacity-1');
+          rInfoText4.classList.add('opacity-1');
 
           rInfoText4.innerHTML = texts[3]
 
@@ -642,7 +656,13 @@ setTimeout(() => {
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
+          withYou.classList.remove('opacity-1')
         } else {
+          withYou.classList.add('opacity-1')
+          // rInfoText1.classList.remove('opacity-1');
+          // rInfoText2.classList.remove('opacity-1');
+          // rInfoText3.classList.remove('opacity-1');
+          // rInfoText4.classList.add('opacity-1');
         }
       }
     }
