@@ -32,4 +32,4 @@ setTimeout(() => {
       isResizing = false;
     }
   })();
-}, 50)
+}, 500)

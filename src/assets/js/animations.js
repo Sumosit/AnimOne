@@ -10,6 +10,7 @@ setTimeout(() => {
   let rInfoText2 = document.getElementById('r-info-text2')
   let rInfoText3 = document.getElementById('r-info-text3')
   let rInfoText4 = document.getElementById('r-info-text4')
+  let withYou = document.getElementById('with-you')
 
   const cupChTds = document.querySelectorAll('.ch-td');
   const cupTds = document.querySelectorAll('.ct-td');
@@ -226,7 +227,7 @@ setTimeout(() => {
         let animItemPoint2 = -400;
         let animItemPoint3 = -700;
         let animItemPoint4 = -1000;
-        let animItemPoint5 = -1200;
+        let animItemPoint5 = -1270;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
@@ -458,6 +459,7 @@ setTimeout(() => {
           rInfoText2.style.opacity = '0';
           rInfoText3.style.opacity = '1';
           rInfoText4.style.opacity = '0';
+          withYou.style.opacity = '1';
           document.getElementById('with-you').style.opacity = '1'
           document.getElementById('tabs').innerHTML = tabs[1];
 
@@ -592,16 +594,19 @@ setTimeout(() => {
           animField.classList.remove('second');
           animField.classList.add('fourth');
           animField.classList.remove('third');
+          // document.getElementById('with-you').classList.remove('opacity-0');
+          // document.getElementById('with-you').classList.add('opacity-1');
           rInfo.style.top = '240px';
 
           rInfoText1.style.opacity = '0';
           rInfoText2.style.opacity = '0';
           rInfoText3.style.opacity = '0';
           rInfoText4.style.opacity = '1';
+          withYou.style.opacity = '0';
 
           rInfoText4.innerHTML = texts[3]
 
-          console.log( td)
+          // console.log( td)
           td[10].innerHTML = fourthWatchlistValues[0];
           td[20].innerHTML = fourthWatchlistValues[1];
           td[30].innerHTML = fourthWatchlistValues[2];
@@ -635,9 +640,8 @@ setTimeout(() => {
         }
 
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
-
-
-          document.getElementById('with-you').style.opacity = '0'
+          // document.getElementById('with-you').classList.add('opacity-0');
+          // document.getElementById('with-you').classList.remove('opacity-1');
         } else {
         }
       }

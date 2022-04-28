@@ -5,19 +5,26 @@ html, body, main, .left, .animation {
 .animation-comp {
   display: none;
   padding: 0 26px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1441px) {
     display: block;
   }
 
-  .with-you {
+  .opacity-0 {
+    opacity: 0 !important;
+  }
 
+  .opacity-1 {
+    opacity: 1 !important;
+  }
+
+  .with-you {
     position: sticky;
     top: -60px;
     padding: 120px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.2s linear !important;
+    transition: all 0.15s ease 0.3s;
 
     span {
       max-width: 851px;
@@ -141,7 +148,7 @@ html, body, main, .left, .animation {
           justify-content: center;
           align-items: flex-start;
           gap: 24px;
-          transition: all 0.5s ease 0s;
+          transition: all 0.5s ease 0.1s;
         }
 
         span {
