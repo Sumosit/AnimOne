@@ -1,5 +1,4 @@
 #container {
-  transition: all 0s ease 0s;
   user-select: none;
   position: relative;
   //width: 100%;
@@ -139,6 +138,22 @@
   }
 }
 
+@keyframes showChangeTheme {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.showChangeTheme {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+
 .change-theme {
   padding: 120px 0 143px;
   background: #181B2A;
@@ -151,6 +166,9 @@
 
   #container {
     border-radius: 12px;
+
+    transform: scale(0.6);
+    opacity: 0;
   }
 
   .change_theme-text {
@@ -160,6 +178,9 @@
     flex-direction: column;
     text-align: center;
     color: #FFFFFF;
+
+    transform: scale(0.6);
+    opacity: 0;
 
     span {
       &:nth-child(1) {

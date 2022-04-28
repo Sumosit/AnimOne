@@ -1,3 +1,62 @@
+
+setTimeout(() => {
+  const animItems = document.querySelectorAll(".change-theme-anim");
+  if (animItems.length > 0) {
+    changeThemeOn()
+    window.addEventListener('scroll', changeThemeOn);
+    console.log(123);
+
+    function changeThemeOn() {
+      // console.log(animItems)
+      for (let i = 0; i < animItems.length; i++) {
+        const animItemHeight = animItems[i].offsetHeight;
+        const animItemOffset = offset(animItems[i]).top;
+
+        const animStart = 4;
+        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+        if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+          animItems[i].classList.add('showChangeTheme')
+        } else {
+          animItems[i].classList.remove('showChangeTheme')
+        }
+      }
+    }
+  }
+
+
+  const rateItems = document.querySelectorAll(".rates-anim");
+  if (rateItems.length > 0) {
+    ratesOn()
+    window.addEventListener('scroll', ratesOn);
+    console.log(123);
+
+    function ratesOn() {
+      console.log(rateItems)
+      for (let i = 0; i < rateItems.length; i++) {
+        const animItemHeight = rateItems[i].offsetHeight;
+        const animItemOffset = offset(rateItems[i]).top;
+
+        const animStart = 4;
+        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+        if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+          rateItems[i].classList.add('showRates')
+        } else {
+          rateItems[i].classList.remove('showRates')
+        }
+      }
+    }
+  }
+
+  function offset(el) {
+    const rect = el.getBoundingClientRect(),
+      scrollLeft = window.scrollX || document.documentElement.scrollLeft,
+      scrollTop = window.scrollY || document.documentElement.scrollTop;
+    return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
+  }
+}, 500)
+
 setTimeout(() => {
   var isResizing = false;
 

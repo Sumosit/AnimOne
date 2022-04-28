@@ -16,8 +16,8 @@ setTimeout(() => {
   const cupTds = document.querySelectorAll('.ct-td');
   const cupTable = document.getElementById('cup-table');
 
-  console.log(animItems)
-  console.log(animField)
+  // console.log(animItems)
+  // console.log(animField)
 
   texts = [
     '<span>Watchlist</span>' +
@@ -203,64 +203,6 @@ setTimeout(() => {
   ]
 
   // console.log(animItems)
-
-  // window.addEventListener('scroll', headerImgOnScroll);
-  setInterval(() => {
-    headerImgOnScroll()
-  })
-  function headerImgOnScroll() {
-    // console.log(123)
-    let hbRightImg = document.getElementById('hb_right-img');
-    //   let formula = ((scrollY / 10) - 15);
-    // console.log(formula)
-    //   if (formula > 10) {
-    //     formula = -20;
-    //   }
-    // let formula = 0, min = -20;
-    let formula = 0;
-    let scr = scrollY;
-    let maxScroll = 400;
-    // maxScroll 100%
-    // scrollY ?
-
-    // 15 100%
-    // ?  prev ? %
-    if (scrollY < maxScroll) {
-      formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1);
-
-      // if (Number.parseFloat(scr.toString()[0]) < 0) {
-      //   formula = Number.parseFloat(scr.toString()[0] +'.'+ scr.toString()[1])
-      // }
-      // formula = formula * 2
-    }
-    console.log(formula)
-    if (formula !== 0) {
-      hbRightImg.style.marginTop = formula+'%';
-    }
-    // if (scrollY < maxScroll)
-    // if (formula < 15) {
-    //   formula = 15;
-    // }
-    // if (formula < -15) {
-    //   formula = -15;
-    // }
-    // console.log(maxScroll + ' ' + scrollY + ' ' + scr)
-
-    // if (formula > Number.parseFloat(hbRightImg.style.marginTop) + 0.1) {
-    //   console.log(formula + ' ' + hbRightImg.style.marginTop)
-    //   return
-    // }
-    // if (formula < -15) {
-    //   formula = 15;
-    // }
-    // if (formula > 15) {
-    //   formula = -15;
-    // }
-    // }
-    // 0   - 0
-    // 100 -20%
-
-  }
 
   if (animItems.length > 0) {
     window.addEventListener('scroll', animOnScroll);
