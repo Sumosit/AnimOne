@@ -18,7 +18,7 @@ setTimeout(() => {
         if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
           animItems[i].classList.add('showChangeTheme')
         } else {
-          animItems[i].classList.remove('showChangeTheme')
+          // animItems[i].classList.remove('showChangeTheme')
         }
       }
     }
@@ -43,7 +43,7 @@ setTimeout(() => {
         if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
           rateItems[i].classList.add('showRates')
         } else {
-          rateItems[i].classList.remove('showRates')
+          // rateItems[i].classList.remove('showRates')
         }
       }
     }
