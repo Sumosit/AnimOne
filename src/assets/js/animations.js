@@ -204,9 +204,41 @@ setTimeout(() => {
 
   // console.log(animItems)
 
-  window.addEventListener('scroll', headerImgOnScroll);
+  // window.addEventListener('scroll', headerImgOnScroll);
+  setInterval(() => {
+    headerImgOnScroll()
+  })
   function headerImgOnScroll() {
-    // top =
+    // console.log(123)
+    let hbRightImg = document.getElementById('hb_right-img');
+    //   let formula = ((scrollY / 10) - 15);
+    // console.log(formula)
+    //   if (formula > 10) {
+    //     formula = -20;
+    //   }
+    // let formula = 0, min = -20;
+    if (scrollY < 100) {
+      let scr = scrollY;
+      formula = Number.parseFloat(scr.toString()[0] +'.'+ scr.toString()[1]) * (-1)
+      if (Number.parseFloat(scr.toString()[0]) < 0) {
+        formula = Number.parseFloat(scr.toString()[0] +'.'+ scr.toString()[1])
+      }
+      formula = formula * 2
+    }
+    // console.log(formula + ' ' + hbRightImg.style.marginTop)
+
+    // if (formula > Number.parseFloat(hbRightImg.style.marginTop) + 0.1) {
+    //   console.log(formula + ' ' + hbRightImg.style.marginTop)
+    //   return
+    // }
+    if (formula < -15) {
+      return
+    }
+      hbRightImg.style.marginTop = formula+'%';
+    // }
+    // 0   - 0
+    // 100 -20%
+
   }
 
   if (animItems.length > 0) {

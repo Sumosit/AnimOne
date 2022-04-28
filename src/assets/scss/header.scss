@@ -1,6 +1,8 @@
 .header-field {
-  position: relative;
+  //position: relative;
   height: fit-content;
+  max-height: 875px;
+  min-height: 875px;
   width: 100%;
   max-width: 1440px;
   padding-bottom: 60px;
@@ -231,16 +233,20 @@
     }
 
     .hb-right {
-      position: absolute;
-      right: 0;
-      top: 88px;
-      width: 45%;
+      //position: absolute;
+      //right: 0;
+      //top: 88px;
+      //width: 45%;
+      margin-top: 45px;
       height: fit-content;
       flex: auto;
+      display: flex;
 
       img {
-        width: 100%;
+        margin-left: auto;
+        width: 90%;
         animation: scaleIn 1s linear;
+        transition: 0s linear;
       }
     }
   }
