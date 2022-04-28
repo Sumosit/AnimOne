@@ -203,6 +203,12 @@ setTimeout(() => {
   ]
 
   // console.log(animItems)
+
+  window.addEventListener('scroll', headerImgOnScroll);
+  function headerImgOnScroll() {
+    // top =
+  }
+
   if (animItems.length > 0) {
     window.addEventListener('scroll', animOnScroll);
 
@@ -227,7 +233,7 @@ setTimeout(() => {
         let animItemPoint2 = -400;
         let animItemPoint3 = -700;
         let animItemPoint4 = -1000;
-        let animItemPoint5 = -1250;
+        let animItemPoint5 = -1170;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
