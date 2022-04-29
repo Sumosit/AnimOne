@@ -12,15 +12,4 @@ export class MobileMenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  scrollToTrial(value: any) {
-
-    this.appService.menu_show = false
-    let el = document.getElementById(value);
-    setTimeout(() => {
-      console.log(el)
-      // @ts-ignore
-      el.scrollIntoView()
-    }, 1000)
-  }
 }

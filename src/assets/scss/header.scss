@@ -94,7 +94,7 @@
 
       .hl-menu {
         display: none;
-        @media screen and (max-width: 390px) {
+        @media screen and (max-width: 850px) {
           display: initial;
         }
       }
@@ -104,11 +104,14 @@
         display: flex;
         align-items: center;
         gap: 36px;
-        @media screen and (max-width: 825px) {
+        @media screen and (max-width: 1100px) {
+          gap: 18px;
+        }
+        @media screen and (max-width: 850px) {
           display: none;
         }
 
-        span {
+        span, a {
           cursor: pointer;
         }
       }

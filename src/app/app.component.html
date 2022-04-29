@@ -6,10 +6,10 @@
       <img class="hl-menu" src="assets/images/menu.svg" (click)="appService.menu_show = true" alt="">
       <img src="assets/images/LOGO.svg" alt="">
       <div class="hi-texts">
-        <span>О продукте</span>
-        <span>Возможности</span>
-        <span>Тарифы</span>
-        <span>Контакты</span>
+        <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">О продукте</span>
+<!--        <a href="#with-you">Возможности</a>-->
+        <span (click)="appService.scrollTo('rates')">Тарифы</span>
+        <span (click)="appService.scrollTo('trial')">Контакты</span>
       </div>
     </div>
     <div class="header-right">
@@ -32,7 +32,7 @@
   </div>
 </div>
 <div class="middle-content animation-comp">
-  <div class="with-you" id="with-you">
+  <div class="with-you" id="with-you" #withYou>
     <span>Мы всегда с вами</span>
     <span>Браузерный терминал с обновлением информации в реальном времени и доступный с любого устройства, без привязки к рабочему месту.</span>
   </div>
@@ -381,7 +381,7 @@
   </div>
 </div>
 <div class="middle-content animation-mobile">
-  <div class="with-you">
+  <div id="with-you1" class="with-you">
     <span>Мы всегда с&nbsp;вами</span>
     <span>Браузерный терминал с&nbsp;обновлением информации в&nbsp;реальном времени и&nbsp;доступный с&nbsp;любого устройства, без&nbsp;привязки к&nbsp;рабочему месту.</span>
   </div>
@@ -443,7 +443,7 @@
   </div>
 </div>
 <div class="middle-content">
-  <div class="rates-field">
+  <div class="rates-field" id="rates">
     <span class="rf-title">Тарифы</span>
     <div class="rates">
       <div class="r-base">

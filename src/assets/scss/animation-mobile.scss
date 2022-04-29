@@ -47,6 +47,12 @@
       padding: 0 0 24px 0;
       flex-direction: row-reverse;
       align-items: center;
+      &:nth-child(1) {
+        img {
+          margin-top: -22px;
+          margin-left: 15px
+        }
+      }
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }

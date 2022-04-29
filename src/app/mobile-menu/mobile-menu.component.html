@@ -6,14 +6,14 @@
   </div>
   <div class="mm-trial-button">
     <div class="button-primary">
-      <a class="" (click)="scrollToTrial('trial')">Попробовать бесплатно</a>
+      <a class="" (click)="appService.scrollTo('trial')">Попробовать бесплатно</a>
     </div>
   </div>
   <div class="mm-links">
-    <div class="mm-link">О продукте</div>
-    <div class="mm-link">Возможности</div>
-    <div class="mm-link">Тарифы</div>
-    <div class="mm-link">Контакты</div>
+    <div class="mm-link" (click)="appService.scrollToBehavior( 'with-you1')">О продукте</div>
+<!--    <div class="mm-link">Возможности</div>-->
+    <div class="mm-link" (click)="appService.scrollTo('rates')">Тарифы</div>
+    <div class="mm-link" (click)="appService.scrollTo('trial')">Контакты</div>
   </div>
   <div class="mm-contacts">
     <div class="mm-contact">
