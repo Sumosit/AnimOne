@@ -60,7 +60,7 @@
     height: 88px;
     padding-left: 96px;
     padding-right: 96px;
-    animation: scaleIn 1s linear;
+    animation: scaleIn 1.2s linear;
     @media screen and (max-width: 1024px) {
       //position: initial;
       padding-left: 16px;
@@ -152,7 +152,7 @@
     //background: black;
     display: flex;
     flex-direction: row;
-    animation: scaleIn 1s linear;
+    animation: scaleIn 1.2s linear;
     @media screen and (max-width: 1024px) {
       //position: initial;
       padding: 0 16px;
@@ -252,6 +252,7 @@
       img {
         margin-left: auto;
         width: 90%;
+        animation: scaleIn2 1.35s linear;
       }
     }
   }
@@ -269,6 +270,20 @@
   0% {
     opacity: 0;
     transform: scale(0.7);
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
   }
   90% {
     opacity: 0;
