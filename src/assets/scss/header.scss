@@ -18,7 +18,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    animation: fadeOut 1s linear;
     background: url("../../assets/images/unsplash_fiXLQXAhCfk.svg") no-repeat top center;
     border-radius: 0px 0px 100px 100px;
   }
@@ -61,6 +60,7 @@
     height: 88px;
     padding-left: 96px;
     padding-right: 96px;
+    animation: scaleIn 1s linear;
     @media screen and (max-width: 1024px) {
       //position: initial;
       padding-left: 16px;
@@ -152,6 +152,7 @@
     //background: black;
     display: flex;
     flex-direction: row;
+    animation: scaleIn 1s linear;
     @media screen and (max-width: 1024px) {
       //position: initial;
       padding: 0 16px;
@@ -251,8 +252,6 @@
       img {
         margin-left: auto;
         width: 90%;
-        animation: scaleIn 1s linear;
-        transition: all 0s linear;
       }
     }
   }
@@ -269,7 +268,10 @@
 @keyframes scaleIn {
   0% {
     opacity: 0;
-    transform: scale(0.4);
+    transform: scale(0.7);
+  }
+  90% {
+    opacity: 0;
   }
   100% {
     opacity: 1;
