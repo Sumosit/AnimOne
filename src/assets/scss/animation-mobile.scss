@@ -50,6 +50,11 @@
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }
+      @media screen and (max-width: 390px) {
+        &:nth-child(1) {
+          margin-top: 24px;
+        }
+      }
       img {
         flex: 70%;
       }
@@ -61,6 +66,7 @@
         align-items: center;
         @media screen and (max-width: 768px){
           width: 100%;
+          margin-left: 0;
         }
       }
       span {
@@ -83,6 +89,7 @@
         }
 
         &:nth-child(2) {
+          white-space: break-spaces;
           margin-top: 8px;
           font-weight: 400;
           font-size: 16px;

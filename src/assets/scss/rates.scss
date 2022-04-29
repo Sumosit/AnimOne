@@ -41,7 +41,7 @@
       box-sizing: border-box;
       box-shadow: -6px -6px 24px rgba(168, 171, 177, 0.25), 8px 8px 22px rgba(154, 165, 182, 0.35), inset 1px 1px 1px rgba(115, 124, 139, 0.05), inset -1px -1px 4px rgba(115, 124, 139, 0.12);
       color: #0D1C32;
-      @media screen and (max-width: 390px) {
+      @media screen and (max-width: 768px) {
         width: 100%;
         min-width: initial;
         align-items: center;

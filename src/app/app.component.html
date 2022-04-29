@@ -1,9 +1,9 @@
-<!--<div style="height: 1000px"></div>-->
+<app-mobile-menu *ngIf="appService.menu_show"></app-mobile-menu>
 <div class="header-field " id="header-field">
   <!--    <div class="hf-bg"></div>-->
   <div class="header">
     <div class="header-left">
-      <img class="hl-menu" src="assets/images/menu.svg" alt="">
+      <img class="hl-menu" src="assets/images/menu.svg" (click)="appService.menu_show = true" alt="">
       <img src="assets/images/LOGO.svg" alt="">
       <div class="hi-texts">
         <span>О продукте</span>
@@ -14,7 +14,7 @@
     </div>
     <div class="header-right">
       <a class="hr-button" href="https://irisapi.kase.kz/webterminal/auth" target="_blank">Войти</a>
-      <a class="hr-button-primary" href="#trial">Попробовать бесплатно</a>
+      <a class="button-primary" href="#trial">Попробовать бесплатно</a>
     </div>
   </div>
   <div class="header-big">
@@ -389,24 +389,21 @@
     <div class="option">
       <div>
         <span>Watchlist</span>
-        <span>Котировки &nbsp;в реальном времени для&nbsp;
-        оперативного реагирования
-        на&nbsp;изменения рынков –&nbsp;наблюдайте за&nbsp;биржевым
-        стаканом и&nbsp;отслеживайте настроения инвесторов.</span>
+        <span>Котировки &nbsp;в реальном времени для&nbsp;оперативного реагирования на&nbsp;изменения рынков –&nbsp;наблюдайте за&nbsp;биржевымстаканом и&nbsp;отслеживайте настроения инвесторов.</span>
       </div>
       <img src="assets/images/watchlist-cup.svg" alt="">
     </div>
     <div class="option">
       <div>
         <span>Актуальные новости</span>
-        <span>Следите за&nbsp;событиями на&nbsp;рынке с&nbsp;помощью нашей новостной ленты KASE и&nbsp;добавляйте наиболее интересные новости в&nbsp;раздел "Избранные", чтобы иметь к&nbsp;ним оперативный доступ.</span>
+        <span>Следите за&nbsp;событиями на&nbsp;рынке с&nbsp;помощью нашей новостной ленты KASE и&nbsp;добавляйте наиболее интересные новости в&nbsp;раздел "Избранные", чтобы иметь к&nbsp;ним&nbsp;доступ.</span>
       </div>
       <img src="assets/images/news.svg" alt="">
     </div>
     <div class="option">
       <div>
         <span>Заявки, сделки и&nbsp;итоги</span>
-        <span>Определяйте динамику рынков с&nbsp;помощью данных intraday, а&nbsp;также анализируйте исторические данные за&nbsp;любой периоддля лучшего понимания картины рынка.</span>
+        <span>Определяйте динамику рынков с&nbsp;помощью данных intraday, а&nbsp;также анализируйте исторические данные за&nbsp;любой период для&nbsp;лучшего понимания картины рынка.</span>
       </div>
       <img src="assets/images/deals-totals.svg" alt="">
     </div>
@@ -499,7 +496,7 @@
     </div>
   </div>
 </div>
-<div class="trial-form-field" id="trial">
+<div class="trial-form-field" id="trial" #trial>
   <div class="middle-content">
     <div class="trial-form">
       <div class="tf-left">

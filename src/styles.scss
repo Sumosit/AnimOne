@@ -33,6 +33,22 @@ html {
   }
 }
 
+.button-primary {
+  z-index: 1001;
+  //width: fit-content;
+  flex: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  background: #13AB53;
+  @media screen and (max-width: 390px) {
+    padding: 12px 20px;
+  }
+}
+
 html {
   //scroll-behavior: smooth;
 }
@@ -49,3 +65,5 @@ a {
 @import "assets/scss/rates.scss";
 @import "assets/scss/trial-form.scss";
 @import "assets/scss/copyright.scss";
+
+@import "assets/scss/mobile-menu.scss";

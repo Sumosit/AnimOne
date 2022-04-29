@@ -1,10 +1,10 @@
 setTimeout(() => {
-  // window.addEventListener('scroll', headerImgOnScroll);
-setInterval(() => {
-  headerImgOnScroll()
-})
+  window.addEventListener('scroll', headerImgOnScroll);
+  // setInterval(() => {
+  //   headerImgOnScroll()
+  // })
   function headerImgOnScroll() {
-    console.log('headerImgOnScroll')
+    // console.log('headerImgOnScroll')
     let hbRightImg = document.getElementById('hb_right-img');
     let formula = 0;
     let scr = scrollY;
@@ -17,7 +17,7 @@ setInterval(() => {
     if (scrollY < maxScroll) {
       formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1);
     }
-    console.log(formula)
+    // console.log(formula)
     if (formula !== 0) {
       hbRightImg.style.marginTop = formula+'%';
     }

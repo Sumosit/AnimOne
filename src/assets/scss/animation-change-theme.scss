@@ -185,6 +185,9 @@
 
     transform: scale(0.6);
     opacity: 0;
+    @media screen and (max-width: 390px) {
+      padding-bottom: 47px;
+    }
 
     span {
       &:nth-child(1) {

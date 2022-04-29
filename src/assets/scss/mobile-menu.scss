@@ -1,0 +1,81 @@
+.mobile-menu {
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 24px;
+  background: #181C28;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  .mm-header {
+    padding-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    display: flex;
+    border-bottom: 1px solid #53586D;
+    a {
+      margin-left: auto;
+      padding: 8px 16px;
+    }
+
+    .mmh-close {
+      margin-left: 24px;
+    }
+  }
+
+  .mm-trial-button {
+    padding: 24px 0;
+    border-bottom: 1px solid #53586D;
+    display: flex;
+    justify-content: center;
+
+    .button-primary {
+
+    }
+  }
+
+  .mm-links {
+    width: 100%;
+    padding: 24px 0;
+    border-bottom: 1px solid #53586D;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    .mm-link {
+      padding: 12px 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  .mm-contacts {
+    margin-top: 40px;
+    .mm-contact {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+      .mmc-title {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        text-transform: uppercase;
+      }
+      .mmc-content {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+      }
+    }
+  }
+}
