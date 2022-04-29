@@ -44,7 +44,7 @@
     }
     .option {
       display: flex;
-      padding: 0 0 24px 0;
+      padding: 0 0 48px 0;
       flex-direction: row-reverse;
       align-items: center;
       &:nth-child(1) {
@@ -52,13 +52,16 @@
           margin-top: -22px;
           margin-left: 15px
         }
+        span {
+          padding: 0 30px
+        }
       }
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }
       @media screen and (max-width: 390px) {
         &:nth-child(1) {
-          margin-top: 24px;
+          margin-top: 48px;
         }
       }
       img {
@@ -72,7 +75,7 @@
         align-items: center;
         @media screen and (max-width: 768px){
           width: 100%;
-          margin-left: 0;
+          margin-left: initial;
         }
       }
       span {
@@ -90,7 +93,7 @@
           line-height: 100%;
           color: #1E2230;
           @media screen and (max-width: 1440px) {
-            margin-top: 0;
+            margin-top: initial;
           }
         }
 
