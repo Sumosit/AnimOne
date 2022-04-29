@@ -189,6 +189,10 @@
       padding-bottom: 47px;
     }
 
+    #left_panel {
+      transition: all 0s !important;
+    }
+
     span {
       &:nth-child(1) {
         font-weight: 800;
