@@ -21,15 +21,20 @@ html {
 .middle-content {
   position: relative;
   overflow: initial;
-  width: 1248px;
+  width: calc(1248px + 64px);
   margin-left: auto;
   margin-right: auto;
   @media screen and (max-width: 1440px) {
     width: 100%;
   }
-  @media screen and (max-width: 1440px) {
-    width: 100%;
-    padding: 0 16px;
+}
+
+.middle-padding {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  @media screen and (max-width: 1024px) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
 
