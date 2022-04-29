@@ -154,6 +154,10 @@
   opacity: 1 !important;
 }
 
+.change-theme-anim {
+  transition: all 0.7s ease 0s;
+}
+
 .change-theme {
   padding: 120px 0 143px;
   background: #181B2A;

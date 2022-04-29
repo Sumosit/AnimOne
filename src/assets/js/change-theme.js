@@ -11,7 +11,7 @@ setTimeout(() => {
         const animItemHeight = animItems[i].offsetHeight;
         const animItemOffset = offset(animItems[i]).top;
 
-        const animStart = 4;
+        const animStart = 10;
         let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
         if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {

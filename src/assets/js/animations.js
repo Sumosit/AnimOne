@@ -246,7 +246,7 @@ setTimeout(() => {
           document.getElementById('tr-header').classList.add('tr-header')
           document.getElementById('table').classList.add('table-zebra')
 
-          rInfo.style.top = '20 0px';
+          rInfo.style.top = '210px';
 
           rInfoText1.innerHTML = texts[0]
 

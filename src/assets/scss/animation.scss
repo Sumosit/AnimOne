@@ -124,6 +124,7 @@ html, body, main, .left, .animation {
     flex-direction: row;
     //gap: 140px;
     overflow: initial;
+    gap: 40px;
 
     .right {
       overflow: initial;
@@ -138,7 +139,7 @@ html, body, main, .left, .animation {
         top: 260px;
         height: 431px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
 
         .r-info-text {
           opacity: 0;
@@ -149,7 +150,7 @@ html, body, main, .left, .animation {
           justify-content: center;
           align-items: flex-start;
           gap: 24px;
-          transition: all 0.15s ease 0.15s;
+          transition: all 0.25s ease 0s;
         }
 
         span {
