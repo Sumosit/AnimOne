@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "build-gzip" : "ng build --aot --prod && rm -rf ./dist/*-gzip && gzipper --verbose --output-file-format [filename].[ext] ./dist/real-world-project ./dist/real-world-project-gzip"
   },
   "private": true,
   "dependencies": {

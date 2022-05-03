@@ -15,20 +15,18 @@ export class AppComponent {
 
   constructor(public appService: AppService) {
     this.screenWidth = window.innerWidth;
-    setInterval(() => {
-      this.height = this.getElementHeight('right_panel-dark-img')
-    })
+    this.height = this.getElementHeight('right_panel-dark-img')
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
+    this.height = this.getElementHeight('right_panel-dark-img')
   }
 
   public getElementHeight(value: string) {
     let el = document.getElementById(value)
     if (el) {
-      console.log(el.offsetHeight)
       return el.offsetHeight + 'px';
     }
     return '100%';
