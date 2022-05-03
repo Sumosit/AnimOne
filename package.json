@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --aot --prod",
-    "build-gzip": "ng build --aot --prod && gzipper --verbose ./dist"
+    "build-gzip": "ng build --aot --prod && gzipper compress ./dist"
   },
   "private": true,
   "dependencies": {
