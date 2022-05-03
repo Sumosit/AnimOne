@@ -2,14 +2,13 @@
   "name": "anim-one",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng", 
+    "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --aot --prod",
-    "build-gzip": "rm -rf ./dist/*-gzip && gzipper compress --output-file-format [filename].[ext] ./dist/real-world-project ./dist/real-world-project-gzip",
-    "gzip": "rm -rf ./dist/*-gzip && gzipper --verbose --output-file-format [filename].[ext] ./dist/real-world-project ./dist/real-world-project-gzip"
+    "build-gzip": "ng build && gzipper compress ./dist ./gzipped"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +42,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "rimraf": "^3.0.2",
     "typescript": "~4.6.2"
   },
   "engines": {
