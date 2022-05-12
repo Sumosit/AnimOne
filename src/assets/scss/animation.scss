@@ -128,7 +128,7 @@ html, body, main, .left, .animation {
 
     .right {
       overflow: initial;
-      height: 2000px;
+      height: 1600px;
       min-width: 448px;
       max-width: 448px;
       width: 448px;
@@ -172,7 +172,7 @@ html, body, main, .left, .animation {
     .left {
       margin-left: -90px;
       width: 900px;
-      height: 2100px;
+      height: 1700px;
 
       color: rgba(255, 255, 255, 0.9);
 
@@ -185,7 +185,6 @@ html, body, main, .left, .animation {
         top: 149px;
         display: flex;
         flex-direction: column;
-
 
         .watch-cup {
           display: flex;
@@ -1070,6 +1069,7 @@ html, body, main, .left, .animation {
                     display: initial;
                     width: 68px;
                     text-align: left;
+                    white-space: nowrap;
                   }
                 }
               }

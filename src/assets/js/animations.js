@@ -224,11 +224,11 @@ setTimeout(() => {
         // let animItemPoint3 = window.innerHeight - animItemHeight / animStart3;
         // let animItemPoint4 = window.innerHeight - animItemHeight / animStart4;
 
-        let animItemPoint = -100;
-        let animItemPoint2 = -400;
-        let animItemPoint3 = -700;
-        let animItemPoint4 = -1000;
-        let animItemPoint5 = -1170;
+        let animItemPoint = -50;
+        let animItemPoint2 = -200;
+        let animItemPoint3 = -400;
+        let animItemPoint4 = -700;
+        let animItemPoint5 = -800;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
