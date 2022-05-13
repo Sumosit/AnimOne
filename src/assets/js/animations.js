@@ -660,14 +660,16 @@ setTimeout(() => {
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
-          withYou.classList.remove('opacity-1')
+          // withYou.classList.remove('opacity-1')
+          withYou.classList.add('with-you-go_up')
           leftAnim.style.height = '1500px';
           rightAnim.style.height = '1400px';
 
         } else {
           leftAnim.style.height = '1700px';
           rightAnim.style.height = '1600px';
-          withYou.classList.add('opacity-1')
+          // withYou.classList.add('opacity-1')
+          withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
           // rInfoText3.classList.remove('opacity-1');

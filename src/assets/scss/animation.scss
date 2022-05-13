@@ -17,15 +17,22 @@ html, body, main, .left, .animation {
   @media screen and (min-width: 1441px) {
     display: block;
   }
+
+  .with-you-go_up {
+    transform: translateY(-400px);
+  }
+
   .with-you {
-    opacity: 0;
+    opacity: 1;
     position: sticky;
-    top: 150px;
-    padding: 0px 0 60px;
+    top: 68px;
+    padding: 60px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.15s ease 0s;
+    transition: all 0.5s ease 0s;
+
+    box-shadow: 4px 0px 25px rgba(0, 0, 0, 0.1), 0px 4px 25px rgba(0, 0, 0, 0.1);
 
     span {
       max-width: 851px;
@@ -132,6 +139,7 @@ html, body, main, .left, .animation {
       min-width: 448px;
       max-width: 448px;
       width: 448px;
+      transition: height 0.5s;
 
       .r-info {
         margin-top: 94px;
@@ -173,6 +181,7 @@ html, body, main, .left, .animation {
       margin-left: -90px;
       width: 900px;
       height: 1700px;
+      transition: height 0.5s;
 
       color: rgba(255, 255, 255, 0.9);
 
