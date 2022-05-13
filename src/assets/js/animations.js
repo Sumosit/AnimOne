@@ -16,6 +16,9 @@ setTimeout(() => {
   const cupTds = document.querySelectorAll('.ct-td');
   const cupTable = document.getElementById('cup-table');
 
+  const leftAnim = document.getElementById('leftAnim');
+  const rightAnim = document.getElementById('rightAnim')
+
   // console.log(animItems)
   // console.log(animField)
 
@@ -228,7 +231,7 @@ setTimeout(() => {
         let animItemPoint2 = -200;
         let animItemPoint3 = -300;
         let animItemPoint4 = -400;
-        let animItemPoint5 = -200;
+        let animItemPoint5 = -800;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
@@ -246,7 +249,7 @@ setTimeout(() => {
           document.getElementById('tr-header').classList.add('tr-header')
           document.getElementById('table').classList.add('table-zebra')
 
-          rInfo.style.top = '240px';
+          rInfo.style.top = '360px';
 
           rInfoText1.innerHTML = texts[0]
 
@@ -390,7 +393,7 @@ setTimeout(() => {
           document.getElementById('tabs').innerHTML = tabs[0];
           document.getElementById('tr-header').classList.remove('tr-header')
           document.getElementById('table').classList.remove('table-zebra')
-          rInfo.style.top = '240px';
+          rInfo.style.top = '360px';
 
           rInfoText2.innerHTML = texts[1];
 
@@ -612,7 +615,7 @@ setTimeout(() => {
           animField.classList.remove('third');
           // withYou.classList.remove('opacity-0')
           // document.getElementById('with-you').classList.add('opacity-1');
-          rInfo.style.top = '240px';
+          rInfo.style.top = '360px';
 
           rInfoText1.classList.remove('opacity-1');
           rInfoText2.classList.remove('opacity-1');
@@ -658,8 +661,12 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.remove('opacity-1')
+          leftAnim.style.height = '1500px';
+          rightAnim.style.height = '1400px';
 
         } else {
+          leftAnim.style.height = '1700px';
+          rightAnim.style.height = '1600px';
           withYou.classList.add('opacity-1')
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
