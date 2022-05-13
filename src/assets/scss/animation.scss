@@ -11,6 +11,13 @@ html, body, main, .left, .animation {
 }
 
 
+.animation-comp-with_you {
+
+  @media screen and (min-width: 1441px) {
+    display: contents !important;
+  }
+}
+
 .animation-comp {
   display: none;
   padding: 0 26px;
@@ -19,13 +26,13 @@ html, body, main, .left, .animation {
   }
 
   .with-you-go_up {
-    transform: translateY(-400px);
+    transform: translateY(-1000px);
   }
 
   .with-you {
     opacity: 1;
     position: sticky;
-    top: 68px;
+    top: 182px;
     padding: 60px 0 60px;
     display: flex;
     flex-direction: column;
@@ -190,7 +197,7 @@ html, body, main, .left, .animation {
         margin-left: -150px;
         transform: scale(0.65);
         position: sticky;
-        top: 266px;
+        top: 375px;
         display: flex;
         flex-direction: column;
         background: #262936;
