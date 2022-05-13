@@ -9,7 +9,7 @@
         <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">О продукте</span>
 <!--        <a href="#with-you">Возможности</a>-->
         <span (click)="appService.scrollTo('rates')">Тарифы</span>
-        <span (click)="appService.scrollTo('trial')">Контакты</span>
+        <span (click)="appService.scrollTo('tf-contacts')">Контакты</span>
       </div>
     </div>
     <div class="header-right">
@@ -501,7 +501,7 @@
 <div class="trial-form-field" #trial>
   <div class="middle-content middle-padding">
     <div class="trial-form">
-      <div class="tf-left">
+      <div class="tf-left" id="tf-contacts" #tfContacts>
         <div class="tf-contacts">
           <span class="rates-anim">Остались вопросы?</span>
           <span class="rates-anim">Свяжитесь с&nbsp;нами по&nbsp;следующим контактам:</span>
