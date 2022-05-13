@@ -228,7 +228,7 @@ setTimeout(() => {
         let animItemPoint2 = -200;
         let animItemPoint3 = -300;
         let animItemPoint4 = -400;
-        let animItemPoint5 = -900;
+        let animItemPoint5 = -200;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
@@ -658,6 +658,7 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.remove('opacity-1')
+
         } else {
           withYou.classList.add('opacity-1')
           // rInfoText1.classList.remove('opacity-1');
