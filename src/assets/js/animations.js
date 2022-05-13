@@ -228,7 +228,7 @@ setTimeout(() => {
         let animItemPoint2 = -200;
         let animItemPoint3 = -300;
         let animItemPoint4 = -400;
-        let animItemPoint5 = -600;
+        let animItemPoint5 = -800;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
