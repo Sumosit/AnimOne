@@ -27,8 +27,8 @@ export class AppComponent {
   public getElementHeight(value: string) {
     let el = document.getElementById(value)
     if (el) {
-      return el.offsetHeight + 'px';
+      // return el.offsetHeight + 'px';
     }
-    return '100%';
+    return '99.5%';
   }
 }
