@@ -26,17 +26,17 @@ html, body, main, .left, .animation {
   }
 
   .with-you-go_up {
-    transform: translateY(-1000px);
+    transform: translateY(-10000px) !important;
   }
 
   .with-you {
-    opacity: 1;
     position: sticky;
-    top: 182px;
+    top: 140px;
     padding: 60px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(0px);
     transition: all 0.5s ease 0s;
 
     box-shadow: 4px 0px 25px rgba(0, 0, 0, 0.1), 0px 4px 25px rgba(0, 0, 0, 0.1);
@@ -197,7 +197,7 @@ html, body, main, .left, .animation {
         margin-left: -150px;
         transform: scale(0.65);
         position: sticky;
-        top: 375px;
+        top: 410px;
         display: flex;
         flex-direction: column;
         background: #262936;

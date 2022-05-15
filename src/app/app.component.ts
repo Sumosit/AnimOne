@@ -31,4 +31,11 @@ export class AppComponent {
     }
     return '99.5%';
   }
+
+  public scroll(id: string) {
+    let el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth', block: "start"});
+    }
+  }
 }

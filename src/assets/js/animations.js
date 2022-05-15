@@ -12,12 +12,15 @@ setTimeout(() => {
   let rInfoText4 = document.getElementById('r-info-text4')
   let withYou = document.getElementById('with-you')
 
+  let scroll = 0
+
   const cupChTds = document.querySelectorAll('.ch-td');
   const cupTds = document.querySelectorAll('.ct-td');
   const cupTable = document.getElementById('cup-table');
 
   const leftAnim = document.getElementById('leftAnim');
   const rightAnim = document.getElementById('rightAnim')
+
 
   // console.log(animItems)
   // console.log(animField)
@@ -249,7 +252,7 @@ setTimeout(() => {
           document.getElementById('tr-header').classList.add('tr-header')
           document.getElementById('table').classList.add('table-zebra')
 
-          rInfo.style.top = '477px';
+          // rInfo.style.top = '500px';
 
           rInfoText1.innerHTML = texts[0]
 
@@ -393,7 +396,7 @@ setTimeout(() => {
           document.getElementById('tabs').innerHTML = tabs[0];
           document.getElementById('tr-header').classList.remove('tr-header')
           document.getElementById('table').classList.remove('table-zebra')
-          rInfo.style.top = '477px';
+          // rInfo.style.top = '500px';
 
           rInfoText2.innerHTML = texts[1];
 
@@ -615,7 +618,7 @@ setTimeout(() => {
           animField.classList.remove('third');
           // withYou.classList.remove('opacity-0')
           // document.getElementById('with-you').classList.add('opacity-1');
-          rInfo.style.top = '477px';
+          // rInfo.style.top = '500px';
 
           rInfoText1.classList.remove('opacity-1');
           rInfoText2.classList.remove('opacity-1');
@@ -660,20 +663,28 @@ setTimeout(() => {
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
-          // withYou.classList.remove('opacity-1')
           withYou.classList.add('with-you-go_up')
-          leftAnim.style.height = '1500px';
-          rightAnim.style.height = '1400px';
+          leftAnim.style.height = '1400px';
+          rightAnim.style.height = '1300px';
 
         } else {
           leftAnim.style.height = '1700px';
           rightAnim.style.height = '1600px';
-          // withYou.classList.add('opacity-1')
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
+        }
+
+        if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
+          // document.getElementById('with-you').classList.add('opacity-0');
+          // document.getElementById('with-you').classList.remove('opacity-1');
+          withYou.classList.add('with-you-go_up')
+
+        }
+        else {
+
         }
       }
     }
