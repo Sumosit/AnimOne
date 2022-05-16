@@ -30,7 +30,7 @@ html, body, main, .left, .animation {
   }
 
   .with-you {
-    position: initial;
+    position: initial !important;
     top: 140px;
     padding: 60px 0 60px;
     display: flex;
@@ -147,6 +147,7 @@ html, body, main, .left, .animation {
       min-width: 448px;
       max-width: 448px;
       width: 448px;
+      margin-left: 100px;
       transition: height 0.5s;
 
       .r-info {
@@ -196,7 +197,7 @@ html, body, main, .left, .animation {
       .anim-field {
         width: fit-content;
         margin-left: -150px;
-        transform: scale(0.65);
+        transform: scale(0.8);
         position: sticky;
         top: 410px;
         display: flex;
