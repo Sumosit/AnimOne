@@ -21,30 +21,54 @@
   }
   .rates {
     padding: 40px 0 121px;
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    @media screen and (max-width: 690px) {
-      flex-direction: column;
-      padding: 40px 0 60px;
+    //display: flex;
+    //flex-direction: row;
+    //justify-content: center;
+    //gap: 40px;
+    display: grid;
+    grid-template-columns: 340px 517px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "r-base r-market"
+      "r-pattern r-market";
+    justify-content: center;
+    gap: 40px 40px;
+    @media screen and (max-width: 920px) {
+      gap: 20px 20px;
     }
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+    //  grid-template-columns: auto;
+    //  grid-template-rows: auto;
+    //  grid-template-areas:
+    //  "r-base"
+    //  "r-pattern"
+    //  "r-market"
+    //;
+    }
+    .rates-left {}
     .r-base {
+      grid-area: r-base;
       width: 340px;
       min-width: 340px;
       height: fit-content;
       padding: 40px 24px;
+      border-radius: 12px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      border-radius: 12px;
-      background: #F3F6FB;
-      border: 2px solid #D3D7E2;
-      box-sizing: border-box;
-      box-shadow: -6px -6px 24px rgba(168, 171, 177, 0.25), 8px 8px 22px rgba(154, 165, 182, 0.35), inset 1px 1px 1px rgba(115, 124, 139, 0.05), inset -1px -1px 4px rgba(115, 124, 139, 0.12);
-      color: #0D1C32;
-      @media screen and (max-width: 768px) {
+      border: 2px solid #53586D;
+      background: #181B2A;
+      box-shadow: -6px -6px 24px rgba(30, 34, 48, 0.48), 8px 8px 22px rgba(30, 34, 48, 0.24), inset 1px 1px 1px rgba(30, 34, 48, 0.05), inset -1px -1px 4px rgba(30, 34, 48, 0.12);;
+      color: #FFFFFF;
+
+      @media screen and (max-width: 900px) {
         width: 100%;
         min-width: initial;
         align-items: center;
+      }
+      @media screen and (max-width: 768px) {
       }
 
       .rb-text {
@@ -83,26 +107,43 @@
         line-height: 140%;
         align-items: center;
         letter-spacing: 0.02em;
-        color: #565969;
+        color: #FFFFFF;
         display: flex;
         flex-direction: row;
         gap: 8px;
+        svg {
+          g {
+            path {
+              fill: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+    .r-pattern {
+      grid-area: r-pattern;
+      @media screen and (max-width: 900px) {
+        width: 100%;
       }
     }
     .r-market {
+      grid-area: r-market;
       padding: 40px 24px;
-      flex: 100%;
+      width: 517px;
       border-radius: 12px;
-      border: 2px solid #D3D7E2;
-      background: #F3F6FB;
       font-weight: 400;
       font-size: 16px;
       line-height: 120%;
+      border: 2px solid #53586D;
+      background: #181B2A;
+      box-shadow: -6px -6px 24px rgba(30, 34, 48, 0.48), 8px 8px 22px rgba(30, 34, 48, 0.24), inset 1px 1px 1px rgba(30, 34, 48, 0.05), inset -1px -1px 4px rgba(30, 34, 48, 0.12);;
+      color: #FFFFFF;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #0D1C32;
-      box-shadow: -6px -6px 24px rgba(168, 171, 177, 0.25), 8px 8px 22px rgba(154, 165, 182, 0.35), inset 1px 1px 1px rgba(115, 124, 139, 0.05), inset -1px -1px 4px rgba(115, 124, 139, 0.12);
+      @media screen and (max-width: 900px) {
+        width: 100%;
+      }
       .rm-header {
         width: 100%;
         font-weight: 700;
@@ -119,11 +160,11 @@
         width: 100%;
         margin-top: 24px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 24px;
-        @media screen and (max-width: 1024px) {
-          flex-direction: column;
-        }
+        //@media screen and (max-width: 1024px) {
+        //  flex-direction: column;
+        //}
         .rmf-items {
           flex-grow: 1;
           .rmf-item {
