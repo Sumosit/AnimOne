@@ -235,6 +235,7 @@ setTimeout(() => {
         let animItemPoint3 = -300;
         let animItemPoint4 = -400;
         let animItemPoint5 = -650;
+        let animItemPoint6 = -750;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
@@ -468,6 +469,8 @@ setTimeout(() => {
           animField.classList.remove('fourth');
           // animField.classList.remove('second');
           animField.classList.add('third');
+          leftAnim.style.height = '1700px';
+          rightAnim.style.height = '1600px';
           // document.getElementById('index-change').style.opacity = '0';
           // document.getElementById('index-change').style.display = 'none';
 
@@ -668,8 +671,6 @@ setTimeout(() => {
           rightAnim.style.height = '1300px';
 
         } else {
-          leftAnim.style.height = '1700px';
-          rightAnim.style.height = '1600px';
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
@@ -681,6 +682,17 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
+          withYou.style.position = 'sticky';
+
+        }
+        else {
+
+        }
+
+        if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
+          // document.getElementById('with-you').classList.add('opacity-0');
+          // document.getElementById('with-you').classList.remove('opacity-1');
+          withYou.style.position = 'initial';
 
         }
         else {
