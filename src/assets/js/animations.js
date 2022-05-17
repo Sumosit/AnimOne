@@ -672,11 +672,9 @@ setTimeout(() => {
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
-          withYou.classList.add('with-you-go_up')
         } else {
           // animField.classList.remove('with-you-go_up')
           // rInfoText4.classList.remove('with-you-go_up')
-          withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
           // rInfoText3.classList.remove('opacity-1');
@@ -687,6 +685,8 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
+          animField.classList.add('anim-you-go_up')
+          rInfoText4.classList.add('anim-you-go_up')
           // leftAnim.style.height = '1800px';
           // rightAnim.style.height = '1700px';
 
@@ -700,6 +700,9 @@ setTimeout(() => {
           }
 
         } else {
+          withYou.classList.remove('with-you-go_up')
+          animField.classList.remove('anim-you-go_up')
+          rInfoText4.classList.remove('anim-you-go_up')
           scroll = 0;
         }
 

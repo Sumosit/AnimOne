@@ -49,9 +49,10 @@
       z-index: 1001;
       width: 532px;
       //flex-grow: 1;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.25);
       border: 3px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 4px 4px 24px rgba(255, 255, 255, 0.25);
+      box-shadow: 4px 4px 24px rgb(0 0 0 / 10%);
       @media screen and (max-width: 960px) {
         display: flex;
         flex-direction: column;
@@ -262,7 +263,7 @@
       flex-direction: column;
       background: rgba(255, 255, 255, 0.25);
       border: 3px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 4px 4px 24px rgb(0 0 0 / 10%);
       border-radius: 10px;
       color: #0D1C32;
       //backdrop-filter: blur(25px);
