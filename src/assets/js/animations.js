@@ -11,6 +11,7 @@ setTimeout(() => {
   let rInfoText3 = document.getElementById('r-info-text3')
   let rInfoText4 = document.getElementById('r-info-text4')
   let withYou = document.getElementById('with-you')
+  let changeTheme = document.getElementById('changeTheme')
 
   let scroll = 0
 
@@ -236,7 +237,7 @@ setTimeout(() => {
         let animItemPoint2 = -500;
         let animItemPoint3 = -1000;
         let animItemPoint4 = -1500;
-        let animItemPoint5 = -1700;
+        let animItemPoint5 = -2100;
         // let animItemPoint6 = -1200;
 
         // console.log(animItemPoint2);
@@ -473,8 +474,8 @@ setTimeout(() => {
           animField.classList.remove('fourth');
           // animField.classList.remove('second');
           animField.classList.add('third');
-          leftAnim.style.height = '3100px';
-          rightAnim.style.height = '3000px';
+          // leftAnim.style.height = '3100px';
+          // rightAnim.style.height = '3000px';
           // document.getElementById('index-change').style.opacity = '0';
           // document.getElementById('index-change').style.display = 'none';
 
@@ -485,6 +486,7 @@ setTimeout(() => {
           rInfoText4.classList.remove('opacity-1');
           // withYou.style.opacity = '1';
           // document.getElementById('with-you').style.opacity = '1'
+
           document.getElementById('tabs').innerHTML = tabs[1];
 
           rInfoText3.innerHTML = texts[2];
@@ -671,13 +673,9 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
-          leftAnim.style.height = '1800px';
-          rightAnim.style.height = '1700px';
-          console.log(window.scrollY)
-          setTimeout(() => {
-            window.scrollTo({top: window.scrollY + 1, behavior: 'smooth'})
-          }, 500)
         } else {
+          // animField.classList.remove('with-you-go_up')
+          // rInfoText4.classList.remove('with-you-go_up')
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
@@ -689,10 +687,20 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
-          withYou.style.position = 'sticky';
+          // leftAnim.style.height = '1800px';
+          // rightAnim.style.height = '1700px';
+
+          if (scroll === 0) {
+            console.log(window.scrollY)
+            scroll = 1;
+            // setTimeout(() => {
+              window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'})
+            // }, 500)
+            withYou.style.position = 'sticky';
+          }
 
         } else {
-
+          scroll = 0;
         }
 
         // if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
