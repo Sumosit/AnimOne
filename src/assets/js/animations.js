@@ -233,11 +233,11 @@ setTimeout(() => {
         // let animItemPoint3 = window.innerHeight - animItemHeight / animStart3;
         // let animItemPoint4 = window.innerHeight - animItemHeight / animStart4;
 
-        let animItemPoint = -50;
-        let animItemPoint2 = -100;
-        let animItemPoint3 = -550;
-        let animItemPoint4 = -900;
-        let animItemPoint5 = -900;
+        let animItemPoint = -0;
+        let animItemPoint2 = -500;
+        let animItemPoint3 = -1000;
+        let animItemPoint4 = -1500;
+        let animItemPoint5 = -1500;
         // let animItemPoint6 = -1200;
 
         // console.log(animItemPoint2);
@@ -475,8 +475,8 @@ setTimeout(() => {
           animField.classList.remove('fourth');
           // animField.classList.remove('second');
           animField.classList.add('third');
-          leftAnim.style.height = '2000px';
-          rightAnim.style.height = '1900px';
+          leftAnim.style.height = '3100px';
+          rightAnim.style.height = '3000px';
           // document.getElementById('index-change').style.opacity = '0';
           // document.getElementById('index-change').style.display = 'none';
 
@@ -673,8 +673,8 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
-          leftAnim.style.height = '1700px';
-          rightAnim.style.height = '1600px';
+          leftAnim.style.height = '2500px';
+          rightAnim.style.height = '2400px';
         } else {
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
