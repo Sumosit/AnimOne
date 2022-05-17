@@ -212,7 +212,7 @@ setTimeout(() => {
 
   if (animItems.length > 0) {
     // window.scrollTo({top: 3000, behavior: 'auto'});
-    // window.scrollTo({top: 0, behavior: 'auto'});
+    window.scrollTo({top: 0, behavior: 'auto'});
     first();
     window.addEventListener('scroll', animOnScroll);
 
@@ -225,7 +225,6 @@ setTimeout(() => {
         const animStart2 = 1.4;
         const animStart3 = 1.1;
         const animStart4 = 1.05;
-
 
 
         // let animItemPoint = window.innerHeight - animItemHeight / animStart;
@@ -250,7 +249,7 @@ setTimeout(() => {
 
         if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
           // if (!animField.classList.contains('first')) {
-            animField.classList.add('first');
+          animField.classList.add('first');
           animField.classList.remove('second');
           animField.classList.remove('third');
           animField.classList.remove('fourth');
@@ -390,7 +389,6 @@ setTimeout(() => {
         }
 
         if ((scrollY > animItemOffset - animItemPoint2) && scrollY < (animItemOffset + animItemHeight)) {
-          console.log('second');
           animField.classList.remove('first');
           animField.classList.add('second');
           animField.classList.remove('third');
@@ -675,6 +673,10 @@ setTimeout(() => {
           withYou.classList.add('with-you-go_up')
           leftAnim.style.height = '1800px';
           rightAnim.style.height = '1700px';
+          console.log(window.scrollY)
+          setTimeout(() => {
+            window.scrollTo({top: window.scrollY + 1, behavior: 'smooth'})
+          }, 500)
         } else {
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
@@ -689,8 +691,7 @@ setTimeout(() => {
           withYou.classList.add('with-you-go_up')
           withYou.style.position = 'sticky';
 
-        }
-        else {
+        } else {
 
         }
 
