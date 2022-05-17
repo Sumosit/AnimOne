@@ -211,6 +211,9 @@ setTimeout(() => {
   // console.log(animItems)
 
   if (animItems.length > 0) {
+    // window.scrollTo({top: 3000, behavior: 'auto'});
+    // window.scrollTo({top: 0, behavior: 'auto'});
+    first();
     window.addEventListener('scroll', animOnScroll);
 
     function animOnScroll() {
@@ -231,23 +234,26 @@ setTimeout(() => {
         // let animItemPoint4 = window.innerHeight - animItemHeight / animStart4;
 
         let animItemPoint = -50;
-        let animItemPoint2 = -200;
-        let animItemPoint3 = -300;
-        let animItemPoint4 = -400;
-        let animItemPoint5 = -650;
-        let animItemPoint6 = -750;
+        let animItemPoint2 = -100;
+        let animItemPoint3 = -550;
+        let animItemPoint4 = -900;
+        let animItemPoint5 = -900;
+        // let animItemPoint6 = -1200;
 
         // console.log(animItemPoint2);
         // console.log(animItemPoint3);
         // console.log(animItemPoint4);
 
-        if (animItemHeight > window.innerHeight) {
-          animItemPoint = window.innerHeight - window.innerHeight / animStart;
-        }
+        // if (animItemHeight > window.innerHeight) {
+        //   animItemPoint = window.innerHeight - window.innerHeight / animStart;
+        // }
 
         if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
           // if (!animField.classList.contains('first')) {
             animField.classList.add('first');
+          animField.classList.remove('second');
+          animField.classList.remove('third');
+          animField.classList.remove('fourth');
           // }
 
           document.getElementById('tr-header').classList.add('tr-header')
@@ -384,7 +390,7 @@ setTimeout(() => {
         }
 
         if ((scrollY > animItemOffset - animItemPoint2) && scrollY < (animItemOffset + animItemHeight)) {
-
+          console.log('second');
           animField.classList.remove('first');
           animField.classList.add('second');
           animField.classList.remove('third');
@@ -469,8 +475,8 @@ setTimeout(() => {
           animField.classList.remove('fourth');
           // animField.classList.remove('second');
           animField.classList.add('third');
-          leftAnim.style.height = '1700px';
-          rightAnim.style.height = '1600px';
+          leftAnim.style.height = '2000px';
+          rightAnim.style.height = '1900px';
           // document.getElementById('index-change').style.opacity = '0';
           // document.getElementById('index-change').style.display = 'none';
 
@@ -667,9 +673,8 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
-          leftAnim.style.height = '1400px';
-          rightAnim.style.height = '1300px';
-
+          leftAnim.style.height = '1700px';
+          rightAnim.style.height = '1600px';
         } else {
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
@@ -689,15 +694,15 @@ setTimeout(() => {
 
         }
 
-        if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
-          // document.getElementById('with-you').classList.add('opacity-0');
-          // document.getElementById('with-you').classList.remove('opacity-1');
-          withYou.style.position = 'initial';
-
-        }
-        else {
-
-        }
+        // if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
+        //   // document.getElementById('with-you').classList.add('opacity-0');
+        //   // document.getElementById('with-you').classList.remove('opacity-1');
+        //   withYou.style.position = 'initial';
+        //
+        // }
+        // else {
+        //
+        // }
       }
     }
 
@@ -711,5 +716,137 @@ setTimeout(() => {
     animOnScroll()
 
   }
+
+  function first() {
+    // if (!animField.classList.contains('first')) {
+    animField.classList.add('first');
+    // }
+
+    document.getElementById('tr-header').classList.add('tr-header')
+    document.getElementById('table').classList.add('table-zebra')
+
+    // rInfo.style.top = '500px';
+
+    rInfoText1.innerHTML = texts[0]
+
+    rInfoText1.classList.add('opacity-1');
+    rInfoText2.classList.remove('opacity-1');
+    rInfoText3.classList.remove('opacity-1');
+    rInfoText4.classList.remove('opacity-1')
+
+    td[0].textContent = firstArray[0][0];
+    td[1].textContent = firstArray[0][1];
+    td[2].textContent = firstArray[0][2];
+    td[3].textContent = firstArray[0][3];
+    td[4].textContent = firstArray[0][4];
+    td[5].textContent = firstArray[0][5];
+    td[6].innerHTML = firstArray[0][6];
+
+    td[10].textContent = firstArray[1][0];
+    td[11].textContent = firstArray[1][1];
+    td[12].textContent = firstArray[1][2];
+    td[13].textContent = firstArray[1][3];
+    td[14].textContent = firstArray[1][4];
+    td[15].textContent = firstArray[1][5];
+    td[16].innerHTML = firstArray[1][6];
+
+    td[20].textContent = firstArray[2][0];
+    td[21].textContent = firstArray[2][1];
+    td[22].textContent = firstArray[2][2];
+    td[23].textContent = firstArray[2][3];
+    td[24].textContent = firstArray[2][4];
+    td[25].textContent = firstArray[2][5];
+    td[26].innerHTML = firstArray[2][6];
+
+    td[30].textContent = firstArray[3][0];
+    td[31].textContent = firstArray[3][1];
+    td[32].textContent = firstArray[3][2];
+    td[33].textContent = firstArray[3][3];
+    td[34].textContent = firstArray[3][4];
+    td[35].textContent = firstArray[3][5];
+    td[36].innerHTML = firstArray[3][6];
+
+    td[40].textContent = firstArray[4][0];
+    td[41].textContent = firstArray[4][1];
+    td[42].textContent = firstArray[4][2];
+    td[43].textContent = firstArray[4][3];
+    td[44].textContent = firstArray[4][4];
+    td[45].textContent = firstArray[4][5];
+    td[46].innerHTML = firstArray[4][6];
+
+    td[50].textContent = firstArray[5][0];
+    td[51].textContent = firstArray[5][1];
+    td[52].textContent = firstArray[5][2];
+    td[53].textContent = firstArray[5][3];
+    td[54].textContent = firstArray[5][4];
+    td[55].textContent = firstArray[5][5];
+    td[56].innerHTML = firstArray[5][6];
+
+    td[60].textContent = firstArray[6][0];
+    td[61].textContent = firstArray[6][1];
+    td[62].textContent = firstArray[6][2];
+    td[63].textContent = firstArray[6][3];
+    td[64].textContent = firstArray[6][4];
+    td[65].textContent = firstArray[6][5];
+    td[66].innerHTML = firstArray[6][6];
+
+    td[70].textContent = firstArray[7][0];
+    td[71].textContent = firstArray[7][1];
+    td[72].textContent = firstArray[7][2];
+    td[73].textContent = firstArray[7][3];
+    td[74].textContent = firstArray[7][4];
+    td[75].textContent = firstArray[7][5];
+    td[76].innerHTML = firstArray[7][6];
+
+    td[80].textContent = firstArray[8][0];
+    td[81].textContent = firstArray[8][1];
+    td[82].textContent = firstArray[8][2];
+    td[83].textContent = firstArray[8][3];
+    td[84].textContent = firstArray[8][4];
+    td[85].textContent = firstArray[8][5];
+    td[86].innerHTML = firstArray[8][6];
+
+    td[90].textContent = firstArray[9][0];
+    td[91].textContent = firstArray[9][1];
+    td[92].textContent = firstArray[9][2];
+    td[93].textContent = firstArray[9][3];
+    td[94].textContent = firstArray[9][4];
+    td[95].textContent = firstArray[9][5];
+    td[96].innerHTML = firstArray[9][6];
+
+    td[100].textContent = firstArray[10][0];
+    td[101].textContent = firstArray[10][1];
+    td[102].textContent = firstArray[10][2];
+    td[103].textContent = firstArray[10][3];
+    td[104].textContent = firstArray[10][4];
+    td[105].textContent = firstArray[10][5];
+    td[106].innerHTML = firstArray[10][6];
+
+    td[110].textContent = firstArray[11][0];
+    td[111].textContent = firstArray[11][1];
+    td[112].textContent = firstArray[11][2];
+    td[113].textContent = firstArray[11][3];
+    td[114].textContent = firstArray[11][4];
+    td[115].textContent = firstArray[11][5];
+    td[116].innerHTML = firstArray[11][6];
+
+    td[120].textContent = firstArray[12][0];
+    td[121].textContent = firstArray[12][1];
+    td[122].textContent = firstArray[12][2];
+    td[123].textContent = firstArray[12][3];
+    td[124].textContent = firstArray[12][4];
+    td[125].textContent = firstArray[12][5];
+    td[126].innerHTML = firstArray[12][6];
+
+    for (let j = 0; j < cupHeaderValues.length; j++) {
+      cupChTds[j].textContent = cupHeaderValues[j];
+    }
+    cupChTds[1].innerHTML = '<img src="assets/images/arrows-fullscreen.svg" alt="">'
+
+    for (let j = 0; j < cupValues.length; j++) {
+      cupTds[j].innerHTML = cupValues[j];
+    }
+  }
 }, 500)
+
 
