@@ -30,7 +30,8 @@ html, body, main, .left, .animation {
   }
 
   .anim-you-go_up {
-    transform: translateY(-1000px) !important;
+    opacity: 0 !important;
+    transition: all 0.5s;
   }
 
   .with-you {
