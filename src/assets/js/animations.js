@@ -237,7 +237,7 @@ setTimeout(() => {
         let animItemPoint2 = -500;
         let animItemPoint3 = -1000;
         let animItemPoint4 = -1500;
-        let animItemPoint5 = -1500;
+        let animItemPoint5 = -1700;
         // let animItemPoint6 = -1200;
 
         // console.log(animItemPoint2);
@@ -673,8 +673,8 @@ setTimeout(() => {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           withYou.classList.add('with-you-go_up')
-          leftAnim.style.height = '2500px';
-          rightAnim.style.height = '2400px';
+          leftAnim.style.height = '1800px';
+          rightAnim.style.height = '1700px';
         } else {
           withYou.classList.remove('with-you-go_up')
           // rInfoText1.classList.remove('opacity-1');
