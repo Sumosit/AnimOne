@@ -667,6 +667,9 @@ setTimeout(() => {
 
         } else {
           // animField.classList.remove('fourth');
+          withYou.classList.remove('with-you-go_up')
+          animField.classList.remove('anim-you-go_up')
+          rInfoText4.classList.remove('anim-you-go_up')
         }
 
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
@@ -700,9 +703,6 @@ setTimeout(() => {
           }
 
         } else {
-          withYou.classList.remove('with-you-go_up')
-          animField.classList.remove('anim-you-go_up')
-          rInfoText4.classList.remove('anim-you-go_up')
           scroll = 0;
         }
 

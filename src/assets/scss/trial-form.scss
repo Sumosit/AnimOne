@@ -88,7 +88,6 @@
         .r-base {
           grid-area: r-base;
           height: fit-content;
-          border-radius: 12px;
           box-sizing: border-box;
           display: flex;
           flex-direction: column;
@@ -172,7 +171,6 @@
 
         .r-market {
           grid-area: r-market;
-          border-radius: 12px;
           font-weight: 400;
           font-size: 16px;
           line-height: 120%;
@@ -192,7 +190,6 @@
             line-height: 120%;
             display: flex;
             align-items: center;
-            letter-spacing: 0.02em;
             @media screen and (max-width: 390px) {
               text-align: center;
             }
@@ -297,7 +294,7 @@
       }
 
       .tfr-inputs {
-        margin-top: 40px;
+        margin-top: 24px;
         display: flex;
         flex-direction: column;
 
@@ -343,7 +340,6 @@
 
       .tfr-button {
         margin-top: 24px;
-        opacity: 0.4;
         width: 100%;
         padding: 8px 40px;
         text-align: center;
