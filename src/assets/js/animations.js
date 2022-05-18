@@ -691,7 +691,7 @@ setTimeout(() => {
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
         }
-        if (scrollY > 3500) {
+        if (scrollY > 3600) {
           withYou.classList.remove('with-you-go_up')
           animField.classList.remove('anim-you-go_up')
           rInfo.classList.remove('anim-you-go_up')
@@ -701,26 +701,27 @@ setTimeout(() => {
           rInfo.classList.add('anim-you-go_up')
         }
 
-        if (scrollY > 3400) {
+        if (scrollY > 3830) {
 
           if (scroll === 0) {
             document.body.style.overflow = 'hidden';
             window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+            window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
             setTimeout(() => {
               document.body.style.overflow = 'auto';
             }, 1000)
+            scroll = 1;
           }
         }
 
-        if (scrollY > 3500 && scrollY < 3800) {
+        if (scrollY > 3800 && scrollY <= 3900) {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           // leftAnim.style.height = '1800px';
           // rightAnim.style.height = '1700px';
-          if (scroll === 0) {
+          if (scroll === 1) {
             document.body.style.overflow = 'hidden';
             console.log(window.scrollY)
-            scroll = 1;
 
             withYou.style.position = 'sticky';
           }
