@@ -691,20 +691,20 @@ setTimeout(() => {
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
         }
-        if (scrollY > 3550) {
+        if (scrollY > 3400) {
           withYou.classList.add('with-you-go_up')
           animField.classList.remove('anim-you-go_up')
           rInfo.classList.remove('anim-you-go_up')
-          document.body.style.overflow = 'hidden';
-          setTimeout(() => {
+          // setTimeout(() => {
             if (scroll === 0) {
+              document.body.style.overflow = 'hidden';
+              scroll = 1;
               window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
               setTimeout(() => {
                 document.body.style.overflow = 'auto';
               }, 1000)
-              scroll = 1;
             }
-          }, 500);
+          // }, 500);
         } else {
           withYou.classList.remove('with-you-go_up')
           animField.classList.add('anim-you-go_up')
@@ -715,16 +715,15 @@ setTimeout(() => {
 
         }
 
-        if (scrollY > 3800 && scrollY <= 3900) {
+        if (scrollY > 3400 && scrollY <= 3900) {
           // document.getElementById('with-you').classList.add('opacity-0');
           // document.getElementById('with-you').classList.remove('opacity-1');
           // leftAnim.style.height = '1800px';
           // rightAnim.style.height = '1700px';
-          if (scroll === 1) {
-            console.log(window.scrollY)
-
-            withYou.style.position = 'sticky';
-          }
+          // if (scroll === 1) {
+          //   scroll = 0
+          //   withYou.style.position = 'sticky';
+          // }
 
         }
 
