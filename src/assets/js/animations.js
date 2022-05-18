@@ -691,7 +691,7 @@ setTimeout(() => {
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
         }
-        if (scrollY > 3700) {
+        if (scrollY > 3550) {
           withYou.classList.add('with-you-go_up')
           animField.classList.remove('anim-you-go_up')
           rInfo.classList.remove('anim-you-go_up')
@@ -701,7 +701,7 @@ setTimeout(() => {
           rInfo.classList.add('anim-you-go_up')
         }
 
-        if (scrollY > 3700) {
+        if (scrollY > 3550) {
 
           if (scroll === 0) {
             document.body.style.overflow = 'hidden';
