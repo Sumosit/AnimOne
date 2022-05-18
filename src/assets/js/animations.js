@@ -695,6 +695,16 @@ setTimeout(() => {
           withYou.classList.add('with-you-go_up')
           animField.classList.remove('anim-you-go_up')
           rInfo.classList.remove('anim-you-go_up')
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => {
+            if (scroll === 0) {
+              window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              setTimeout(() => {
+                document.body.style.overflow = 'auto';
+              }, 1000)
+              scroll = 1;
+            }
+          }, 500);
         } else {
           withYou.classList.remove('with-you-go_up')
           animField.classList.add('anim-you-go_up')
@@ -703,14 +713,6 @@ setTimeout(() => {
 
         if (scrollY > 3550) {
 
-          if (scroll === 0) {
-            document.body.style.overflow = 'hidden';
-            window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
-            setTimeout(() => {
-              document.body.style.overflow = 'auto';
-            }, 1000)
-            scroll = 1;
-          }
         }
 
         if (scrollY > 3800 && scrollY <= 3900) {
