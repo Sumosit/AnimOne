@@ -691,21 +691,20 @@ setTimeout(() => {
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
         }
-        if (scrollY > 3600) {
-          withYou.classList.remove('with-you-go_up')
+        if (scrollY > 3700) {
+          withYou.classList.add('with-you-go_up')
           animField.classList.remove('anim-you-go_up')
           rInfo.classList.remove('anim-you-go_up')
         } else {
-          withYou.classList.add('with-you-go_up')
+          withYou.classList.remove('with-you-go_up')
           animField.classList.add('anim-you-go_up')
           rInfo.classList.add('anim-you-go_up')
         }
 
-        if (scrollY > 3830) {
+        if (scrollY > 3700) {
 
           if (scroll === 0) {
             document.body.style.overflow = 'hidden';
-            window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
             window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
             setTimeout(() => {
               document.body.style.overflow = 'auto';
@@ -720,7 +719,6 @@ setTimeout(() => {
           // leftAnim.style.height = '1800px';
           // rightAnim.style.height = '1700px';
           if (scroll === 1) {
-            document.body.style.overflow = 'hidden';
             console.log(window.scrollY)
 
             withYou.style.position = 'sticky';
