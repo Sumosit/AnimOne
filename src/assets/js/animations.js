@@ -22,6 +22,12 @@ setTimeout(() => {
   const leftAnim = document.getElementById('leftAnim');
   const rightAnim = document.getElementById('rightAnim')
 
+  let anim1 = 0;
+  let anim2 = 0;
+  let anim3 = 0;
+  let anim4 = 0;
+  let anim5 = 0;
+
 
   // console.log(animItems)
   // console.log(animField)
@@ -237,7 +243,7 @@ setTimeout(() => {
         let animItemPoint2 = -500;
         let animItemPoint3 = -1000;
         let animItemPoint4 = -1500;
-        let animItemPoint5 = -2100;
+        let animItemPoint5 = -2400;
         // let animItemPoint6 = -1200;
 
         // console.log(animItemPoint2);
@@ -248,8 +254,9 @@ setTimeout(() => {
         //   animItemPoint = window.innerHeight - window.innerHeight / animStart;
         // }
 
-        if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+        if (scrollY > 1200 && scrollY <= 1600) {
           // if (!animField.classList.contains('first')) {
+          console.log(scrollY)
           animField.classList.add('first');
           animField.classList.remove('second');
           animField.classList.remove('third');
@@ -389,10 +396,11 @@ setTimeout(() => {
           // rInfoText4.classList.remove('opacity-1')
         }
 
-        if ((scrollY > animItemOffset - animItemPoint2) && scrollY < (animItemOffset + animItemHeight)) {
-          animField.classList.remove('first');
+        if ((scrollY > 1600) && scrollY <= 2260) {
           animField.classList.add('second');
+          animField.classList.remove('first');
           animField.classList.remove('third');
+          animField.classList.remove('fourth');
           cupTable.classList.remove('table-zebra');
 
           rInfoText1.classList.remove('opacity-1');
@@ -462,7 +470,6 @@ setTimeout(() => {
             cupTds[j].innerHTML = '';
           }
         } else {
-          animField.classList.remove('second');
 
           // rInfoText1.classList.remove('opacity-1');
           // rInfoText2.classList.remove('opacity-1');
@@ -470,10 +477,12 @@ setTimeout(() => {
           // rInfoText4.classList.remove('opacity-1')
         }
 
-        if ((scrollY > animItemOffset - animItemPoint3) && scrollY < (animItemOffset + animItemHeight)) {
+        if (scrollY > 2260 && scrollY <= 2700) {
+          animField.classList.add('third');
+          animField.classList.remove('first');
+          animField.classList.remove('second');
           animField.classList.remove('fourth');
           // animField.classList.remove('second');
-          animField.classList.add('third');
           // leftAnim.style.height = '3100px';
           // rightAnim.style.height = '3000px';
           // document.getElementById('index-change').style.opacity = '0';
@@ -621,9 +630,10 @@ setTimeout(() => {
           // rInfoText4.classList.add('opacity-1');
         }
 
-        if ((scrollY > animItemOffset - animItemPoint4) && scrollY < (animItemOffset + animItemHeight)) {
-          animField.classList.remove('second');
+        if (scrollY > 2700 && scrollY <= 3400) {
           animField.classList.add('fourth');
+          animField.classList.remove('first');
+          animField.classList.remove('second');
           animField.classList.remove('third');
           // withYou.classList.remove('opacity-0')
           // document.getElementById('with-you').classList.add('opacity-1');
@@ -665,11 +675,9 @@ setTimeout(() => {
           // document.getElementById('index-change').style.opacity = '1';
           // document.getElementById('index-change').style.display = 'initial';
 
+          scroll = 0;
         } else {
           // animField.classList.remove('fourth');
-          withYou.classList.remove('with-you-go_up')
-          animField.classList.remove('anim-you-go_up')
-          rInfoText4.classList.remove('anim-you-go_up')
         }
 
         if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
@@ -683,33 +691,52 @@ setTimeout(() => {
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
         }
-
-        if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
-          // document.getElementById('with-you').classList.add('opacity-0');
-          // document.getElementById('with-you').classList.remove('opacity-1');
+        if (scrollY > 3500) {
+          withYou.classList.remove('with-you-go_up')
+          animField.classList.remove('anim-you-go_up')
+          rInfo.classList.remove('anim-you-go_up')
+        } else {
           withYou.classList.add('with-you-go_up')
           animField.classList.add('anim-you-go_up')
-          rInfoText4.classList.add('anim-you-go_up')
-          // leftAnim.style.height = '1800px';
-          // rightAnim.style.height = '1700px';
+          rInfo.classList.add('anim-you-go_up')
+        }
+
+        if (scrollY > 3400) {
 
           if (scroll === 0) {
+            document.body.style.overflow = 'hidden';
+            window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+            setTimeout(() => {
+              document.body.style.overflow = 'auto';
+            }, 1000)
+          }
+        }
+
+        if (scrollY > 3500 && scrollY < 3800) {
+          // document.getElementById('with-you').classList.add('opacity-0');
+          // document.getElementById('with-you').classList.remove('opacity-1');
+          // leftAnim.style.height = '1800px';
+          // rightAnim.style.height = '1700px';
+          if (scroll === 0) {
+            document.body.style.overflow = 'hidden';
             console.log(window.scrollY)
             scroll = 1;
-            // setTimeout(() => {
-              window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'})
-            // }, 500)
+
             withYou.style.position = 'sticky';
           }
 
-        } else {
-          scroll = 0;
         }
 
+        // if (scroll === 1) {
+        //   if (scrollY > 3800) {
+        //     document.body.style.overflowY = 'hidden';
+        //     setTimeout(() => {
+        //       document.body.style.overflowY = 'auto';
+        //     }, 2000)
+        //   }
+        // }
+
         // if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
-        //   // document.getElementById('with-you').classList.add('opacity-0');
-        //   // document.getElementById('with-you').classList.remove('opacity-1');
-        //   withYou.style.position = 'initial';
         //
         // }
         // else {
