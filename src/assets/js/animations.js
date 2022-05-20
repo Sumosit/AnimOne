@@ -691,7 +691,7 @@ setTimeout(() => {
           // rInfoText3.classList.remove('opacity-1');
           // rInfoText4.classList.add('opacity-1');
         }
-        if (scrollY > 3400) {
+        if (scrollY > 3400 && scrollY < 3900) {
           withYou.classList.add('with-you-go_up')
           animField.classList.remove('anim-you-go_up')
           rInfo.classList.remove('anim-you-go_up')
