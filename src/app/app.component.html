@@ -7,7 +7,7 @@
       <img src="assets/images/LOGO.svg" alt="">
       <div class="hi-texts">
         <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">О продукте</span>
-<!--        <a href="#with-you">Возможности</a>-->
+        <!--        <a href="#with-you">Возможности</a>-->
         <span (click)="appService.scrollTo('rates')">Тарифы</span>
         <span (click)="appService.scrollTo('tf-contacts')">Контакты</span>
       </div>
@@ -37,7 +37,7 @@
     <span>Браузерный терминал с обновлением информации в реальном времени и доступный с любого устройства, без привязки к рабочему месту.</span>
   </div>
 </div>
-  <div class="middle-content middle-padding animation-comp">
+<div class="middle-content middle-padding animation-comp">
   <div class="animation" id="animation">
     <main class="anim">
       <div class="left" id="leftAnim">
@@ -427,7 +427,7 @@
       <img id="right_panel-dark-img" src="assets/images/main-dark.svg" alt="">
       <div id="left_panel">
         <img id="right_panel-img" src="assets/images/main-light.svg" alt=""
-        [ngStyle]="{'height': height}"
+             [ngStyle]="{'height': height}"
         >
         <div id="drag1">
           <div></div>
@@ -535,27 +535,37 @@
           </div>
         </div>
       </div>
-      <div class="tf-right" id="trial">
+      <form class="tf-right" id="trial"
+            [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
         <span class="rates-anim tfr-text">Пробный период</span>
         <span class="rates-anim tfr-text">Оставьте заявку и&nbsp;воспользуйтесь бесплатным тестовым доступом</span>
         <div class="tfr-inputs">
-          <input placeholder="E-mail" name="email">
-          <input placeholder="Телефон" name="tel">
-          <input placeholder="ФИО" name="fio">
+          <input formControlName="userEmail" placeholder="E-mail" name="email"
+                 [ngStyle]="{
+                 border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
+                 }">
+          <input formControlName="userPhone" placeholder="Телефон" name="tel"
+                 [ngStyle]="{
+                 border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
+                 }">
+          <input formControlName="userFio" placeholder="ФИО" name="fio"
+                 [ngStyle]="{
+                 border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
+                 }">
         </div>
         <div class="tfr-line"></div>
         <div class="rates-anim tfr-accept">
           Нажимая&nbsp;на кнопку&nbsp;вы автоматически принимаете условия<span>&nbsp;Пользовательского соглашения
           и&nbsp;конфиденциальности</span>
         </div>
-        <div class="rates-anim tfr-button">
+        <button class="rates-anim tfr-button">
           Получить доступ
-        </div>
+        </button>
         <div class="tfr-question">
           <span>Уже являетесь нашим пользователем?</span>
           <span>Войти в IRIS Finance</span>
         </div>
-      </div>
+      </form>
     </div>
     <img class="tfr-rec" src="assets/images/Rectangle%20656.svg">
     <img class="tfr-rec_1" src="assets/images/Rectangle%20655.svg">

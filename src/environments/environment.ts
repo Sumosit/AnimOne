@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mqtt: {
+    server: 'irisapi.kase.kz',
+    protocol: 'wss',
+    port: 443,
+    directory: '/mqtt/iris/api20'
+  }
 };
 
 /*
