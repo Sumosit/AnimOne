@@ -54,6 +54,10 @@ html {
   }
 }
 
+.button-disabled {
+  opacity: 0.5 !important;
+}
+
 html {
   //scroll-behavior: smooth;
 }

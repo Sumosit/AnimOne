@@ -101,19 +101,19 @@ export class AppComponent implements OnInit, OnDestroy{
           console.log(state)
           this.loading = false;
 
-          this.appService.sendUserFeedbackRequest(this.userEmail.value, this.userPhone.value, this.userFio.value);
-
-          this.feedbackSubscription = this.appService.getUserFeedbackRequest()
-            .subscribe((feedbackReply: IRIS.UserFeedbackReply) => {
-              if (feedbackReply.ok) {
-                this.loading = false;
-                console.log('ok');
-              }
-              else if (!feedbackReply.ok) {
-                this.loading = false;
-                console.log('not ok');
-              }
-            })
+          // this.appService.sendUserFeedbackRequest(this.userEmail.value, this.userPhone.value, this.userFio.value);
+          //
+          // this.feedbackSubscription = this.appService.getUserFeedbackRequest()
+          //   .subscribe((feedbackReply: IRIS.UserFeedbackReply) => {
+          //     if (feedbackReply.ok) {
+          //       this.loading = false;
+          //       console.log('ok');
+          //     }
+          //     else if (!feedbackReply.ok) {
+          //       this.loading = false;
+          //       console.log('not ok');
+          //     }
+          //   })
         }
       })
     }
