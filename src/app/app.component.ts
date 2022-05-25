@@ -2,7 +2,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {AppService} from "./app.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {environment} from "../environments/environment";
+import {environment as env} from "../environments/environment";
 import {IMqttServiceOptions, MqttConnectionState, MqttService} from "ngx-mqtt";
 import {Subscription} from "rxjs";
 import {IRIS} from "../../iris";
@@ -39,15 +39,17 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
+    // Тест подключения
     const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-      hostname: environment.mqtt.server,
-      port: environment.mqtt.port,
-      protocol: (environment.mqtt.protocol === 'wss') ? 'wss' : 'ws',
-      path: environment.mqtt.directory,
+      hostname: env.mqtt.server,
+      port: env.mqtt.port,
+      protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
+      path: env.mqtt.directory,
       username: 'iris@open.kase.kz',
       password: 'free'
     }
     this.mqttService.disconnect();
+    console.log(MQTT_SERVICE_OPTIONS);
     this.mqttService.connect(MQTT_SERVICE_OPTIONS);
     this.mqttSubscription = this.mqttService.state.subscribe((state: MqttConnectionState) => {
       console.log(state)
@@ -78,10 +80,10 @@ export class AppComponent implements OnInit{
   promoFormSubmit() {
     if (this.formPromo.valid) {
       const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-        hostname: environment.mqtt.server,
-        port: environment.mqtt.port,
-        protocol: (environment.mqtt.protocol === 'wss') ? 'wss' : 'ws',
-        path: environment.mqtt.directory,
+        hostname: env.mqtt.server,
+        port: env.mqtt.port,
+        protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
+        path: env.mqtt.directory,
         username: 'iris@open.kase.kz',
         password: 'free'
       }

@@ -224,478 +224,478 @@ setTimeout(() => {
     window.addEventListener('scroll', animOnScroll);
 
     function animOnScroll() {
-      for (let i = 0; i < animItems.length; i++) {
-        const animItem = animItems[i];
-        const animItemHeight = animItem.offsetHeight;
-        const animItemOffset = offset(animItem).top;
-        const animStart = 3;
-        const animStart2 = 1.4;
-        const animStart3 = 1.1;
-        const animStart4 = 1.05;
+      if (window.innerWidth > 1440) {
+        for (let i = 0; i < animItems.length; i++) {
+          const animItem = animItems[i];
+          const animItemHeight = animItem.offsetHeight;
+          const animItemOffset = offset(animItem).top;
+          const animStart = 3;
+          const animStart2 = 1.4;
+          const animStart3 = 1.1;
+          const animStart4 = 1.05;
 
 
-        // let animItemPoint = window.innerHeight - animItemHeight / animStart;
-        // let animItemPoint2 = window.innerHeight - animItemHeight / animStart2;
-        // let animItemPoint3 = window.innerHeight - animItemHeight / animStart3;
-        // let animItemPoint4 = window.innerHeight - animItemHeight / animStart4;
+          // let animItemPoint = window.innerHeight - animItemHeight / animStart;
+          // let animItemPoint2 = window.innerHeight - animItemHeight / animStart2;
+          // let animItemPoint3 = window.innerHeight - animItemHeight / animStart3;
+          // let animItemPoint4 = window.innerHeight - animItemHeight / animStart4;
 
-        let animItemPoint = -0;
-        let animItemPoint2 = -500;
-        let animItemPoint3 = -1000;
-        let animItemPoint4 = -1500;
-        let animItemPoint5 = -2400;
-        // let animItemPoint6 = -1200;
+          let animItemPoint = -0;
+          let animItemPoint2 = -500;
+          let animItemPoint3 = -1000;
+          let animItemPoint4 = -1500;
+          let animItemPoint5 = -2400;
+          // let animItemPoint6 = -1200;
 
-        // console.log(animItemPoint2);
-        // console.log(animItemPoint3);
-        // console.log(animItemPoint4);
+          // console.log(animItemPoint2);
+          // console.log(animItemPoint3);
+          // console.log(animItemPoint4);
 
-        // if (animItemHeight > window.innerHeight) {
-        //   animItemPoint = window.innerHeight - window.innerHeight / animStart;
-        // }
-
-        if (scrollY > 1200 && scrollY <= 1600) {
-          // if (!animField.classList.contains('first')) {
-          console.log(scrollY)
-          animField.classList.add('first');
-          animField.classList.remove('second');
-          animField.classList.remove('third');
-          animField.classList.remove('fourth');
+          // if (animItemHeight > window.innerHeight) {
+          //   animItemPoint = window.innerHeight - window.innerHeight / animStart;
           // }
 
-          document.getElementById('tr-header').classList.add('tr-header')
-          document.getElementById('table').classList.add('table-zebra')
+          if (scrollY > 1200 && scrollY <= 1600) {
+            // if (!animField.classList.contains('first')) {
+            console.log(scrollY)
+            animField.classList.add('first');
+            animField.classList.remove('second');
+            animField.classList.remove('third');
+            animField.classList.remove('fourth');
+            // }
 
-          // rInfo.style.top = '500px';
+            document.getElementById('tr-header').classList.add('tr-header')
+            document.getElementById('table').classList.add('table-zebra')
 
-          rInfoText1.innerHTML = texts[0]
+            // rInfo.style.top = '500px';
 
-          rInfoText1.classList.add('opacity-1');
-          rInfoText2.classList.remove('opacity-1');
-          rInfoText3.classList.remove('opacity-1');
-          rInfoText4.classList.remove('opacity-1')
+            rInfoText1.innerHTML = texts[0]
 
-          td[0].textContent = firstArray[0][0];
-          td[1].textContent = firstArray[0][1];
-          td[2].textContent = firstArray[0][2];
-          td[3].textContent = firstArray[0][3];
-          td[4].textContent = firstArray[0][4];
-          td[5].textContent = firstArray[0][5];
-          td[6].innerHTML = firstArray[0][6];
+            rInfoText1.classList.add('opacity-1');
+            rInfoText2.classList.remove('opacity-1');
+            rInfoText3.classList.remove('opacity-1');
+            rInfoText4.classList.remove('opacity-1')
 
-          td[10].textContent = firstArray[1][0];
-          td[11].textContent = firstArray[1][1];
-          td[12].textContent = firstArray[1][2];
-          td[13].textContent = firstArray[1][3];
-          td[14].textContent = firstArray[1][4];
-          td[15].textContent = firstArray[1][5];
-          td[16].innerHTML = firstArray[1][6];
+            td[0].textContent = firstArray[0][0];
+            td[1].textContent = firstArray[0][1];
+            td[2].textContent = firstArray[0][2];
+            td[3].textContent = firstArray[0][3];
+            td[4].textContent = firstArray[0][4];
+            td[5].textContent = firstArray[0][5];
+            td[6].innerHTML = firstArray[0][6];
 
-          td[20].textContent = firstArray[2][0];
-          td[21].textContent = firstArray[2][1];
-          td[22].textContent = firstArray[2][2];
-          td[23].textContent = firstArray[2][3];
-          td[24].textContent = firstArray[2][4];
-          td[25].textContent = firstArray[2][5];
-          td[26].innerHTML = firstArray[2][6];
+            td[10].textContent = firstArray[1][0];
+            td[11].textContent = firstArray[1][1];
+            td[12].textContent = firstArray[1][2];
+            td[13].textContent = firstArray[1][3];
+            td[14].textContent = firstArray[1][4];
+            td[15].textContent = firstArray[1][5];
+            td[16].innerHTML = firstArray[1][6];
 
-          td[30].textContent = firstArray[3][0];
-          td[31].textContent = firstArray[3][1];
-          td[32].textContent = firstArray[3][2];
-          td[33].textContent = firstArray[3][3];
-          td[34].textContent = firstArray[3][4];
-          td[35].textContent = firstArray[3][5];
-          td[36].innerHTML = firstArray[3][6];
+            td[20].textContent = firstArray[2][0];
+            td[21].textContent = firstArray[2][1];
+            td[22].textContent = firstArray[2][2];
+            td[23].textContent = firstArray[2][3];
+            td[24].textContent = firstArray[2][4];
+            td[25].textContent = firstArray[2][5];
+            td[26].innerHTML = firstArray[2][6];
 
-          td[40].textContent = firstArray[4][0];
-          td[41].textContent = firstArray[4][1];
-          td[42].textContent = firstArray[4][2];
-          td[43].textContent = firstArray[4][3];
-          td[44].textContent = firstArray[4][4];
-          td[45].textContent = firstArray[4][5];
-          td[46].innerHTML = firstArray[4][6];
+            td[30].textContent = firstArray[3][0];
+            td[31].textContent = firstArray[3][1];
+            td[32].textContent = firstArray[3][2];
+            td[33].textContent = firstArray[3][3];
+            td[34].textContent = firstArray[3][4];
+            td[35].textContent = firstArray[3][5];
+            td[36].innerHTML = firstArray[3][6];
 
-          td[50].textContent = firstArray[5][0];
-          td[51].textContent = firstArray[5][1];
-          td[52].textContent = firstArray[5][2];
-          td[53].textContent = firstArray[5][3];
-          td[54].textContent = firstArray[5][4];
-          td[55].textContent = firstArray[5][5];
-          td[56].innerHTML = firstArray[5][6];
+            td[40].textContent = firstArray[4][0];
+            td[41].textContent = firstArray[4][1];
+            td[42].textContent = firstArray[4][2];
+            td[43].textContent = firstArray[4][3];
+            td[44].textContent = firstArray[4][4];
+            td[45].textContent = firstArray[4][5];
+            td[46].innerHTML = firstArray[4][6];
 
-          td[60].textContent = firstArray[6][0];
-          td[61].textContent = firstArray[6][1];
-          td[62].textContent = firstArray[6][2];
-          td[63].textContent = firstArray[6][3];
-          td[64].textContent = firstArray[6][4];
-          td[65].textContent = firstArray[6][5];
-          td[66].innerHTML = firstArray[6][6];
+            td[50].textContent = firstArray[5][0];
+            td[51].textContent = firstArray[5][1];
+            td[52].textContent = firstArray[5][2];
+            td[53].textContent = firstArray[5][3];
+            td[54].textContent = firstArray[5][4];
+            td[55].textContent = firstArray[5][5];
+            td[56].innerHTML = firstArray[5][6];
 
-          td[70].textContent = firstArray[7][0];
-          td[71].textContent = firstArray[7][1];
-          td[72].textContent = firstArray[7][2];
-          td[73].textContent = firstArray[7][3];
-          td[74].textContent = firstArray[7][4];
-          td[75].textContent = firstArray[7][5];
-          td[76].innerHTML = firstArray[7][6];
+            td[60].textContent = firstArray[6][0];
+            td[61].textContent = firstArray[6][1];
+            td[62].textContent = firstArray[6][2];
+            td[63].textContent = firstArray[6][3];
+            td[64].textContent = firstArray[6][4];
+            td[65].textContent = firstArray[6][5];
+            td[66].innerHTML = firstArray[6][6];
 
-          td[80].textContent = firstArray[8][0];
-          td[81].textContent = firstArray[8][1];
-          td[82].textContent = firstArray[8][2];
-          td[83].textContent = firstArray[8][3];
-          td[84].textContent = firstArray[8][4];
-          td[85].textContent = firstArray[8][5];
-          td[86].innerHTML = firstArray[8][6];
+            td[70].textContent = firstArray[7][0];
+            td[71].textContent = firstArray[7][1];
+            td[72].textContent = firstArray[7][2];
+            td[73].textContent = firstArray[7][3];
+            td[74].textContent = firstArray[7][4];
+            td[75].textContent = firstArray[7][5];
+            td[76].innerHTML = firstArray[7][6];
 
-          td[90].textContent = firstArray[9][0];
-          td[91].textContent = firstArray[9][1];
-          td[92].textContent = firstArray[9][2];
-          td[93].textContent = firstArray[9][3];
-          td[94].textContent = firstArray[9][4];
-          td[95].textContent = firstArray[9][5];
-          td[96].innerHTML = firstArray[9][6];
+            td[80].textContent = firstArray[8][0];
+            td[81].textContent = firstArray[8][1];
+            td[82].textContent = firstArray[8][2];
+            td[83].textContent = firstArray[8][3];
+            td[84].textContent = firstArray[8][4];
+            td[85].textContent = firstArray[8][5];
+            td[86].innerHTML = firstArray[8][6];
 
-          td[100].textContent = firstArray[10][0];
-          td[101].textContent = firstArray[10][1];
-          td[102].textContent = firstArray[10][2];
-          td[103].textContent = firstArray[10][3];
-          td[104].textContent = firstArray[10][4];
-          td[105].textContent = firstArray[10][5];
-          td[106].innerHTML = firstArray[10][6];
+            td[90].textContent = firstArray[9][0];
+            td[91].textContent = firstArray[9][1];
+            td[92].textContent = firstArray[9][2];
+            td[93].textContent = firstArray[9][3];
+            td[94].textContent = firstArray[9][4];
+            td[95].textContent = firstArray[9][5];
+            td[96].innerHTML = firstArray[9][6];
 
-          td[110].textContent = firstArray[11][0];
-          td[111].textContent = firstArray[11][1];
-          td[112].textContent = firstArray[11][2];
-          td[113].textContent = firstArray[11][3];
-          td[114].textContent = firstArray[11][4];
-          td[115].textContent = firstArray[11][5];
-          td[116].innerHTML = firstArray[11][6];
+            td[100].textContent = firstArray[10][0];
+            td[101].textContent = firstArray[10][1];
+            td[102].textContent = firstArray[10][2];
+            td[103].textContent = firstArray[10][3];
+            td[104].textContent = firstArray[10][4];
+            td[105].textContent = firstArray[10][5];
+            td[106].innerHTML = firstArray[10][6];
 
-          td[120].textContent = firstArray[12][0];
-          td[121].textContent = firstArray[12][1];
-          td[122].textContent = firstArray[12][2];
-          td[123].textContent = firstArray[12][3];
-          td[124].textContent = firstArray[12][4];
-          td[125].textContent = firstArray[12][5];
-          td[126].innerHTML = firstArray[12][6];
+            td[110].textContent = firstArray[11][0];
+            td[111].textContent = firstArray[11][1];
+            td[112].textContent = firstArray[11][2];
+            td[113].textContent = firstArray[11][3];
+            td[114].textContent = firstArray[11][4];
+            td[115].textContent = firstArray[11][5];
+            td[116].innerHTML = firstArray[11][6];
 
-          for (let j = 0; j < cupHeaderValues.length; j++) {
-            cupChTds[j].textContent = cupHeaderValues[j];
-          }
-          cupChTds[1].innerHTML = '<img src="assets/images/arrows-fullscreen.svg" alt="">'
+            td[120].textContent = firstArray[12][0];
+            td[121].textContent = firstArray[12][1];
+            td[122].textContent = firstArray[12][2];
+            td[123].textContent = firstArray[12][3];
+            td[124].textContent = firstArray[12][4];
+            td[125].textContent = firstArray[12][5];
+            td[126].innerHTML = firstArray[12][6];
 
-          for (let j = 0; j < cupValues.length; j++) {
-            cupTds[j].innerHTML = cupValues[j];
-          }
+            for (let j = 0; j < cupHeaderValues.length; j++) {
+              cupChTds[j].textContent = cupHeaderValues[j];
+            }
+            cupChTds[1].innerHTML = '<img src="assets/images/arrows-fullscreen.svg" alt="">'
 
-        } else {
-          // animField.classList.remove('first');
-          // rInfoText1.classList.remove('opacity-1');
-          // rInfoText2.classList.add('opacity-1');
-          // rInfoText3.classList.remove('opacity-1');
-          // rInfoText4.classList.remove('opacity-1')
-        }
+            for (let j = 0; j < cupValues.length; j++) {
+              cupTds[j].innerHTML = cupValues[j];
+            }
 
-        if ((scrollY > 1600) && scrollY <= 2260) {
-          animField.classList.add('second');
-          animField.classList.remove('first');
-          animField.classList.remove('third');
-          animField.classList.remove('fourth');
-          cupTable.classList.remove('table-zebra');
-
-          rInfoText1.classList.remove('opacity-1');
-          rInfoText2.classList.add('opacity-1');
-          rInfoText3.classList.remove('opacity-1');
-          rInfoText4.classList.remove('opacity-1');
-          document.getElementById('tabs').innerHTML = tabs[0];
-          document.getElementById('tr-header').classList.remove('tr-header')
-          document.getElementById('table').classList.remove('table-zebra')
-          // rInfo.style.top = '500px';
-
-          rInfoText2.innerHTML = texts[1];
-
-          // console.log(rInfo.textContent)
-          td[0].textContent = secondArray[0][0];
-          td[1].textContent = secondArray[0][1];
-          td[2].innerHTML = secondArray[0][2];
-
-          td[10].textContent = secondArray[1][0];
-          td[11].textContent = secondArray[1][1];
-          td[12].innerHTML = secondArray[1][2];
-
-          td[20].textContent = secondArray[2][0];
-          td[21].textContent = secondArray[2][1];
-          td[22].innerHTML = secondArray[2][2];
-
-          td[30].textContent = secondArray[3][0];
-          td[31].textContent = secondArray[3][1];
-          td[32].innerHTML = secondArray[3][2];
-
-          td[40].textContent = secondArray[4][0];
-          td[41].textContent = secondArray[4][1];
-          td[42].innerHTML = secondArray[4][2];
-
-          td[50].textContent = secondArray[5][0];
-          td[51].textContent = secondArray[5][1];
-          td[52].innerHTML = secondArray[5][2];
-
-          td[60].textContent = secondArray[5][0];
-          td[61].textContent = secondArray[5][1];
-          td[62].innerHTML = secondArray[5][2];
-
-          for (let j = 0; j < cupChTds.length; j++) {
-            cupChTds[j].innerHTML = secCupHeaderValues[j];
+          } else {
+            // animField.classList.remove('first');
+            // rInfoText1.classList.remove('opacity-1');
+            // rInfoText2.classList.add('opacity-1');
+            // rInfoText3.classList.remove('opacity-1');
+            // rInfoText4.classList.remove('opacity-1')
           }
 
-          for (let j = 0; j < 7; j++) {
-            cupTds[j].innerHTML = secCupValues[j];
+          if ((scrollY > 1600) && scrollY <= 2260) {
+            animField.classList.add('second');
+            animField.classList.remove('first');
+            animField.classList.remove('third');
+            animField.classList.remove('fourth');
+            cupTable.classList.remove('table-zebra');
+
+            rInfoText1.classList.remove('opacity-1');
+            rInfoText2.classList.add('opacity-1');
+            rInfoText3.classList.remove('opacity-1');
+            rInfoText4.classList.remove('opacity-1');
+            document.getElementById('tabs').innerHTML = tabs[0];
+            document.getElementById('tr-header').classList.remove('tr-header')
+            document.getElementById('table').classList.remove('table-zebra')
+            // rInfo.style.top = '500px';
+
+            rInfoText2.innerHTML = texts[1];
+
+            // console.log(rInfo.textContent)
+            td[0].textContent = secondArray[0][0];
+            td[1].textContent = secondArray[0][1];
+            td[2].innerHTML = secondArray[0][2];
+
+            td[10].textContent = secondArray[1][0];
+            td[11].textContent = secondArray[1][1];
+            td[12].innerHTML = secondArray[1][2];
+
+            td[20].textContent = secondArray[2][0];
+            td[21].textContent = secondArray[2][1];
+            td[22].innerHTML = secondArray[2][2];
+
+            td[30].textContent = secondArray[3][0];
+            td[31].textContent = secondArray[3][1];
+            td[32].innerHTML = secondArray[3][2];
+
+            td[40].textContent = secondArray[4][0];
+            td[41].textContent = secondArray[4][1];
+            td[42].innerHTML = secondArray[4][2];
+
+            td[50].textContent = secondArray[5][0];
+            td[51].textContent = secondArray[5][1];
+            td[52].innerHTML = secondArray[5][2];
+
+            td[60].textContent = secondArray[5][0];
+            td[61].textContent = secondArray[5][1];
+            td[62].innerHTML = secondArray[5][2];
+
+            for (let j = 0; j < cupChTds.length; j++) {
+              cupChTds[j].innerHTML = secCupHeaderValues[j];
+            }
+
+            for (let j = 0; j < 7; j++) {
+              cupTds[j].innerHTML = secCupValues[j];
+            }
+            cupTds[7].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
+
+            for (let j = 8; j < 15; j++) {
+              cupTds[j].innerHTML = secCupValues[j];
+            }
+            cupTds[15].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
+            for (let j = 16; j < 21; j++) {
+              cupTds[j].innerHTML = secCupValues[j];
+            }
+            cupTds[21].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
+            cupTds[21].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
+            for (let j = 22; j < 33; j++) {
+              cupTds[j].innerHTML = secCupValues[j];
+            }
+            cupTds[33].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
+            cupTds[34].innerHTML = secCupValues[34]
+            for (let j = 35; j < cupTds.length; j++) {
+              cupTds[j].innerHTML = '';
+            }
+          } else {
+
+            // rInfoText1.classList.remove('opacity-1');
+            // rInfoText2.classList.remove('opacity-1');
+            // rInfoText3.classList.add('opacity-1');
+            // rInfoText4.classList.remove('opacity-1')
           }
-          cupTds[7].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
 
-          for (let j = 8; j < 15; j++) {
-            cupTds[j].innerHTML = secCupValues[j];
+          if (scrollY > 2260 && scrollY <= 2700) {
+            animField.classList.add('third');
+            animField.classList.remove('first');
+            animField.classList.remove('second');
+            animField.classList.remove('fourth');
+            // animField.classList.remove('second');
+            // leftAnim.style.height = '3100px';
+            // rightAnim.style.height = '3000px';
+            // document.getElementById('index-change').style.opacity = '0';
+            // document.getElementById('index-change').style.display = 'none';
+
+
+            rInfoText1.classList.remove('opacity-1');
+            rInfoText2.classList.remove('opacity-1');
+            rInfoText3.classList.add('opacity-1');
+            rInfoText4.classList.remove('opacity-1');
+            // withYou.style.opacity = '1';
+            // document.getElementById('with-you').style.opacity = '1'
+
+            document.getElementById('tabs').innerHTML = tabs[1];
+
+            rInfoText3.innerHTML = texts[2];
+            // console.log(rInfo.innerHTML)
+
+            td[0].textContent = thirdArray[0][0];
+            td[1].textContent = thirdArray[0][1];
+            td[2].innerHTML = thirdArray[0][2];
+            td[3].innerHTML = thirdArray[0][3];
+            td[4].innerHTML = thirdArray[0][4];
+            td[5].innerHTML = thirdArray[0][5];
+            td[6].innerHTML = thirdArray[0][6];
+            td[7].innerHTML = thirdArray[0][7];
+            td[8].innerHTML = thirdArray[0][8];
+            td[9].innerHTML = thirdArray[0][9];
+
+            td[10].textContent = thirdArray[2][0];
+            td[11].textContent = thirdArray[2][1];
+            td[12].innerHTML = thirdArray[2][2];
+            td[13].innerHTML = thirdArray[2][3];
+            td[14].innerHTML = thirdArray[2][4];
+            td[15].innerHTML = thirdArray[2][5];
+            td[16].innerHTML = thirdArray[2][6];
+            td[17].innerHTML = thirdArray[2][7];
+            td[18].innerHTML = thirdArray[2][8];
+            td[19].innerHTML = thirdArray[2][9];
+
+            td[20].textContent = thirdArray[3][0];
+            td[21].textContent = thirdArray[3][1];
+            td[22].innerHTML = thirdArray[3][2];
+            td[23].innerHTML = thirdArray[3][3];
+            td[24].innerHTML = thirdArray[3][4];
+            td[25].innerHTML = thirdArray[3][5];
+            td[26].innerHTML = thirdArray[3][6];
+            td[27].innerHTML = thirdArray[3][7];
+            td[28].innerHTML = thirdArray[3][8];
+            td[29].innerHTML = thirdArray[3][9];
+
+            td[30].textContent = thirdArray[4][0];
+            td[31].textContent = thirdArray[4][1];
+            td[32].innerHTML = thirdArray[4][2];
+            td[33].innerHTML = thirdArray[4][3];
+            td[34].innerHTML = thirdArray[4][4];
+            td[35].innerHTML = thirdArray[4][5];
+            td[36].innerHTML = thirdArray[4][6];
+            td[37].innerHTML = thirdArray[4][7];
+            td[38].innerHTML = thirdArray[4][8];
+            td[39].innerHTML = thirdArray[4][9];
+
+            td[40].textContent = thirdArray[5][0];
+            td[41].textContent = thirdArray[5][1];
+            td[42].innerHTML = thirdArray[5][2];
+            td[43].innerHTML = thirdArray[5][3];
+            td[44].innerHTML = thirdArray[5][4];
+            td[45].innerHTML = thirdArray[5][5];
+            td[46].innerHTML = thirdArray[5][6];
+            td[47].innerHTML = thirdArray[5][7];
+            td[48].innerHTML = thirdArray[5][8];
+            td[49].innerHTML = thirdArray[5][9];
+
+            td[50].textContent = thirdArray[6][0];
+            td[51].textContent = thirdArray[6][1];
+            td[52].innerHTML = thirdArray[6][2];
+            td[53].innerHTML = thirdArray[6][3];
+            td[54].innerHTML = thirdArray[6][4];
+            td[55].innerHTML = thirdArray[6][5];
+            td[56].innerHTML = thirdArray[6][6];
+            td[57].innerHTML = thirdArray[6][7];
+            td[58].innerHTML = thirdArray[6][8];
+            td[59].innerHTML = thirdArray[6][9];
+
+            td[60].textContent = thirdArray[7][0];
+            td[61].textContent = thirdArray[7][1];
+            td[62].innerHTML = thirdArray[7][2];
+            td[63].innerHTML = thirdArray[7][3];
+            td[64].innerHTML = thirdArray[7][4];
+            td[65].innerHTML = thirdArray[7][5];
+            td[66].innerHTML = thirdArray[7][6];
+            td[67].innerHTML = thirdArray[7][7];
+            td[68].innerHTML = thirdArray[7][8];
+            td[69].innerHTML = thirdArray[7][9];
+
+            td[70].textContent = thirdArray[8][0];
+            td[71].textContent = thirdArray[8][1];
+            td[72].innerHTML = thirdArray[8][2];
+            td[73].innerHTML = thirdArray[8][3];
+            td[74].innerHTML = thirdArray[8][4];
+            td[75].innerHTML = thirdArray[8][5];
+            td[76].innerHTML = thirdArray[8][6];
+            td[77].innerHTML = thirdArray[8][7];
+            td[78].innerHTML = thirdArray[8][8];
+            td[79].innerHTML = thirdArray[8][9];
+
+            td[80].textContent = thirdArray[9][0];
+            td[81].textContent = thirdArray[9][1];
+            td[82].innerHTML = thirdArray[9][2];
+            td[83].innerHTML = thirdArray[9][3];
+            td[84].innerHTML = thirdArray[9][4];
+            td[85].innerHTML = thirdArray[9][5];
+            td[86].innerHTML = thirdArray[9][6];
+            td[87].innerHTML = thirdArray[9][7];
+            td[88].innerHTML = thirdArray[9][8];
+            td[89].innerHTML = thirdArray[9][9];
+
+            td[90].textContent = thirdArray[10][0];
+            td[91].textContent = thirdArray[10][1];
+            td[92].innerHTML = thirdArray[10][2];
+            td[93].innerHTML = thirdArray[10][3];
+            td[94].innerHTML = thirdArray[10][4];
+            td[95].innerHTML = thirdArray[10][5];
+            td[96].innerHTML = thirdArray[10][6];
+            td[97].innerHTML = thirdArray[10][7];
+            td[98].innerHTML = thirdArray[10][8];
+            td[99].innerHTML = thirdArray[10][9];
+
+            td[100].textContent = thirdArray[11][0];
+            td[101].textContent = thirdArray[11][1];
+            td[102].innerHTML = thirdArray[11][2];
+            td[103].innerHTML = thirdArray[11][3];
+            td[104].innerHTML = thirdArray[11][4];
+            td[105].innerHTML = thirdArray[11][5];
+            td[106].innerHTML = thirdArray[11][6];
+            td[107].innerHTML = thirdArray[11][7];
+            td[108].innerHTML = thirdArray[11][8];
+            td[109].innerHTML = thirdArray[11][9];
+          } else {
+            animField.classList.remove('third');
+
+            // rInfoText1.classList.remove('opacity-1');
+            // rInfoText2.classList.remove('opacity-1');
+            // rInfoText3.classList.remove('opacity-1');
+            // rInfoText4.classList.add('opacity-1');
           }
-          cupTds[15].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
-          for (let j = 16; j < 21; j++) {
-            cupTds[j].innerHTML = secCupValues[j];
+
+          if (scrollY > 2700 && scrollY <= 3400) {
+            animField.classList.add('fourth');
+            animField.classList.remove('first');
+            animField.classList.remove('second');
+            animField.classList.remove('third');
+            // withYou.classList.remove('opacity-0')
+            // document.getElementById('with-you').classList.add('opacity-1');
+            // rInfo.style.top = '500px';
+
+            rInfoText1.classList.remove('opacity-1');
+            rInfoText2.classList.remove('opacity-1');
+            rInfoText3.classList.remove('opacity-1');
+            rInfoText4.classList.add('opacity-1');
+
+            rInfoText4.innerHTML = texts[3]
+
+            // console.log( td)
+            td[10].innerHTML = fourthWatchlistValues[0];
+            td[20].innerHTML = fourthWatchlistValues[1];
+            td[30].innerHTML = fourthWatchlistValues[2];
+            td[40].innerHTML = fourthWatchlistValues[3];
+            td[50].innerHTML = fourthWatchlistValues[4];
+            td[60].innerHTML = fourthWatchlistValues[5];
+            td[70].innerHTML = fourthWatchlistValues[6];
+            td[80].innerHTML = fourthWatchlistValues[7];
+            td[90].innerHTML = fourthWatchlistValues[8];
+            td[100].innerHTML = fourthWatchlistValues[9];
+
+            cupChTds[0].innerHTML = fourthCupValues[0];
+            cupChTds[1].innerHTML = fourthCupValues[1];
+            // for (let j = 2; j < cupChTds.length; j++) {
+            //   cupChTds[j].innerHTML = ''
+            // }
+
+            for (let j = 0; j < fourthCupValues.length; j++) {
+              cupTds[j].innerHTML = fourthCupValues[j + 2];
+            }
+            // for (let j = fourthCupValues.length - 2; j < cupTds.length; j++) {
+            //   cupTds[j].innerHTML = ''
+            //   cupTds[j].style.display = 'none'
+            // }
+            cupTable.classList.add('table-zebra');
+            // document.getElementById('index-change').style.opacity = '1';
+            // document.getElementById('index-change').style.display = 'initial';
+
+            scroll = 0;
+          } else {
+            // animField.classList.remove('fourth');
           }
-          cupTds[21].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
-          cupTds[21].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
-          for (let j = 22; j < 33; j++) {
-            cupTds[j].innerHTML = secCupValues[j];
+
+          if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
+            // document.getElementById('with-you').classList.add('opacity-0');
+            // document.getElementById('with-you').classList.remove('opacity-1');
+          } else {
+            // animField.classList.remove('with-you-go_up')
+            // rInfoText4.classList.remove('with-you-go_up')
+            // rInfoText1.classList.remove('opacity-1');
+            // rInfoText2.classList.remove('opacity-1');
+            // rInfoText3.classList.remove('opacity-1');
+            // rInfoText4.classList.add('opacity-1');
           }
-          cupTds[33].innerHTML = '<img src="assets/images/border-dashed.svg" alt="">'
-          cupTds[34].innerHTML = secCupValues[34]
-          for (let j = 35; j < cupTds.length; j++) {
-            cupTds[j].innerHTML = '';
-          }
-        } else {
-
-          // rInfoText1.classList.remove('opacity-1');
-          // rInfoText2.classList.remove('opacity-1');
-          // rInfoText3.classList.add('opacity-1');
-          // rInfoText4.classList.remove('opacity-1')
-        }
-
-        if (scrollY > 2260 && scrollY <= 2700) {
-          animField.classList.add('third');
-          animField.classList.remove('first');
-          animField.classList.remove('second');
-          animField.classList.remove('fourth');
-          // animField.classList.remove('second');
-          // leftAnim.style.height = '3100px';
-          // rightAnim.style.height = '3000px';
-          // document.getElementById('index-change').style.opacity = '0';
-          // document.getElementById('index-change').style.display = 'none';
 
 
-          rInfoText1.classList.remove('opacity-1');
-          rInfoText2.classList.remove('opacity-1');
-          rInfoText3.classList.add('opacity-1');
-          rInfoText4.classList.remove('opacity-1');
-          // withYou.style.opacity = '1';
-          // document.getElementById('with-you').style.opacity = '1'
-
-          document.getElementById('tabs').innerHTML = tabs[1];
-
-          rInfoText3.innerHTML = texts[2];
-          // console.log(rInfo.innerHTML)
-
-          td[0].textContent = thirdArray[0][0];
-          td[1].textContent = thirdArray[0][1];
-          td[2].innerHTML = thirdArray[0][2];
-          td[3].innerHTML = thirdArray[0][3];
-          td[4].innerHTML = thirdArray[0][4];
-          td[5].innerHTML = thirdArray[0][5];
-          td[6].innerHTML = thirdArray[0][6];
-          td[7].innerHTML = thirdArray[0][7];
-          td[8].innerHTML = thirdArray[0][8];
-          td[9].innerHTML = thirdArray[0][9];
-
-          td[10].textContent = thirdArray[2][0];
-          td[11].textContent = thirdArray[2][1];
-          td[12].innerHTML = thirdArray[2][2];
-          td[13].innerHTML = thirdArray[2][3];
-          td[14].innerHTML = thirdArray[2][4];
-          td[15].innerHTML = thirdArray[2][5];
-          td[16].innerHTML = thirdArray[2][6];
-          td[17].innerHTML = thirdArray[2][7];
-          td[18].innerHTML = thirdArray[2][8];
-          td[19].innerHTML = thirdArray[2][9];
-
-          td[20].textContent = thirdArray[3][0];
-          td[21].textContent = thirdArray[3][1];
-          td[22].innerHTML = thirdArray[3][2];
-          td[23].innerHTML = thirdArray[3][3];
-          td[24].innerHTML = thirdArray[3][4];
-          td[25].innerHTML = thirdArray[3][5];
-          td[26].innerHTML = thirdArray[3][6];
-          td[27].innerHTML = thirdArray[3][7];
-          td[28].innerHTML = thirdArray[3][8];
-          td[29].innerHTML = thirdArray[3][9];
-
-          td[30].textContent = thirdArray[4][0];
-          td[31].textContent = thirdArray[4][1];
-          td[32].innerHTML = thirdArray[4][2];
-          td[33].innerHTML = thirdArray[4][3];
-          td[34].innerHTML = thirdArray[4][4];
-          td[35].innerHTML = thirdArray[4][5];
-          td[36].innerHTML = thirdArray[4][6];
-          td[37].innerHTML = thirdArray[4][7];
-          td[38].innerHTML = thirdArray[4][8];
-          td[39].innerHTML = thirdArray[4][9];
-
-          td[40].textContent = thirdArray[5][0];
-          td[41].textContent = thirdArray[5][1];
-          td[42].innerHTML = thirdArray[5][2];
-          td[43].innerHTML = thirdArray[5][3];
-          td[44].innerHTML = thirdArray[5][4];
-          td[45].innerHTML = thirdArray[5][5];
-          td[46].innerHTML = thirdArray[5][6];
-          td[47].innerHTML = thirdArray[5][7];
-          td[48].innerHTML = thirdArray[5][8];
-          td[49].innerHTML = thirdArray[5][9];
-
-          td[50].textContent = thirdArray[6][0];
-          td[51].textContent = thirdArray[6][1];
-          td[52].innerHTML = thirdArray[6][2];
-          td[53].innerHTML = thirdArray[6][3];
-          td[54].innerHTML = thirdArray[6][4];
-          td[55].innerHTML = thirdArray[6][5];
-          td[56].innerHTML = thirdArray[6][6];
-          td[57].innerHTML = thirdArray[6][7];
-          td[58].innerHTML = thirdArray[6][8];
-          td[59].innerHTML = thirdArray[6][9];
-
-          td[60].textContent = thirdArray[7][0];
-          td[61].textContent = thirdArray[7][1];
-          td[62].innerHTML = thirdArray[7][2];
-          td[63].innerHTML = thirdArray[7][3];
-          td[64].innerHTML = thirdArray[7][4];
-          td[65].innerHTML = thirdArray[7][5];
-          td[66].innerHTML = thirdArray[7][6];
-          td[67].innerHTML = thirdArray[7][7];
-          td[68].innerHTML = thirdArray[7][8];
-          td[69].innerHTML = thirdArray[7][9];
-
-          td[70].textContent = thirdArray[8][0];
-          td[71].textContent = thirdArray[8][1];
-          td[72].innerHTML = thirdArray[8][2];
-          td[73].innerHTML = thirdArray[8][3];
-          td[74].innerHTML = thirdArray[8][4];
-          td[75].innerHTML = thirdArray[8][5];
-          td[76].innerHTML = thirdArray[8][6];
-          td[77].innerHTML = thirdArray[8][7];
-          td[78].innerHTML = thirdArray[8][8];
-          td[79].innerHTML = thirdArray[8][9];
-
-          td[80].textContent = thirdArray[9][0];
-          td[81].textContent = thirdArray[9][1];
-          td[82].innerHTML = thirdArray[9][2];
-          td[83].innerHTML = thirdArray[9][3];
-          td[84].innerHTML = thirdArray[9][4];
-          td[85].innerHTML = thirdArray[9][5];
-          td[86].innerHTML = thirdArray[9][6];
-          td[87].innerHTML = thirdArray[9][7];
-          td[88].innerHTML = thirdArray[9][8];
-          td[89].innerHTML = thirdArray[9][9];
-
-          td[90].textContent = thirdArray[10][0];
-          td[91].textContent = thirdArray[10][1];
-          td[92].innerHTML = thirdArray[10][2];
-          td[93].innerHTML = thirdArray[10][3];
-          td[94].innerHTML = thirdArray[10][4];
-          td[95].innerHTML = thirdArray[10][5];
-          td[96].innerHTML = thirdArray[10][6];
-          td[97].innerHTML = thirdArray[10][7];
-          td[98].innerHTML = thirdArray[10][8];
-          td[99].innerHTML = thirdArray[10][9];
-
-          td[100].textContent = thirdArray[11][0];
-          td[101].textContent = thirdArray[11][1];
-          td[102].innerHTML = thirdArray[11][2];
-          td[103].innerHTML = thirdArray[11][3];
-          td[104].innerHTML = thirdArray[11][4];
-          td[105].innerHTML = thirdArray[11][5];
-          td[106].innerHTML = thirdArray[11][6];
-          td[107].innerHTML = thirdArray[11][7];
-          td[108].innerHTML = thirdArray[11][8];
-          td[109].innerHTML = thirdArray[11][9];
-        } else {
-          animField.classList.remove('third');
-
-          // rInfoText1.classList.remove('opacity-1');
-          // rInfoText2.classList.remove('opacity-1');
-          // rInfoText3.classList.remove('opacity-1');
-          // rInfoText4.classList.add('opacity-1');
-        }
-
-        if (scrollY > 2700 && scrollY <= 3400) {
-          animField.classList.add('fourth');
-          animField.classList.remove('first');
-          animField.classList.remove('second');
-          animField.classList.remove('third');
-          // withYou.classList.remove('opacity-0')
-          // document.getElementById('with-you').classList.add('opacity-1');
-          // rInfo.style.top = '500px';
-
-          rInfoText1.classList.remove('opacity-1');
-          rInfoText2.classList.remove('opacity-1');
-          rInfoText3.classList.remove('opacity-1');
-          rInfoText4.classList.add('opacity-1');
-
-          rInfoText4.innerHTML = texts[3]
-
-          // console.log( td)
-          td[10].innerHTML = fourthWatchlistValues[0];
-          td[20].innerHTML = fourthWatchlistValues[1];
-          td[30].innerHTML = fourthWatchlistValues[2];
-          td[40].innerHTML = fourthWatchlistValues[3];
-          td[50].innerHTML = fourthWatchlistValues[4];
-          td[60].innerHTML = fourthWatchlistValues[5];
-          td[70].innerHTML = fourthWatchlistValues[6];
-          td[80].innerHTML = fourthWatchlistValues[7];
-          td[90].innerHTML = fourthWatchlistValues[8];
-          td[100].innerHTML = fourthWatchlistValues[9];
-
-          cupChTds[0].innerHTML = fourthCupValues[0];
-          cupChTds[1].innerHTML = fourthCupValues[1];
-          // for (let j = 2; j < cupChTds.length; j++) {
-          //   cupChTds[j].innerHTML = ''
-          // }
-
-          for (let j = 0; j < fourthCupValues.length; j++) {
-            cupTds[j].innerHTML = fourthCupValues[j + 2];
-          }
-          // for (let j = fourthCupValues.length - 2; j < cupTds.length; j++) {
-          //   cupTds[j].innerHTML = ''
-          //   cupTds[j].style.display = 'none'
-          // }
-          cupTable.classList.add('table-zebra');
-          // document.getElementById('index-change').style.opacity = '1';
-          // document.getElementById('index-change').style.display = 'initial';
-
-          scroll = 0;
-        } else {
-          // animField.classList.remove('fourth');
-        }
-
-        if ((scrollY > animItemOffset - animItemPoint5) && scrollY < (animItemOffset + animItemHeight)) {
-          // document.getElementById('with-you').classList.add('opacity-0');
-          // document.getElementById('with-you').classList.remove('opacity-1');
-        } else {
-          // animField.classList.remove('with-you-go_up')
-          // rInfoText4.classList.remove('with-you-go_up')
-          // rInfoText1.classList.remove('opacity-1');
-          // rInfoText2.classList.remove('opacity-1');
-          // rInfoText3.classList.remove('opacity-1');
-          // rInfoText4.classList.add('opacity-1');
-        }
-        if (scrollY > 3400 && scrollY < 3900) {
-          withYou.classList.add('with-you-go_up')
-          animField.classList.remove('anim-you-go_up')
-          rInfo.classList.remove('anim-you-go_up')
-          // setTimeout(() => {
+          if (scrollY > 3400 && scrollY < 3900) {
+            // setTimeout(() => {
             if (scroll === 0) {
               document.body.style.overflow = 'hidden';
               scroll = 1;
@@ -704,44 +704,49 @@ setTimeout(() => {
                 document.body.style.overflow = 'auto';
               }, 1000)
             }
-          // }, 500);
-        } else {
-          withYou.classList.remove('with-you-go_up')
-          animField.classList.add('anim-you-go_up')
-          rInfo.classList.add('anim-you-go_up')
-        }
+            // }, 500);
+          } else {
+          }
+          if (scrollY < 3900) {
+            withYou.classList.remove('with-you-go_up')
+            animField.classList.add('anim-you-go_up')
+            rInfo.classList.add('anim-you-go_up')
+          }
 
-        if (scrollY > 3550) {
+          if (scrollY >= 3900) {
+            withYou.classList.add('with-you-go_up')
+            animField.classList.remove('anim-you-go_up')
+            rInfo.classList.remove('anim-you-go_up')
+          }
 
-        }
+          if (scrollY > 3400 && scrollY <= 3900) {
+            // document.getElementById('with-you').classList.add('opacity-0');
+            // document.getElementById('with-you').classList.remove('opacity-1');
+            // leftAnim.style.height = '1800px';
+            // rightAnim.style.height = '1700px';
+            // if (scroll === 1) {
+            //   scroll = 0
+            //   withYou.style.position = 'sticky';
+            // }
 
-        if (scrollY > 3400 && scrollY <= 3900) {
-          // document.getElementById('with-you').classList.add('opacity-0');
-          // document.getElementById('with-you').classList.remove('opacity-1');
-          // leftAnim.style.height = '1800px';
-          // rightAnim.style.height = '1700px';
+          }
+
           // if (scroll === 1) {
-          //   scroll = 0
-          //   withYou.style.position = 'sticky';
+          //   if (scrollY > 3800) {
+          //     document.body.style.overflowY = 'hidden';
+          //     setTimeout(() => {
+          //       document.body.style.overflowY = 'auto';
+          //     }, 2000)
+          //   }
           // }
 
+          // if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
+          //
+          // }
+          // else {
+          //
+          // }
         }
-
-        // if (scroll === 1) {
-        //   if (scrollY > 3800) {
-        //     document.body.style.overflowY = 'hidden';
-        //     setTimeout(() => {
-        //       document.body.style.overflowY = 'auto';
-        //     }, 2000)
-        //   }
-        // }
-
-        // if ((scrollY > animItemOffset - animItemPoint6) && scrollY < (animItemOffset + animItemHeight)) {
-        //
-        // }
-        // else {
-        //
-        // }
       }
     }
 
