@@ -84,8 +84,8 @@ export class AppComponent implements OnInit, OnDestroy{
         port: env.mqtt.port,
         protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
         path: env.mqtt.directory,
-        username: 'kase5',
-        password: 'ulyz17mg'
+        username: 'needtest',
+        password: 'mequy46y'
       }
       this.mqttService.disconnect();
       this.mqttService.connect(MQTT_SERVICE_OPTIONS);
