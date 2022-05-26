@@ -40,28 +40,28 @@ export class AppComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     // Тест подключения
-  //   const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  //     hostname: env.mqtt.server,
-  //     port: env.mqtt.port,
-  //     protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
-  //     path: env.mqtt.directory,
-  //     username: 'kase5',
-  //     password: 'ulyz17mg'
-  //   }
-  //   this.mqttService.disconnect();
-  //   this.mqttService.connect(MQTT_SERVICE_OPTIONS);
-  //   this.mqttSubscription = this.mqttService.state.subscribe((state: MqttConnectionState) => {
-  //     console.log(state)
-  //     if (state === 0) {
-  //       // this.mqttSubscription?.unsubscribe();
-  //     }
-  //     if (state === 1) {
-  //
-  //     }
-  //     if (state === 2) {
-  //       this.loading = false;
-  //     }
-  //   })
+    // const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+    //   hostname: env.mqtt.server,
+    //   port: env.mqtt.port,
+    //   protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
+    //   path: env.mqtt.directory,
+    //   username: 'kase5',
+    //   password: 'ulyz17mg'
+    // }
+    // this.mqttService.disconnect();
+    // this.mqttService.connect(MQTT_SERVICE_OPTIONS);
+    // this.mqttSubscription = this.mqttService.state.subscribe((state: MqttConnectionState) => {
+    //   console.log(state)
+    //   if (state === 0) {
+    //     // this.mqttSubscription?.unsubscribe();
+    //   }
+    //   if (state === 1) {
+    //
+    //   }
+    //   if (state === 2) {
+    //     this.loading = false;
+    //   }
+    // })
   }
 
   get userFio() {
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   promoFormSubmit() {
-    if (this.formPromo.valid) {
+    // if (this.formPromo.valid) {
       console.log('promo is valid');
       const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
         hostname: env.mqtt.server,
@@ -90,6 +90,7 @@ export class AppComponent implements OnInit, OnDestroy{
       this.mqttService.disconnect();
       this.mqttService.connect(MQTT_SERVICE_OPTIONS);
       this.mqttSubscription = this.mqttService.state.subscribe((state: MqttConnectionState) => {
+        // console.log(state)
 
         if (state === 0) {
           // this.mqttSubscription?.unsubscribe();
@@ -98,7 +99,7 @@ export class AppComponent implements OnInit, OnDestroy{
 
         }
         if (state === 2) {
-          console.log(state)
+          // console.log("start send");
           this.loading = false;
 
           this.appService.sendUserFeedbackRequest(this.userEmail.value, this.userPhone.value, this.userFio.value);
@@ -116,7 +117,7 @@ export class AppComponent implements OnInit, OnDestroy{
             })
         }
       })
-    }
+    // }
   }
 
   @HostListener('window:resize', ['$event'])

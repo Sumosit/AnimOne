@@ -560,7 +560,7 @@
           Нажимая&nbsp;на кнопку&nbsp;вы автоматически принимаете условия<span>&nbsp;Пользовательского соглашения
           и&nbsp;конфиденциальности</span>
         </div>
-        <button class="{{formPromo.valid ? '' : 'button-disabled'}} tfr-button ">
+        <button class="{{formPromo.valid ? '' : 'button-disabled'}} tfr-button" [disabled]="!formPromo.valid">
           Получить доступ
         </button>
         <div class="tfr-question">
