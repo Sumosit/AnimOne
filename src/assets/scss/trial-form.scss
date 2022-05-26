@@ -400,6 +400,7 @@
       }
 
       .tfr-button {
+        cursor: pointer;
         margin-top: 24px;
         width: 100%;
         padding: 8px 40px;
@@ -414,7 +415,7 @@
       }
 
       .tfr-question {
-        margin-top: auto;
+        margin-top: 40px;
         display: flex;
         flex-direction: column;
 
@@ -424,14 +425,15 @@
             font-size: 14px;
             line-height: 20px;
           }
+        }
 
-          &:nth-child(2) {
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 20px;
-            text-decoration-line: underline;
-            color: #13AB53;
-          }
+        a {
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 20px;
+          text-decoration-line: underline;
+          color: #13AB53;
         }
       }
     }

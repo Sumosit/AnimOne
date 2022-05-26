@@ -12,6 +12,11 @@ export const environment = {
   }
 };
 
+// server: '192.168.211.181',
+// protocol: 'ws',
+// port: 1883,
+// directory: ''
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

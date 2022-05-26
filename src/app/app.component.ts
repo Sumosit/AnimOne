@@ -45,8 +45,8 @@ export class AppComponent implements OnInit, OnDestroy{
   //     port: env.mqtt.port,
   //     protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
   //     path: env.mqtt.directory,
-  //     username: 'iris@open.kase.kz',
-  //     password: 'free'
+  //     username: 'kase5',
+  //     password: 'ulyz17mg'
   //   }
   //   this.mqttService.disconnect();
   //   this.mqttService.connect(MQTT_SERVICE_OPTIONS);
@@ -78,14 +78,14 @@ export class AppComponent implements OnInit, OnDestroy{
 
   promoFormSubmit() {
     if (this.formPromo.valid) {
-      console.log(321)
+      console.log('promo is valid');
       const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
         hostname: env.mqtt.server,
         port: env.mqtt.port,
         protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
         path: env.mqtt.directory,
-        username: 'iris@open.kase.kz',
-        password: 'free'
+        username: 'kase5',
+        password: 'ulyz17mg'
       }
       this.mqttService.disconnect();
       this.mqttService.connect(MQTT_SERVICE_OPTIONS);
@@ -101,19 +101,19 @@ export class AppComponent implements OnInit, OnDestroy{
           console.log(state)
           this.loading = false;
 
-          // this.appService.sendUserFeedbackRequest(this.userEmail.value, this.userPhone.value, this.userFio.value);
-          //
-          // this.feedbackSubscription = this.appService.getUserFeedbackRequest()
-          //   .subscribe((feedbackReply: IRIS.UserFeedbackReply) => {
-          //     if (feedbackReply.ok) {
-          //        this.loading = false;
-          //       console.log('ok');
-          //     }
-          //     else if (!feedbackReply.ok) {
-          //       this.loading = false;
-          //       console.log('not ok');
-          //     }
-          //   })
+          this.appService.sendUserFeedbackRequest(this.userEmail.value, this.userPhone.value, this.userFio.value);
+
+          this.feedbackSubscription = this.appService.getUserFeedbackRequest()
+            .subscribe((feedbackReply: IRIS.UserFeedbackReply) => {
+              if (feedbackReply.ok) {
+                 this.loading = false;
+                // console.log('ok');
+              }
+              else if (!feedbackReply.ok) {
+                this.loading = false;
+                // console.log('not ok');
+              }
+            })
         }
       })
     }
