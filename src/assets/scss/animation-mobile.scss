@@ -4,12 +4,12 @@
     display: initial;
   }
   .with-you {
-    padding: 120px 0 16px;
+    padding: 60px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 4px 0px 25px rgba(0, 0, 0, 0.1), 0px 4px 25px rgba(0, 0, 0, 0.1);
     @media screen and (max-width: 1440px) {
-      padding: 60px 0 16px;
     }
     span {
       &:nth-child(1) {

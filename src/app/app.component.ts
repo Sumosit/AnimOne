@@ -106,7 +106,7 @@ export class AppComponent implements OnInit, OnDestroy{
           // this.feedbackSubscription = this.appService.getUserFeedbackRequest()
           //   .subscribe((feedbackReply: IRIS.UserFeedbackReply) => {
           //     if (feedbackReply.ok) {
-          //       this.loading = false;
+          //        this.loading = false;
           //       console.log('ok');
           //     }
           //     else if (!feedbackReply.ok) {

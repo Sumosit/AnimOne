@@ -694,7 +694,7 @@ setTimeout(() => {
           }
 
 
-          if (scrollY > 3400 && scrollY < 3900) {
+          if (scrollY > 3400 && scrollY < 3800) {
             // setTimeout(() => {
             if (scroll === 0) {
               document.body.style.overflow = 'hidden';
@@ -707,13 +707,13 @@ setTimeout(() => {
             // }, 500);
           } else {
           }
-          if (scrollY < 3900) {
+          if (scrollY < 3800) {
             withYou.classList.remove('with-you-go_up')
             animField.classList.add('anim-you-go_up')
             rInfo.classList.add('anim-you-go_up')
           }
 
-          if (scrollY >= 3900) {
+          if (scrollY >= 3800) {
             withYou.classList.add('with-you-go_up')
             animField.classList.remove('anim-you-go_up')
             rInfo.classList.remove('anim-you-go_up')

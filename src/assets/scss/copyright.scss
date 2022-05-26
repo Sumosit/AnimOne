@@ -5,17 +5,28 @@
   color: #0D1C32;
   display: flex;
   flex-direction: row;
+  gap: 30px;
   @media screen and (max-width: 1440px) {
-    padding: 0 16px;
+    padding: 24px 0 16px;
     margin-top: 60px;
     width: 100%;
     text-align: center;
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
   }
 
   .copyright-left {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
+    text-align: left;
+    @media screen and (max-width: 800px) {
+      text-align: center;
+      align-items: center;
+    }
     span {
       &:nth-child(1) {
         font-weight: 800;
@@ -37,6 +48,12 @@
     flex-direction: column;
     gap: 2px;
     align-items: flex-end;
+    text-align: right;
+    @media screen and (max-width: 800px) {
+      margin-left: initial;
+      text-align: center;
+      align-items: center;
+    }
     span {
       &:nth-child(1) {
         font-weight: 800;
