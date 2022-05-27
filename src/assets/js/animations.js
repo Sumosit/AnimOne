@@ -1,4 +1,10 @@
 setTimeout(() => {
+  if (window.innerWidth < 1440) {
+
+  }
+}, 500)
+
+setTimeout(() => {
 
   const animItems = document.querySelectorAll(".anim");
   const td = document.querySelectorAll(".td")

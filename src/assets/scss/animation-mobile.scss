@@ -1,7 +1,7 @@
 .animation-mobile {
   display: none;
   @media screen and (max-width: 1440px) {
-    display: initial;
+    display: contents;
   }
   .with-you {
     padding: 60px 0 60px;
