@@ -536,24 +536,124 @@
             </div>
           </div>
         </div>
+
+        <svg *ngIf="userPassword.value" class="r-pattern" width="452" height="135" viewBox="0 0 452 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.3">
+            <ellipse cx="225.083" cy="67.5" rx="62.0834" ry="62.5" fill="#13AB53" fill-opacity="0.1"/>
+            <ellipse cx="225.084" cy="67.5002" rx="22.0833" ry="21.6667" fill="#13AB53" fill-opacity="0.8"/>
+            <rect x="43.2502" y="76.2749" width="13.5" height="29.7" fill="#18C35D"/>
+            <rect x="48.6499" y="66.8247" width="2.7" height="49.275" fill="#18C35D"/>
+            <rect x="124.25" y="49.2747" width="13.5" height="29.7" fill="#FF524A"/>
+            <rect x="129.649" y="39.8245" width="2.7" height="49.275" fill="#FF524A"/>
+            <rect x="63.5002" y="60.7498" width="13.5" height="24.975" fill="#18C35D"/>
+            <rect x="68.9001" y="46.5747" width="2.7" height="49.275" fill="#18C35D"/>
+            <rect x="103.999" y="27.6746" width="13.5" height="24.975" fill="#FF524A"/>
+            <rect x="109.399" y="18.8994" width="2.7" height="43.875" fill="#FF524A"/>
+            <rect x="83.749" y="29.6997" width="13.5" height="56.025" fill="#18C35D"/>
+            <rect x="89.1489" y="18.8994" width="2.7" height="76.95" fill="#18C35D"/>
+            <path d="M293 135C293 117.272 296.492 99.7167 303.277 83.3378C310.061 66.9588 320.005 52.0765 332.541 39.5406C345.077 27.0047 359.959 17.0607 376.338 10.2763C392.717 3.49188 410.272 -7.74936e-07 428 0L428 135H293Z" fill="#FF524A"/>
+            <path d="M303.277 83.3376C296.492 99.7166 293 117.271 293 135H428L332.541 39.5405C320.005 52.0764 310.061 66.9587 303.277 83.3376Z" fill="#18C35D"/>
+          </g>
+        </svg>
+
       </div>
       <form class="tf-right" id="trial"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
         <span class="rates-anim tfr-text">Пробный период</span>
         <span class="rates-anim tfr-text">Оставьте заявку и&nbsp;воспользуйтесь бесплатным тестовым доступом</span>
         <div class="tfr-inputs">
-          <input formControlName="userEmail" placeholder="E-mail" name="email"
-                 [ngStyle]="{
+          <div class="tft-input-field">
+            <label *ngIf="userFio.value" for="fio">ФИО</label>
+            <input formControlName="userFio" placeholder="ФИО" id="fio" name="fio"
+                   [ngStyle]="{
+                   border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
+                   }">
+          </div>
+          <div class="tft-input-field">
+            <label *ngIf="userLogin.value" for="login">Логин</label>
+            <input formControlName="userLogin" placeholder="Логин" id="login" name="login"
+                   [ngStyle]="{
+                 border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
+                 }">
+          </div>
+          <div class="tft-input-field">
+            <label *ngIf="userEmail.value" for="email">E-mail</label>
+            <input formControlName="userEmail" placeholder="E-mail" id="email" name="email"
+                   [ngStyle]="{
                  border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
                  }">
-          <input formControlName="userPhone" placeholder="Телефон" name="tel"
-                 [ngStyle]="{
+          </div>
+          <div class="tft-input-field">
+            <label *ngIf="userPhone.value" for="phone">Телефон</label>
+            <input formControlName="userPhone" placeholder="Телефон" id="phone" name="tel"
+                   [ngStyle]="{
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
-          <input formControlName="userFio" placeholder="ФИО" name="fio"
-                 [ngStyle]="{
-                 border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
+          </div>
+          <div class="tft-input-field input-img-right">
+            <label *ngIf="userPassword.value" for="password">Пароль</label>
+            <input formControlName="userPassword" placeholder="Пароль" id="password" name="password"
+                   maxlength="51"
+                   [ngClass]="{
+                   'input-password': !showPassword && userPassword.value
+                   }"
+                   [type]="showPassword ? '' : 'password'"
+                   [ngStyle]="{
+                 border: !checkPasswordUppercase() && !checkEnglish() && !checkNumbers() && userPassword.value.length < 6 && userPassword.value.length > 0 ? '1px solid #FF2E24' : ''
                  }">
+            <svg (click)="showPassword = !showPassword" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.8729 11.6111C21.6942 11.3667 17.4371 5.62646 11.9999 5.62646C6.56274 5.62646 2.30539 11.3667 2.12691 11.6109C1.9577 11.8427 1.9577 12.1572 2.12691 12.3891C2.30539 12.6335 6.56274 18.3737 11.9999 18.3737C17.4371 18.3737 21.6942 12.6335 21.8729 12.3893C22.0423 12.1575 22.0423 11.8427 21.8729 11.6111ZM11.9999 17.055C7.99486 17.055 4.52606 13.2452 3.49922 11.9996C4.52473 10.753 7.98626 6.94514 11.9999 6.94514C16.0048 6.94514 19.4733 10.7544 20.5006 12.0005C19.4751 13.2471 16.0135 17.055 11.9999 17.055Z"
+                fill="white"/>
+              <path
+                d="M12.0005 8.0437C9.81916 8.0437 8.04443 9.81843 8.04443 11.9998C8.04443 14.1811 9.81916 15.9558 12.0005 15.9558C14.1818 15.9558 15.9565 14.1811 15.9565 11.9998C15.9565 9.81843 14.1818 8.0437 12.0005 8.0437ZM12.0005 14.6371C10.5462 14.6371 9.36314 13.454 9.36314 11.9998C9.36314 10.5455 10.5462 9.36241 12.0005 9.36241C13.4547 9.36241 14.6378 10.5455 14.6378 11.9998C14.6378 13.454 13.4548 14.6371 12.0005 14.6371Z"
+                fill="white"/>
+            </svg>
+          </div>
+          <ng-container *ngIf="userPassword.value">
+            <div class="form-segments"
+            [ngClass]="{
+            'form-segments-filled-0': getSegments() === 0,
+            'form-segments-filled-1': getSegments() === 1,
+            'form-segments-filled-2': getSegments() === 2,
+            'form-segments-filled-3': getSegments() === 3
+            }">
+              <div class="form-segment"></div>
+              <div class="form-segment"></div>
+              <div class="form-segment"></div>
+            </div>
+            <div class="form-password-errors" *ngIf="getSegments() > 0 && getSegments() < 3">
+              <div *ngIf="userPassword.value.length < 6">&bull;&nbsp;&nbsp;не менее 6 символов</div>
+              <div *ngIf="!checkPasswordUppercase()">&bull;&nbsp;&nbsp;отсутствуют буквы верхнего регистра: A-Z</div>
+              <div *ngIf="!checkNumbers()">&bull;&nbsp;&nbsp;отсутствуют цифры 0-9</div>
+              <div *ngIf="!checkEnglish()">&bull;&nbsp;&nbsp;только буквы латинского алфавита</div>
+            </div>
+          <div class="tft-input-field input-img-right">
+            <div class="tft-input">
+              <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>
+            </div>
+            <input formControlName="userPasswordConfirm" placeholder="Подтверждение пароля" id="userPasswordConfirm"
+                   name="userPasswordConfirm"
+                   maxlength="51"
+                   [ngClass]="{
+                   'input-password': !showPasswordConfirm && userPasswordConfirm.value
+                   }"
+                   [type]="showPasswordConfirm ? '' : 'password'"
+                   [ngStyle]="{
+                 border: !checkPasswordUppercase() && !checkEnglish() && !checkNumbers() && userPassword.value.length < 6 && userPassword.value.length > 0 ? '1px solid #FF2E24' : ''
+                 }">
+            <svg (click)="showPasswordConfirm = !showPasswordConfirm" width="24" height="24" viewBox="0 0 24 24"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.8729 11.6111C21.6942 11.3667 17.4371 5.62646 11.9999 5.62646C6.56274 5.62646 2.30539 11.3667 2.12691 11.6109C1.9577 11.8427 1.9577 12.1572 2.12691 12.3891C2.30539 12.6335 6.56274 18.3737 11.9999 18.3737C17.4371 18.3737 21.6942 12.6335 21.8729 12.3893C22.0423 12.1575 22.0423 11.8427 21.8729 11.6111ZM11.9999 17.055C7.99486 17.055 4.52606 13.2452 3.49922 11.9996C4.52473 10.753 7.98626 6.94514 11.9999 6.94514C16.0048 6.94514 19.4733 10.7544 20.5006 12.0005C19.4751 13.2471 16.0135 17.055 11.9999 17.055Z"
+                fill="white"/>
+              <path
+                d="M12.0005 8.0437C9.81916 8.0437 8.04443 9.81843 8.04443 11.9998C8.04443 14.1811 9.81916 15.9558 12.0005 15.9558C14.1818 15.9558 15.9565 14.1811 15.9565 11.9998C15.9565 9.81843 14.1818 8.0437 12.0005 8.0437ZM12.0005 14.6371C10.5462 14.6371 9.36314 13.454 9.36314 11.9998C9.36314 10.5455 10.5462 9.36241 12.0005 9.36241C13.4547 9.36241 14.6378 10.5455 14.6378 11.9998C14.6378 13.454 13.4548 14.6371 12.0005 14.6371Z"
+                fill="white"/>
+            </svg>
+          </div>
+          </ng-container>
         </div>
         <div class="tfr-line"></div>
         <div class="rates-anim tfr-accept">
@@ -570,10 +670,10 @@
       </form>
       <div class="tfr-rec_2"></div>
       <div class="tfr-rec_3"></div>
-<!--      <div class="tfr-rec_4"></div>-->
+      <!--      <div class="tfr-rec_4"></div>-->
     </div>
-<!--    <img class="tfr-rec" src="assets/images/Rectangle%20656.svg">-->
-<!--    <img class="tfr-rec_1" src="assets/images/Rectangle%20655.svg">-->
+    <!--    <img class="tfr-rec" src="assets/images/Rectangle%20656.svg">-->
+    <!--    <img class="tfr-rec_1" src="assets/images/Rectangle%20655.svg">-->
   </div>
   <div class="middle-content">
     <div class="copyright">

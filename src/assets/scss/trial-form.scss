@@ -61,6 +61,7 @@
     .tf-left {
       z-index: 1002;
       width: 532px;
+      padding: 62px 32px;
       //flex-grow: 1;
       background: rgba(255, 255, 255, 0.05);
       border: 3px solid rgba(255, 255, 255, 0.05);
@@ -81,8 +82,13 @@
         backdrop-filter: blur(0);
       }
 
+      .r-pattern {
+        grid-area: r-pattern;
+        width: 100%;
+        margin-top: 40px;
+      }
+
       .rates {
-        padding: 40px 32px 40px;
         //display: flex;
         //flex-direction: row;
         //justify-content: center;
@@ -187,13 +193,6 @@
           }
         }
 
-        .r-pattern {
-          grid-area: r-pattern;
-          @media screen and (max-width: 900px) {
-            width: 100%;
-          }
-        }
-
         .r-market {
           grid-area: r-market;
           font-weight: 400;
@@ -230,22 +229,27 @@
             //}
             .rmf-items {
               flex-grow: 1;
+
               table {
                 width: 100%;
                 table-layout: auto;
                 border-collapse: collapse;
+
                 tr {
                   td {
                     padding: 14px 19px;
+
                     &:nth-child(1) {
                       width: 100%;
                     }
+
                     &:nth-child(2) {
                       width: max-content;
                     }
                   }
                 }
               }
+
               table td {
                 //&:nth-child(1) {
                 //  width: 100%;
@@ -351,27 +355,73 @@
 
       .tfr-inputs {
         margin-top: 24px;
+        flex: none;
         display: flex;
         flex-direction: column;
 
+        .tft-input-field {
+          position: relative;
+          width: 100%;
+          margin-top: 12px;
+          display: flex;
+          flex-direction: column;
+
+          &:nth-child(1) {
+            margin-top: 0;
+          }
+        }
+
+        label {
+          padding-left: 8px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 20px;
+          color: #B4B5BD;
+        }
+
+        .input-img-right {
+          input {
+            padding-right: 34px;
+          }
+
+          svg {
+            user-select: none;
+            position: absolute;
+            right: 14px;
+            bottom: 7px;
+          }
+        }
+
+        .input-password {
+          font-size: 36px;
+          letter-spacing: 3px;
+        }
+
+        //input[type="password"] {
+        //  font-size: 36px;
+        //  letter-spacing: 3px;
+        //}
+
         input {
-          margin-top: 24px;
-          height: 48px;
+          flex: none;
+          transition: all 0s;
+          width: 100%;
+          height: 38px;
           padding: 0 12px;
           border: 1px solid #53586D;
           outline: none;
           border-radius: 4px;
           background: none;
           font-weight: 400;
-          font-size: 16px;
-          line-height: 24px;
-          color: #9FA4B2;
-
-          &:nth-child(1) {
-            margin-top: 0;
-          }
+          font-size: 14px;
+          line-height: 22px;
+          color: rgba(255, 255, 255, 0.9);
 
           &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0;
             color: #9FA4B2;
           }
 
@@ -384,7 +434,7 @@
       .tfr-line {
         width: 100%;
         height: 1px;
-        margin: 24px 0;
+        margin: 12px 0;
         background: #53586D;
       }
 
@@ -487,4 +537,60 @@
     height: 100%;
     //opacity: 0.6;
   }
+}
+
+.form-segments-filled-1 {
+  .form-segment {
+    background: #B4B5BD;
+  }
+}
+
+.form-segments-filled-1 {
+  .form-segment {
+    background: #B4B5BD;
+    &:nth-child(1) {
+      background: #FF524A;
+    }
+  }
+}
+
+.form-segments-filled-2 {
+  .form-segment {
+    background: #B4B5BD;
+    &:nth-child(1), &:nth-child(2) {
+      background: #E66407;
+    }
+  }
+}
+
+.form-segments-filled-3 {
+  .form-segment {
+    background: #13AB53;
+  }
+}
+
+.form-segments {
+  margin-top: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
+  .form-segment {
+    flex-grow: 1;
+    height: 2px;
+  }
+
+  .form-segment-empty {
+    background: #B4B5BD;
+  }
+}
+
+.form-password-errors {
+  margin-top: 31px;
+  padding-left: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #B4B5BD;
 }
