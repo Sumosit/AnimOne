@@ -12,10 +12,15 @@ export const environment = {
   }
 };
 
+// test backend
 // server: '192.168.211.181',
 // protocol: 'ws',
 // port: 1883,
 // directory: ''
+
+// feedback account
+// username: 'needtest',
+// password: 'mequy46y'
 
 /*
  * For easier debugging in development mode, you can import the following file

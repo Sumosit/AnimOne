@@ -6,7 +6,8 @@ import {environment as env} from "../environments/environment";
 import {IMqttServiceOptions, MqttConnectionState, MqttService} from "ngx-mqtt";
 import {Subscription} from "rxjs";
 import {IRIS} from "../../iris";
-import {MustMatch} from "./MustMatch";
+import {v4 as uuidv4} from 'uuid'
+import {group} from "@angular/animations";
 
 @Component({
   selector: 'app-root',
@@ -18,15 +19,17 @@ export class AppComponent implements OnInit, OnDestroy {
   public screenWidth: any;
   public height: any;
 
-  formPromo: FormGroup;
-  public segments = 0;
+  public formPromo: FormGroup;
+  public segments: number = 0;
+  public guid: string = ''
+  public errorRegText: any = [];
 
   public loading: boolean = false;
   public showPassword: boolean = false;
   public showPasswordConfirm: boolean = false;
 
   public mqttSubscription: Subscription | undefined;
-  public feedbackSubscription: Subscription | undefined;
+  public regSubscription: Subscription | undefined;
 
   constructor(public appService: AppService,
               private mqttService: MqttService,
@@ -35,27 +38,45 @@ export class AppComponent implements OnInit, OnDestroy {
     this.height = this.appService.getElementHeight('right_panel-dark-img')
 
     this.formPromo = formBuilder.group({
-      "userFio": ["", [Validators.required]],
+      "userFio": ["", [Validators.required, this.checkFio]],
       "userLogin": ["", [Validators.required]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", Validators.required],
       "userPassword": ["", [Validators.required,
-        Validators.minLength(6), Validators.maxLength(50),
+        // Validators.minLength(6), Validators.maxLength(50),
         Validators.pattern('^[a-zA-Z0-9]+$')]],
-      "userPasswordConfirm": ["", Validators.required]},{
-      validators: this.checkPasswords
-    });
+      "userPasswordConfirm": ["", [Validators.required]],
+      "userCaptcha": ["", [Validators.required, Validators.minLength(1)]],
+
+    }, {validators: this.checkPasswords});
   }
 
-  checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
-    // @ts-ignore
-    let pass = group.get('userPassword').value;
-    // @ts-ignore
-    let confirmPass = group.get('userPasswordConfirm').value
-    return pass === confirmPass ? null : { notSame: true }
+  public checkPasswords: ValidatorFn = (control: any): ValidationErrors | null => {
+    if (control.controls['userPassword'].value === control.controls['userPasswordConfirm'].value) {
+      return null;
+    }
+    return {'mismatch': true};
+  }
+
+  checkFio: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+    let fio = group?.value;
+    if (!fio) {
+      return null;
+    }
+    let f_i_o = fio.trim().replace(/\s+/g, ' ').split(' ');
+    if (f_i_o[0] && f_i_o[1] && f_i_o[2] && !f_i_o[3]) {
+      return null;
+    } else {
+      return {notSame: true};
+    }
   }
 
   ngOnInit() {
+    this.guid = this.generateUuid();
+  }
+
+  getU() {
+    console.log(this.formPromo.controls['userPassword']);
   }
 
   get userFio() {
@@ -80,6 +101,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   get userPasswordConfirm() {
     return this.formPromo.controls['userPasswordConfirm'];
+  }
+
+  get userCaptcha() {
+    return this.formPromo.controls['userCaptcha'];
+  }
+
+  generateUuid() {
+    return uuidv4();
   }
 
   getSegments() {
@@ -114,10 +143,8 @@ export class AppComponent implements OnInit, OnDestroy {
       return false;
     }
 
-    if (pass.match(regex2)) {
-      return true
-    }
-    return false;
+    return !!pass.match(regex2);
+
   }
 
   checkNumbers() {
@@ -133,8 +160,8 @@ export class AppComponent implements OnInit, OnDestroy {
       port: env.mqtt.port,
       protocol: (env.mqtt.protocol === 'wss') ? 'wss' : 'ws',
       path: env.mqtt.directory,
-      username: 'needtest',
-      password: 'mequy46y'
+      username: 'iris@open.kase.kz',
+      password: 'free',
     }
     this.mqttService.disconnect();
     this.mqttService.connect(MQTT_SERVICE_OPTIONS);
@@ -151,21 +178,42 @@ export class AppComponent implements OnInit, OnDestroy {
         // console.log("start send");
         this.loading = false;
 
-        this.appService.sendUserFeedbackRequest(this.userEmail.value, this.userPhone.value, this.userFio.value);
+        let fio = this.userFio.value.trim().replace(/\s+/g, ' ').split(' ');
+        this.appService.sendUserRegRequest(
+          this.userEmail.value,
+          this.userLogin.value,
+          fio[0],
+          fio[1],
+          fio[2],
+          this.userPhone.value,
+          this.userPassword.value,
+          this.userCaptcha.value,
+          this.guid
+        );
 
-        this.feedbackSubscription = this.appService.getUserFeedbackRequest()
-          .subscribe((feedbackReply: IRIS.UserFeedbackReply) => {
-            if (feedbackReply.ok) {
+        this.regSubscription = this.appService.getInfoRegRequest()
+          .subscribe((regReply: IRIS.OpenInfoApiReply) => {
+            if (regReply.userRegReply?.ok) {
+              console.log('ok');
               this.loading = false;
-              // console.log('ok');
-            } else if (!feedbackReply.ok) {
+            } else if (!regReply.userRegReply?.ok) {
+              console.log('not ok');
               this.loading = false;
-              // console.log('not ok');
+              this.guid = this.generateUuid();
+              if (regReply.userRegReply?.messages) {
+                regReply.userRegReply?.messages.forEach(item => {
+                  this.errorRegText.push(item.id + ': ' + item.message);
+                })
+              }
             }
           })
       }
     })
-    // }
+  }
+
+  public getCaptchaLink() {
+    return env.mqtt.server.toString() === '192.168.211.181'
+      ? 'http://192.168.211.181:8080/iris-api-ee/rest/captcha/' : 'https://irisapi.kase.kz/iris-api-ee/rest/captcha/'
   }
 
   @HostListener('window:resize', ['$event'])

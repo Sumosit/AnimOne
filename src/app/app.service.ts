@@ -40,6 +40,48 @@ export class AppService {
     );
   }
 
+  sendUserRegRequest(email: string,
+                     username: string,
+                     lastname: string,
+                     firstname: string,
+                     middlename: string,
+                     tel: string,
+                     password: string,
+                     captcha: string,
+                     guid: string) {
+    let serial = 1;
+    const USERINFO = IRIS.UserRegRequest.create({
+      user: {
+        email: email,
+        lastname: lastname,
+        firstname: firstname,
+        middlename: middlename,
+        userName: username,
+        tel: tel,
+        password: password,
+      },
+      reCaptcha: captcha,
+      guid: guid,
+      lang: Language.RU
+    });
+    console.log(USERINFO);
+    const REQUEST = IRIS.OpenInfoApiRequest.create({
+      serialNum: serial,
+      userRegRequest: USERINFO,
+    })
+    //
+    const buffer = IRIS.OpenInfoApiRequest.encode(REQUEST).finish();
+    this.mqttService.publish('jms/queue/open/iris/Info', Buffer.from(buffer)).subscribe(() => {
+    });
+  }
+
+  getInfoRegRequest(): Observable<IRIS.OpenInfoApiReply> {
+    return this.mqttService.observe('jms/topic/open/iris/Info/client').pipe(
+      map(buffer => IRIS.OpenInfoApiReply.decode(buffer.payload)),
+    );
+  }
+
+
   scrollTo(value: any) {
     this.menu_show = false
     let el = document.getElementById(value);
