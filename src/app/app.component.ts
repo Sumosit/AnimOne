@@ -46,7 +46,7 @@ export class AppComponent implements OnInit, OnDestroy {
         // Validators.minLength(6), Validators.maxLength(50),
         Validators.pattern('^[a-zA-Z0-9]+$')]],
       "userPasswordConfirm": ["", [Validators.required]],
-      "userCaptcha": ["", [Validators.required, Validators.minLength(1)]],
+      "userCaptcha": ["", [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
 
     }, {validators: this.checkPasswords});
   }

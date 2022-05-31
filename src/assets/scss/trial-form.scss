@@ -68,6 +68,8 @@
       box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.15);
       backdrop-filter: blur(15px);
       border-radius: 8px;
+      display: flex;
+      flex-direction: column;
       @media screen and (max-width: 960px) {
         display: flex;
         flex-direction: column;
@@ -365,6 +367,7 @@
           margin-top: 12px;
           display: flex;
           flex-direction: column;
+          text-align: left;
 
           &:nth-child(1) {
             margin-top: 0;
