@@ -616,7 +616,7 @@
                 fill="white"/>
             </svg>
           </div>
-          <ng-container *ngIf="!userPassword.valid">
+          <ng-container *ngIf="!userPassword.valid && userPassword.value">
             <div class="form-segments"
                  [ngClass]="{
             'form-segments-filled-0': getSegments() === 0,
