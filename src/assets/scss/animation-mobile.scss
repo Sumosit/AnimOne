@@ -78,6 +78,14 @@
           margin-left: initial;
         }
       }
+
+      &:nth-child(1) > div {
+        margin-left: 0;
+        span {
+          padding-left: 0;
+        }
+      }
+
       span {
         width: 100%;
         text-align: left;

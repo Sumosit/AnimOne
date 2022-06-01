@@ -43,8 +43,8 @@ export class AppComponent implements OnInit, OnDestroy {
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", Validators.required],
       "userPassword": ["", [Validators.required,
-        // Validators.minLength(6), Validators.maxLength(50),
-        Validators.pattern('^[a-zA-Z0-9]+$')]],
+        Validators.minLength(6), Validators.maxLength(50),
+        Validators.pattern('^[a-zA-Z0-9]+$'), this.checkPasswordUppercase, this.checkEnglish, this.checkNumbers]],
       "userPasswordConfirm": ["", [Validators.required]],
       "userCaptcha": ["", [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
 
@@ -71,12 +71,49 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  checkPasswordUppercase: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+    let regex = '[A-Z]';
+    if (group.value.search(regex) != -1) {
+      return null;
+    }
+    return {'uppercase': true};
+  }
+
+  checkEnglish: ValidatorFn = (group: AbstractControl): ValidationErrors | null => { // тут походу костыль
+    let regex2 = '^[a-zA-Z0-9]+$';
+    let pass = group.value;
+    let j = 0;
+    for (let i = 0; i < pass.length; i++) {
+      if (0 < Number.parseInt(pass[i]) && Number.parseInt(pass[i]) < 9) {
+        j++;
+      }
+    }
+    if (j === pass.length) {
+      return {'english': true};
+    }
+    if (pass.match(regex2)) {
+      return null;
+    } else {
+      return {'english': true};
+    }
+  }
+
+  checkNumbers: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+    let regex = '[0-9]';
+    if (group.value.search(regex) != -1) {
+      return null;
+    }
+    return {'number': true};
+  }
+
+
   ngOnInit() {
     this.guid = this.generateUuid();
   }
 
   getU() {
-    console.log(this.formPromo.controls['userPassword']);
+    console.log(this.formPromo);
+    // console.log(this.userPassword.errors?.['minlength']);
   }
 
   get userFio() {
@@ -113,43 +150,19 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getSegments() {
     let segments = 0;
-    if (this.checkPasswordUppercase()) {
+    if (!this.userPassword.errors?.['uppercase']) {
       segments++;
     }
-    if (this.checkEnglish()) {
+    if (!this.userPassword.errors?.['english']) {
       segments++;
     }
-    if (this.checkNumbers()) {
+    if (!this.userPassword.errors?.['number']) {
+      segments++;
+    }
+    if (!this.userPassword.errors?.['minlength']) {
       segments++;
     }
     return segments;
-  }
-
-  checkPasswordUppercase() {
-    let regex = '[\\A-Z]';
-    return this.userPassword.value.search(regex) != -1;
-  }
-
-  checkEnglish() { // тут походу костыль
-    let regex2 = '^[a-zA-Z0-9]+$';
-    let pass = this.userPassword.value;
-    let j = 0;
-    for (let i = 0; i < pass.length; i++) {
-      if (0 < Number.parseInt(pass[i]) && Number.parseInt(pass[i]) < 9) {
-        j++;
-      }
-    }
-    if (j === pass.length) {
-      return false;
-    }
-
-    return !!pass.match(regex2);
-
-  }
-
-  checkNumbers() {
-    let regex = '[0-9]+';
-    return this.userPassword.value.search(regex) != -1;
   }
 
   promoFormSubmit() {

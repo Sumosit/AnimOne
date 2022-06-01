@@ -447,15 +447,15 @@
 </div>
 <div class="trial-form-field" #trial>
   <div class="middle-content">
-    <div class="rates-field" id="rates">
+    <div class="rates-field">
       <span class="rf-title">Тарифы</span>
 
     </div>
   </div>
   <div class="middle-content" style="display: flex; justify-content: center">
     <div class="trial-form">
-      <div class="tf-left" id="tf-contacts" #tfContacts>
-        <div class="rates">
+      <div class="tf-left">
+        <div class="rates" id="rates">
           <div class="r-base">
             <span class="rb-text rates-anim">Базовый модуль</span>
             <span class="rb-text rates-anim">Справочник по эмитентам</span>
@@ -564,8 +564,8 @@
       </div>
       <form class="tf-right" id="trial"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
-        <span class="rates-anim tfr-text">Пробный период</span>
-        <span class="rates-anim tfr-text">Оставьте заявку и&nbsp;воспользуйтесь бесплатным тестовым доступом</span>
+        <span class="rates-anim tfr-text">Пробный период на 7 дней</span>
+        <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
         <div class="tfr-inputs">
           <div class="tft-input-field">
             <label *ngIf="userFio.value" for="fio">ФИО</label>
@@ -604,8 +604,7 @@
                    }"
                    [type]="showPassword ? '' : 'password'"
                    [ngStyle]="{
-                 border: (!checkPasswordUppercase() || !checkEnglish() || !checkNumbers()
-                 || !userPassword.valid || formPromo.hasError('mismatch')) && userPassword.value.length > 0 ? '1px solid #FF2E24' : ''
+                 border: (!userPassword.valid || formPromo.hasError('mismatch')) && userPassword.errors?.['minlength'] ? '1px solid #FF2E24' : ''
                  }">
             <svg (click)="showPassword = !showPassword" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
@@ -617,24 +616,26 @@
                 fill="white"/>
             </svg>
           </div>
-          <ng-container *ngIf="userPassword.value">
+          <ng-container *ngIf="!userPassword.valid">
             <div class="form-segments"
                  [ngClass]="{
             'form-segments-filled-0': getSegments() === 0,
             'form-segments-filled-1': getSegments() === 1,
-            'form-segments-filled-2': getSegments() === 2,
-            'form-segments-filled-3': getSegments() === 3
+            'form-segments-filled-2': getSegments() === 2 || getSegments() === 3,
+            'form-segments-filled-3': getSegments() === 4
             }">
               <div class="form-segment"></div>
               <div class="form-segment"></div>
               <div class="form-segment"></div>
             </div>
-            <div class="form-password-errors" *ngIf="getSegments() > 0 && getSegments() < 3">
-              <div *ngIf="userPassword.value.length < 6">&bull;&nbsp;&nbsp;не менее 6 символов</div>
-              <div *ngIf="!checkPasswordUppercase()">&bull;&nbsp;&nbsp;отсутствуют буквы верхнего регистра: A-Z</div>
-              <div *ngIf="!checkNumbers()">&bull;&nbsp;&nbsp;отсутствуют цифры 0-9</div>
-              <div *ngIf="!checkEnglish()">&bull;&nbsp;&nbsp;только буквы латинского алфавита</div>
+            <div class="form-password-errors">
+              <div *ngIf="userPassword.errors?.['minlength']">&bull;&nbsp;&nbsp;не менее 6 символов</div>
+              <div *ngIf="userPassword.errors?.['uppercase']">&bull;&nbsp;&nbsp;отсутствуют буквы верхнего регистра: A-Z</div>
+              <div *ngIf="userPassword.errors?.['number']">&bull;&nbsp;&nbsp;отсутствуют цифры 0-9</div>
+              <div *ngIf="userPassword.errors?.['english']">&bull;&nbsp;&nbsp;только буквы латинского алфавита</div>
             </div>
+          </ng-container>
+          <ng-container *ngIf="userPassword.value.length > 0">
             <div class="tft-input-field input-img-right">
               <div class="tft-input">
                 <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>
@@ -647,7 +648,7 @@
                    }"
                      [type]="showPasswordConfirm ? '' : 'password'"
                      [ngStyle]="{
-                 border: !checkPasswordUppercase() || !checkEnglish() || !checkNumbers() || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
+                 border: !userPassword.valid || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
                  }">
               <svg (click)="showPasswordConfirm = !showPasswordConfirm" width="24" height="24" viewBox="0 0 24 24"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -660,17 +661,17 @@
               </svg>
             </div>
           </ng-container>
-          <ng-container *ngIf="!formPromo.hasError('mismatch') && checkPasswordUppercase() && checkEnglish() && checkNumbers()">
-          <div class="tft-input-field">
-            <img [src]="getCaptchaLink() + guid" alt="">
-          </div>
-          <div class="tft-input-field">
-            <label *ngIf="userCaptcha.value" for="phone">Captcha</label>
-            <input formControlName="userCaptcha" placeholder="Captcha" id="captcha" name="tel"
-                   [ngStyle]="{
+          <ng-container *ngIf="!formPromo.hasError('mismatch') && userPassword.valid">
+            <div class="tft-input-field">
+              <img [src]="getCaptchaLink() + guid" alt="">
+            </div>
+            <div class="tft-input-field">
+              <label *ngIf="userCaptcha.value" for="phone">Captcha</label>
+              <input formControlName="userCaptcha" placeholder="Captcha" id="captcha" name="tel"
+                     [ngStyle]="{
                  border: userCaptcha.invalid && userCaptcha.touched ? '1px solid #FF2E24' : ''
                  }">
-          </div>
+            </div>
           </ng-container>
         </div>
         <div class="tfr-line"></div>
@@ -693,7 +694,7 @@
     <!--    <img class="tfr-rec" src="assets/images/Rectangle%20656.svg">-->
     <!--    <img class="tfr-rec_1" src="assets/images/Rectangle%20655.svg">-->
   </div>
-  <div class="middle-content">
+  <div class="middle-content" id="tf-contacts" #tfContacts>
     <div class="copyright">
       <div class="copyright-left">
         <span class="rates-anim">IRIS Finance</span>
@@ -706,11 +707,3 @@
     </div>
   </div>
 </div>
-
-<!--<div style="height: 1000px; background: #3f0707"></div>-->
-<!--<div id="container">-->
-<!--  <div id="left_panel"> left content! </div>-->
-<!--  <div id="right_panel">-->
-<!--    <div id="drag"></div> right content!-->
-<!--  </div>-->
-<!--</div>-->
