@@ -14,7 +14,7 @@
     </div>
     <div class="header-right">
       <a class="hr-button" href="https://irisapi.kase.kz/webterminal/auth" target="_blank">Войти</a>
-      <a class="button-primary" (click)="appService.scrollTo('trial')">Попробовать бесплатно</a>
+      <a class="button-primary" (click)="appService.scrollTo('form')">Попробовать бесплатно</a>
     </div>
   </div>
   <div class="header-big">
@@ -24,7 +24,7 @@
         <span>Информационный терминал KASE для работы с&nbsp;финансовой информацией.</span>
         <span>Принимайте взвешенные решения с&nbsp;помощью уникальных торговых данных, аналитики и&nbsp;новостей IRIS Finance.</span>
       </div>
-      <div class="button"><a (click)="appService.scrollTo('trial')">Попробовать бесплатно</a></div>
+      <div class="button"><a (click)="appService.scrollTo('form')">Попробовать бесплатно</a></div>
     </div>
     <div class="hb-right">
       <img id="hb_right-img" src="assets/images/promomain%201.svg" alt="">
@@ -445,14 +445,14 @@
     </div>
   </div>
 </div>
-<div class="trial-form-field" >
+<div class="trial-form-field" #trial id="trial">
   <div class="middle-content">
     <div class="rates-field">
       <span class="rf-title">Тарифы</span>
 
     </div>
   </div>
-  <div class="middle-content" #trial style="display: flex; justify-content: center">
+  <div class="middle-content"  style="display: flex; justify-content: center">
     <div class="trial-form">
       <div class="tf-left">
         <div class="rates" id="rates">
@@ -562,7 +562,7 @@
         </svg>
 
       </div>
-      <form class="tf-right" id="trial"
+      <form class="tf-right" id="form"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
         <span class="rates-anim tfr-text">Пробный период на 7 дней</span>
         <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
