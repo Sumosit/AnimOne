@@ -88,7 +88,7 @@ export class AppService {
     setTimeout(() => {
       console.log(el)
       // @ts-ignore
-      el.scrollIntoView({block: "center"})
+      el.scrollIntoView({block: "nearest"})
     }, 0)
   }
   scrollToBehavior(value: any) {

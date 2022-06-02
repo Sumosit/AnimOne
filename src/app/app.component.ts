@@ -47,7 +47,6 @@ export class AppComponent implements OnInit, OnDestroy {
         Validators.pattern('^[a-zA-Z0-9]+$'), this.checkPasswordUppercase, this.checkEnglish, this.checkNumbers]],
       "userPasswordConfirm": ["", [Validators.required]],
       "userCaptcha": ["", [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
-
     }, {validators: this.checkPasswords});
   }
 
@@ -105,7 +104,6 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     return {'number': true};
   }
-
 
   ngOnInit() {
     this.guid = this.generateUuid();

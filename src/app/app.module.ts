@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {MobileMenuComponent} from './mobile-menu/mobile-menu.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {IMqttServiceOptions, MqttModule} from "ngx-mqtt";
+import {AppRoutingModule} from "./app-routing.module";
 
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {}
 
@@ -16,6 +17,7 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {}
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
   providers: [],

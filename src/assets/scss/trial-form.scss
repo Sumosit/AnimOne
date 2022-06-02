@@ -61,7 +61,7 @@
     .tf-left {
       z-index: 1002;
       width: 532px;
-      padding: 62px 32px;
+      padding: 48px 32px;
       //flex-grow: 1;
       background: rgba(255, 255, 255, 0.05);
       border: 3px solid rgba(255, 255, 255, 0.05);
@@ -95,7 +95,6 @@
         //flex-direction: row;
         //justify-content: center;
         //gap: 40px;
-        border-radius: 12px;
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
