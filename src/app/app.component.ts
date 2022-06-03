@@ -22,7 +22,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public formPromo: FormGroup;
   public segments: number = 0;
   public guid: string = ''
-  public errorRegText: any = [];
+  public regErrorText: any = [];
+  public regSuccess: boolean = false;
 
   public loading: boolean = false;
   public showPassword: boolean = false;
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (f_i_o[0] && f_i_o[1] && f_i_o[2] && !f_i_o[3]) {
       return null;
     } else {
-      return {notSame: true};
+      return {'notSame': true};
     }
   }
 
@@ -187,7 +188,7 @@ export class AppComponent implements OnInit, OnDestroy {
       }
       if (state === 2) {
         // console.log("start send");
-        this.loading = false;
+        this.loading = true;
 
         let fio = this.userFio.value.trim().replace(/\s+/g, ' ').split(' ');
         this.appService.sendUserRegRequest(
@@ -206,6 +207,7 @@ export class AppComponent implements OnInit, OnDestroy {
           .subscribe((regReply: IRIS.OpenInfoApiReply) => {
             if (regReply.userRegReply?.ok) {
               console.log('ok');
+              this.regSuccess = true;
               this.loading = false;
             } else if (!regReply.userRegReply?.ok) {
               console.log('not ok');
@@ -213,7 +215,7 @@ export class AppComponent implements OnInit, OnDestroy {
               this.guid = this.generateUuid();
               if (regReply.userRegReply?.messages) {
                 regReply.userRegReply?.messages.forEach(item => {
-                  this.errorRegText.push(item.id + ': ' + item.message);
+                  this.regErrorText.push(item.id + ': ' + item.message);
                 })
               }
             }

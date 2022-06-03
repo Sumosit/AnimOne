@@ -312,7 +312,7 @@
     }
 
     .tf-right {
-      z-index: 10021;
+      z-index: 1002;
       width: 440px;
       height: auto;
       padding: 40px;
@@ -494,6 +494,72 @@
         }
       }
     }
+
+    .tf-right-success {
+      z-index: 1002;
+      align-self: center;
+      width: 440px;
+      height: fit-content;
+      padding: 40px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 3px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      .tfrc-header {
+        display: flex;
+        flex-direction: column;
+        span {
+          &:nth-child(1) {
+            font-weight: 800;
+            font-size: 28px;
+            line-height: 40px;
+          }
+
+          &:nth-child(2) {
+            margin-top: 20px;
+          }
+
+          &:nth-child(3), &:nth-child(4) {
+            margin-top: 12px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+          }
+        }
+      }
+      .tfrc-question {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        span {
+          &:nth-child(1) {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #FFFFFF;
+          }
+          &:nth-child(2) {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            text-decoration-line: underline;
+            color: #13AB53;
+          }
+        }
+      }
+      button {
+        margin-top: 32px;
+        padding: 8px 40px;
+        border-radius: 4px;
+        background: #13AB53;
+        color: #FFFFFF;
+        border: none;
+      }
+    }
+
   }
 
   .tfr-rec {

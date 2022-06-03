@@ -562,7 +562,21 @@
         </svg>
 
       </div>
+      <div *ngIf="regSuccess" class="tf-right-success">
+        <div class="tfrc-header">
+          <span>Спасибо,<br>что вы&nbsp;с&nbsp;нами!</span>
+          <span>Мы выслали письмо подтверждения на&nbsp;вашу почту: name@gmail.com</span>
+          <span>Для завершения регистрации просим перейти по&nbsp;кнопке. После подтверждения вы&nbsp;сразу сможете войти в&nbsp;терминал.</span>
+          <span>Продуктивной вам&nbsp;работы!</span>
+        </div>
+        <button>Подтвердить e-mail</button>
+        <div class="tfrc-question">
+          <span>Уже являетесь нашим пользователем?</span>
+          <span>Войти в IRIS Finance</span>
+        </div>
+      </div>
       <form class="tf-right" id="form"
+            *ngIf="!regSuccess"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
         <span class="rates-anim tfr-text">Пробный период на 7 дней</span>
         <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
@@ -679,8 +693,8 @@
           Нажимая&nbsp;на кнопку&nbsp;вы автоматически принимаете условия<span>&nbsp;Пользовательского соглашения
           и&nbsp;конфиденциальности</span>
         </div>
-        <button class="{{formPromo.valid ? '' : 'button-disabled'}} tfr-button" [disabled]="!formPromo.valid">
-          Получить доступ
+        <button class="{{formPromo.valid ? '' : 'button-disabled'}} tfr-button" [disabled]="!formPromo.valid && loading">
+          {{loading ? 'загрузка...' : 'Получить доступ'}}
         </button>
         <div class="tfr-question">
           <span>Уже являетесь нашим пользователем?</span>
