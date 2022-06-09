@@ -569,10 +569,9 @@
           <span>Для завершения регистрации просим перейти по&nbsp;кнопке. После подтверждения вы&nbsp;сразу сможете войти в&nbsp;терминал.</span>
           <span>Продуктивной вам&nbsp;работы!</span>
         </div>
-        <button>Подтвердить e-mail</button>
         <div class="tfrc-question">
           <span>Уже являетесь нашим пользователем?</span>
-          <span>Войти в IRIS Finance</span>
+          <a href="https://irisapi.kase.kz/webterminal/auth" target="_blank">Войти в IRIS Finance</a>
         </div>
       </div>
       <form class="tf-right" id="form"
@@ -582,25 +581,11 @@
         <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
         <div class="tfr-inputs">
           <div class="tft-input-field">
-            <label *ngIf="userFio.value" for="fio">ФИО</label>
-            <input formControlName="userFio" placeholder="ФИО" id="fio" name="fio"
+            <label *ngIf="userFio.value" for="fio">Имя</label>
+            <input formControlName="userFio" placeholder="Имя" id="fio" name="fio" maxlength="24"
                    [ngStyle]="{
                    border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
                    }">
-          </div>
-          <div class="tft-input-field">
-            <label *ngIf="userLogin.value" for="login">Логин</label>
-            <input formControlName="userLogin" placeholder="Логин" id="login" name="login"
-                   [ngStyle]="{
-                 border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
-                 }">
-          </div>
-          <div class="tft-input-field">
-            <label *ngIf="userEmail.value" for="email">E-mail</label>
-            <input formControlName="userEmail" placeholder="E-mail" id="email" name="email"
-                   [ngStyle]="{
-                 border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
-                 }">
           </div>
           <div class="tft-input-field">
             <label *ngIf="userPhone.value" for="phone">Телефон</label>
@@ -609,10 +594,24 @@
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
+          <div class="tft-input-field">
+            <label *ngIf="userEmail.value" for="email">E-mail</label>
+            <input formControlName="userEmail" placeholder="E-mail" id="email" name="email" maxlength="100"
+                   [ngStyle]="{
+                 border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
+                 }">
+          </div>
+          <div class="tft-input-field">
+            <label *ngIf="userLogin.value" for="login">Логин</label>
+            <input formControlName="userLogin" placeholder="Логин" id="login" name="login" maxlength="24"
+                   [ngStyle]="{
+                 border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
+                 }">
+          </div>
           <div class="tft-input-field input-img-right">
             <label *ngIf="userPassword.value" for="password">Пароль</label>
             <input formControlName="userPassword" placeholder="Пароль" id="password" name="password"
-                   maxlength="51"
+                   maxlength="20"
                    [ngClass]="{
                    'input-password': !showPassword && userPassword.value
                    }"

@@ -39,7 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.height = this.appService.getElementHeight('right_panel-dark-img')
 
     this.formPromo = formBuilder.group({
-      "userFio": ["", [Validators.required, this.checkFio]],
+      "userFio": ["", [Validators.required]],
       "userLogin": ["", [Validators.required]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", Validators.required],
@@ -194,9 +194,9 @@ export class AppComponent implements OnInit, OnDestroy {
         this.appService.sendUserRegRequest(
           this.userEmail.value,
           this.userLogin.value,
-          fio[0],
-          fio[1],
-          fio[2],
+          '',
+          this.userFio.value,
+          '',
           this.userPhone.value,
           this.userPassword.value,
           this.userCaptcha.value,
