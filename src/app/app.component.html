@@ -581,35 +581,35 @@
         <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
         <div class="tfr-inputs">
           <div class="tft-input-field">
-            <label *ngIf="userFio.value" for="fio">Имя</label>
+<!--            <label *ngIf="userFio.value" for="fio">Имя</label>-->
             <input formControlName="userFio" placeholder="Имя" id="fio" name="fio" maxlength="24"
                    [ngStyle]="{
                    border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
                    }">
           </div>
           <div class="tft-input-field">
-            <label *ngIf="userPhone.value" for="phone">Телефон</label>
+<!--            <label *ngIf="userPhone.value" for="phone">Телефон</label>-->
             <input formControlName="userPhone" placeholder="Телефон" id="phone" name="tel"
                    [ngStyle]="{
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div class="tft-input-field">
-            <label *ngIf="userEmail.value" for="email">E-mail</label>
+<!--            <label *ngIf="userEmail.value" for="email">E-mail</label>-->
             <input formControlName="userEmail" placeholder="E-mail" id="email" name="email" maxlength="100"
                    [ngStyle]="{
                  border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div class="tft-input-field">
-            <label *ngIf="userLogin.value" for="login">Логин</label>
+<!--            <label *ngIf="userLogin.value" for="login">Логин</label>-->
             <input formControlName="userLogin" placeholder="Логин" id="login" name="login" maxlength="24"
                    [ngStyle]="{
                  border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div class="tft-input-field input-img-right">
-            <label *ngIf="userPassword.value" for="password">Пароль</label>
+<!--            <label *ngIf="userPassword.value" for="password">Пароль</label>-->
             <input formControlName="userPassword" placeholder="Пароль" id="password" name="password"
                    maxlength="20"
                    [ngClass]="{
@@ -653,9 +653,9 @@
           </ng-container>
           <ng-container *ngIf="userPassword.value.length > 0">
             <div class="tft-input-field input-img-right">
-              <div class="tft-input">
-                <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>
-              </div>
+<!--              <div class="tft-input">-->
+<!--                <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>-->
+<!--              </div>-->
               <input formControlName="userPasswordConfirm" placeholder="Подтверждение пароля" id="userPasswordConfirm"
                      name="userPasswordConfirm"
                      maxlength="51"
