@@ -629,7 +629,7 @@
                 fill="white"/>
             </svg>
           </div>
-          <ng-container *ngIf="!userPassword.valid && userPassword.value">
+          <ng-container *ngIf="userPassword.value">
             <div class="form-segments"
                  [ngClass]="{
             'form-segments-filled-0': getSegments() === 0,
@@ -641,7 +641,10 @@
               <div class="form-segment"></div>
               <div class="form-segment"></div>
             </div>
-            <div class="form-password-errors">
+            <span class="form-segment-text form-segments-filled-1" *ngIf="getSegments() === 0 || getSegments() === 1">Слабый</span>
+            <span class="form-segment-text form-segments-filled-2" *ngIf="getSegments() === 2 || getSegments() === 3">Средний</span>
+            <span class="form-segment-text form-segments-filled-3" *ngIf="getSegments() === 4">Сильный</span>
+            <div class="form-password-errors" [ngStyle]="{marginTop: userPassword.valid ? '12px' : '4px'}">
               <div *ngIf="userPassword.errors?.['minlength']">&bull;&nbsp;&nbsp;не менее 6 символов</div>
               <div *ngIf="userPassword.errors?.['uppercase']">&bull;&nbsp;&nbsp;отсутствуют буквы верхнего регистра: A-Z</div>
               <div *ngIf="userPassword.errors?.['number']">&bull;&nbsp;&nbsp;отсутствуют цифры 0-9</div>

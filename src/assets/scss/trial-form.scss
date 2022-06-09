@@ -619,6 +619,7 @@
 }
 
 .form-segments-filled-1 {
+  color: #FF524A;
   .form-segment {
     background: #B4B5BD;
     &:nth-child(1) {
@@ -628,6 +629,7 @@
 }
 
 .form-segments-filled-2 {
+  color: #E66407;
   .form-segment {
     background: #B4B5BD;
     &:nth-child(1), &:nth-child(2) {
@@ -637,6 +639,7 @@
 }
 
 .form-segments-filled-3 {
+  color: #13AB53;
   .form-segment {
     background: #13AB53;
   }
@@ -659,9 +662,17 @@
   }
 }
 
+.form-segment-text {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  text-align: right;
+}
+
 .form-password-errors {
   text-align: left;
-  margin-top: 31px;
+  margin-top: 4px;
   padding-left: 12px;
   font-weight: 400;
   font-size: 12px;
