@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.formPromo = formBuilder.group({
       "userFio": ["", [Validators.required]],
-      "userLogin": ["", [Validators.required]],
+      "userLogin": ["", [Validators.required, this.checkPasswordUppercase, this.checkEnglish]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", Validators.required],
       "userPassword": ["", [Validators.required,
@@ -213,6 +213,7 @@ export class AppComponent implements OnInit, OnDestroy {
               console.log('not ok');
               this.loading = false;
               this.guid = this.generateUuid();
+              console.log(regReply.userRegReply);
               if (regReply.userRegReply?.messages) {
                 regReply.userRegReply?.messages.forEach(item => {
                   this.regErrorText.push(item.id + ': ' + item.message);
