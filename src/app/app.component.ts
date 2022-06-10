@@ -39,8 +39,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.height = this.appService.getElementHeight('right_panel-dark-img')
 
     this.formPromo = formBuilder.group({
-      "userFio": ["", [Validators.required]],
-      "userLogin": ["", [Validators.required, this.checkPasswordUppercase, this.checkEnglish]],
+      "userFio": ["", [Validators.required, this.checkSpaces]],
+      "userLogin": ["", [Validators.required, this.checkPasswordUppercase, this.checkEnglish, this.checkNumbers]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", Validators.required],
       "userPassword": ["", [Validators.required,
@@ -69,6 +69,14 @@ export class AppComponent implements OnInit, OnDestroy {
     } else {
       return {'notSame': true};
     }
+  }
+
+  checkSpaces: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+    let regex = ' ';
+    if (group.value.search(regex) != -1) {
+      return {'spaces': true};
+    }
+    return null;
   }
 
   checkPasswordUppercase: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
