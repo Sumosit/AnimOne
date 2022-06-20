@@ -82,9 +82,9 @@ export class AppService {
   }
 
 
-  scrollTo(value: any) {
+  scrollTo(id: any) {
     this.menu_show = false
-    let el = document.getElementById(value);
+    let el = document.getElementById(id);
     setTimeout(() => {
       console.log(el)
       // @ts-ignore

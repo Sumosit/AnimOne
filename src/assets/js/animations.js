@@ -225,7 +225,7 @@ setTimeout(() => {
 
   if (animItems.length > 0) {
     // window.scrollTo({top: 3000, behavior: 'auto'});
-    window.scrollTo({top: 0, behavior: 'auto'});
+    // window.scrollTo({top: 0, behavior: 'auto'});
     first();
     window.addEventListener('scroll', animOnScroll);
 
@@ -263,7 +263,7 @@ setTimeout(() => {
 
           if (scrollY > 1200 && scrollY <= 1600) {
             // if (!animField.classList.contains('first')) {
-            console.log(scrollY)
+            // console.log(scrollY)
             animField.classList.add('first');
             animField.classList.remove('second');
             animField.classList.remove('third');
@@ -705,13 +705,20 @@ setTimeout(() => {
             if (scroll === 0) {
               document.body.style.overflow = 'hidden';
               scroll = 1;
+              console.log(changeTheme.offsetTop)
               window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              setTimeout(() => {
+                window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              }, 500)
               setTimeout(() => {
                 document.body.style.overflow = 'auto';
               }, 1000)
             }
             // }, 500);
           } else {
+          }
+          if (scrollY === 3800) {
+
           }
           if (scrollY < 3800) {
             withYou.classList.remove('with-you-go_up')
