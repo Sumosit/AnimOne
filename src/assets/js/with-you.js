@@ -26,6 +26,5 @@ setTimeout(() => {
     leftAnim.style.top = leftAnim_top + 'px';
     rightAnim.style.top = rightAnim_top + 'px';
     // animation.style.marginTop = (leftAnim_top - 200) + 'px';
-    animation.style.marginTop = '50px';
   }
 }, 500);

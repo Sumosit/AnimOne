@@ -46,7 +46,7 @@ setTimeout(() => {
     '<br> на изменения рынков – наблюдайте' +
     '<br> за биржевым стаканом и отслеживайте настроения инвесторов</span>',
 
-    '<span>Актуальные новости</span>' +
+    '<span>Актуальные<br>новости</span>' +
     '<span>Следите за событиями на рынке' +
     '<br>с помощью нашей новостной ленты' +
     '<br>KASE и добавляйте наиболее интересные' +
@@ -226,7 +226,7 @@ setTimeout(() => {
 
   if (animItems.length > 0) {
     // window.scrollTo({top: 3000, behavior: 'auto'});
-    window.scrollTo({top: 0, behavior: 'auto'});
+    // window.scrollTo({top: 0, behavior: 'auto'});
     first();
     window.addEventListener('scroll', animOnScroll);
 
@@ -703,20 +703,22 @@ setTimeout(() => {
 
           if (scrollY > 3400 && scrollY < 3800) {
             // setTimeout(() => {
+            rInfoText4.style.top = '28%';
             if (scroll === 0) {
-              document.body.style.overflow = 'hidden';
+
+              // document.body.style.overflow = 'hidden';
               scroll = 1;
               // console.log(changeTheme.offsetTop)
-              window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              // window.scrollTo({top: scrollY + 400, behavior: 'smooth'});
+              // // // setTimeout(() => {
+              // // //   window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              // // // }, 500)
+              // // setTimeout(() => {
+              // //   window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              // // }, 800)
               // setTimeout(() => {
-              //   window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              //   document.body.style.overflow = 'auto';
               // }, 500)
-              setTimeout(() => {
-                window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
-              }, 800)
-              setTimeout(() => {
-                document.body.style.overflow = 'auto';
-              }, 1000)
             }
             // }, 500);
           } else {
@@ -724,13 +726,13 @@ setTimeout(() => {
           if (scrollY === 3800) {
 
           }
-          if (scrollY < 3800) {
+          if (scrollY < 4200) {
             withYou.classList.remove('with-you-go_up')
             animField.classList.add('anim-you-go_up')
             rInfo.classList.add('anim-you-go_up')
           }
 
-          if (scrollY >= 3800) {
+          if (scrollY >= 4200) {
             withYou.classList.add('with-you-go_up')
             animField.classList.remove('anim-you-go_up')
             rInfo.classList.remove('anim-you-go_up')

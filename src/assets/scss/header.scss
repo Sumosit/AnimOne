@@ -1,3 +1,12 @@
+.header-bg {
+  z-index: 1001;
+  position: absolute;
+  width: 100%;
+  height: 691px;
+  background: url("../../assets/images/unsplash_fiXLQXAhCfk.svg") no-repeat top center;
+  background-size: cover;
+}
+
 .header-field {
   //position: relative;
   height: fit-content;
@@ -8,8 +17,6 @@
   padding-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
-  background: url("../../assets/images/unsplash_fiXLQXAhCfk.svg") no-repeat top center;
-  border-radius: 0px 0px 100px 100px;
 
   @media screen and (max-width: 768px) {
     max-height: initial;
@@ -248,6 +255,8 @@
       //right: 0;
       //top: 88px;
       //width: 45%;
+      z-index: 1001;
+      position: inherit;
       padding-top: 60px;
       height: fit-content;
       flex: auto;
@@ -268,13 +277,13 @@
     }
   }
 
-  .header-bg {
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
+  //.header-bg {
+  //  z-index: 1000;
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //}
 }
 
 @keyframes scaleIn {

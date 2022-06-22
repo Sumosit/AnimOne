@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
     text-align: left;
     @media screen and (max-width: 800px) {
       text-align: center;
@@ -35,6 +34,15 @@
       }
 
       &:nth-child(2) {
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        text-decoration-line: underline;
+      }
+
+      &:nth-child(3) {
+        margin-top: 28px;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
@@ -46,7 +54,7 @@
     margin-left: auto;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     align-items: flex-end;
     text-align: right;
     @media screen and (max-width: 800px) {
@@ -56,15 +64,22 @@
     }
     span {
       &:nth-child(1) {
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 36px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
       }
 
       &:nth-child(2) {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 100%;
+      }
+
+      &:nth-child(3) {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 120%;
+        text-decoration-line: underline;
       }
     }
   }
