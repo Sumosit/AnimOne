@@ -59,6 +59,7 @@
   <div class="animation" id="animation">
     <main class="anim">
       <div class="left" id="leftAnim">
+        <div class="anim-height"></div>
         <div class="anim-field first" id="anim-field">
           <div class="tabs" id="tabs">
             <div class="tab">
@@ -435,32 +436,10 @@
     </div>
   </div>
 </div>
-<div id="changeTheme1" style="transition: opacity 0.3s; display: flex; width: 100%" #changeTheme class="change-theme">
+<div id="changeTheme1" style="transition: opacity 0s; display: flex; width: 100%" #changeTheme class="change-theme">
   <div class="change_theme-text">
     <span>Темная или&nbsp;светлая сторона?</span>
     <span>Никаких ограничений! Выбирайте свою любимую тему</span>
-  </div>
-  <div class="middle-content change-theme-anim">
-    <div>
-      <img id="right_panel-dark-img" src="assets/images/main-dark.svg" alt="">
-      <div id="left_panel">
-        <img id="right_panel-img" src="assets/images/main-light.svg" alt=""
-             [ngStyle]="{'height': height}"
-        >
-        <div id="drag1">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div id="right_panel">
-        <div id="drag">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 <div id="changeTheme" #changeTheme class="change-theme">

@@ -226,7 +226,7 @@ setTimeout(() => {
 
   if (animItems.length > 0) {
     // window.scrollTo({top: 3000, behavior: 'auto'});
-    // window.scrollTo({top: 0, behavior: 'auto'});
+    window.scrollTo({top: 0, behavior: 'auto'});
     first();
     window.addEventListener('scroll', animOnScroll);
 
@@ -708,9 +708,9 @@ setTimeout(() => {
               scroll = 1;
               // console.log(changeTheme.offsetTop)
               window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
-              setTimeout(() => {
-                window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
-              }, 500)
+              // setTimeout(() => {
+              //   window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              // }, 500)
               setTimeout(() => {
                 window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
               }, 800)

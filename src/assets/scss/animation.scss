@@ -145,7 +145,7 @@ html, body, main, .left, .animation {
         .r-info-text {
           opacity: 0;
           position: absolute;
-          top: 25%;
+          top: 34%;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -177,7 +177,11 @@ html, body, main, .left, .animation {
       transition: height 0.5s;
 
       color: rgba(255, 255, 255, 0.9);
-
+      .anim-height {
+        width: 0;
+        height: 0px;
+        max-height: 300px;
+      }
       .anim-field {
         opacity: 0;
         width: fit-content;
