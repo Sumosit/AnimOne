@@ -24,18 +24,18 @@ setTimeout(() => {
     }
 
     if (scrollY > 3300 || scrollY < 1000) {
-      changeTheme1.style.opacity = '0';
       changeThemeText.style.display = 'initial';
       // changeTheme1.style.position = 'relative'
     }
     if (scrollY <= 3500 && scrollY > 0) {
       changeThemeText.style.display = 'none';
-      if (changeTheme1.style.opacity !== 0) {
-        changeTheme1.style.opacity = '1';
-      }
+      changeTheme1.style.display = 'initial';
       changeTheme1.style.display = 'flex';
       changeTheme1.style.position = 'fixed'
       changeTheme1.style.top = animCompBg.getBoundingClientRect().bottom+'px';
+    }else {
+
+      changeTheme1.style.display = 'none';
     }
 
     if (scrollY < 3800 && scrollY > -100) {
