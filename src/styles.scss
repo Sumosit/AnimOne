@@ -1,10 +1,28 @@
 body {
-  background: #F3F6FB;
   color: #1E2230;
 }
 
 html {
-  overflow-y: auto;
+  overflow-y: initial;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 * {

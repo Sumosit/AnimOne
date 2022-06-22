@@ -18,9 +18,9 @@ setTimeout(() => {
     let leftAnim_top = (windowHeight - leftAnim.offsetHeight) / 2.2;
     let rightAnim_top = (windowHeight - rightAnim.offsetHeight) / 2.2;
 
-    console.log(withYou_top);
-    console.log(leftAnim_top);
-    console.log(rightAnim_top);
+    // console.log(withYou_top);
+    // console.log(leftAnim_top);
+    // console.log(rightAnim_top);
 
     withYou.style.top = withYou_top + 'px';
     leftAnim.style.top = leftAnim_top + 'px';

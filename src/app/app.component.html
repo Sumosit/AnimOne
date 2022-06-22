@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="header-right">
-      <a class="hr-button" href="https://irisapi.kase.kz/webterminal/auth" target="_blank">Войти</a>
+      <a class="hr-button" href="https://irisfinance.kase.kz/auth" target="_blank">Войти</a>
       <a class="button-primary" (click)="appService.scrollTo('form')">Попробовать бесплатно</a>
     </div>
   </div>
@@ -31,12 +31,30 @@
     </div>
   </div>
 </div>
-<div class="animation-comp animation-comp-with_you">
-  <div class="with-you" id="with-you" #withYou>
-    <span>Мы всегда с вами</span>
-    <span>Браузерный терминал с обновлением информации в реальном времени и доступный с любого устройства, без привязки к рабочему месту.</span>
+<div class="animation-comp animation-comp-with_you" style="display: flex; justify-content: center">
+  <div class="expand" id="with-you" #withYou style="transition: all 0s; margin-top: -80px;display: flex; flex-direction: column; align-items: center">
+    <div style="display: flex; flex-direction: column">
+      <span style="font-weight: 800;font-size: 52px;line-height: 100%;text-align: center; color: #1E2230;">Мы расширяем ваши возможности</span>
+      <span style="width: 100%;max-width: 912px;margin-top: 16px;font-weight: 400;font-size: 24px;line-height: 140%;text-align: center; color: #1E2230;
+">Браузерный терминал с обновлением информации в реальном времени и доступный с любого устройства, без привязки к рабочему месту</span>
+    </div>
+    <div style="margin-top: 16px;display: flex; gap: 40px">
+      <div style="display: flex; flex-direction: column; align-items: center;width: 389px; height: 224px">
+        <img src="assets/images/Real-time.svg" alt="">
+        <span style="text-align: center">Просмотр торгов<br>в реальном времени</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;width: 389px; height: 224px">
+        <img src="assets/images/App.svg" alt="">
+        <span style="text-align: center">Просмотр торгов<br>в реальном времени</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center;width: 389px; height: 224px">
+        <img src="assets/images/Info.svg" alt="">
+        <span style="text-align: center">Просмотр торгов<br>в реальном времени</span>
+      </div>
+    </div>
   </div>
 </div>
+<div id="animCompBg" style="background: #E9EDF3; height: 670px; width: 100%; position: fixed; top: 0;"></div>
 <div class="middle-content middle-padding animation-comp">
   <div class="animation" id="animation">
     <main class="anim">
@@ -417,8 +435,36 @@
     </div>
   </div>
 </div>
+<div id="changeTheme1" style="transition: opacity 0.3s; display: flex; width: 100%" #changeTheme class="change-theme">
+  <div class="change_theme-text">
+    <span>Темная или&nbsp;светлая сторона?</span>
+    <span>Никаких ограничений! Выбирайте свою любимую тему</span>
+  </div>
+  <div class="middle-content change-theme-anim">
+    <div>
+      <img id="right_panel-dark-img" src="assets/images/main-dark.svg" alt="">
+      <div id="left_panel">
+        <img id="right_panel-img" src="assets/images/main-light.svg" alt=""
+             [ngStyle]="{'height': height}"
+        >
+        <div id="drag1">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div id="right_panel">
+        <div id="drag">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="changeTheme" #changeTheme class="change-theme">
-  <div class="middle-content change_theme-text change-theme-anim">
+  <div id="changeThemeText" class="middle-content change_theme-text">
     <span>Темная или&nbsp;светлая сторона?</span>
     <span>Никаких ограничений! Выбирайте свою любимую тему</span>
   </div>
@@ -446,10 +492,11 @@
   </div>
 </div>
 <div class="trial-form-field" #trial id="trial">
-  <div class="middle-content">
+  <div class="tfr-rec_2"></div>
+  <div class="tfr-rec_3"></div>
+  <div class="middle-content" style="z-index: 1001">
     <div class="rates-field">
       <span class="rf-title">Тарифы</span>
-
     </div>
   </div>
   <div class="middle-content"  style="display: flex; justify-content: center">
@@ -542,7 +589,7 @@
           <span>Еще один шаг и вы у цели!</span>
           <span>Мы отправили на адрес вашей электронной почты письмо со ссылкой. Пожалуйста, пройдите по данной ссылке для получения доступа к IRIS Finance</span>
           <span>Если вы не получили письмо, пожалуйста, </span>
-          <span>свяжитесь с нами</span>
+          <a href="mailto:mds@kase.kz?subject=Обратная связь&body=Введите сообщение">свяжитесь с нами</a>
           <img src="assets/images/trial-form-left.svg">
         </div>
       </div>
@@ -553,35 +600,46 @@
         <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
         <div class="tfr-inputs">
           <div class="tft-input-field">
-<!--            <label *ngIf="userFio.value" for="fio">Имя</label>-->
-            <input formControlName="userFio" placeholder="Имя" id="fio" name="fio" maxlength="24"
+            <label *ngIf="userFio.value" for="fio">Имя</label>
+            <input formControlName="userFio" placeholder="Имя" id="fio" name="fio" maxlength="80"
                    [ngStyle]="{
                    border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
                    }">
           </div>
+          <div class="" [ngStyle]="{marginTop: userPassword.valid ? '12px' : '4px'}">
+            <div *ngIf="userFio.errors?.['minlength']">&bull;&nbsp;&nbsp;не менее 6 символов</div>
+          </div>
           <div class="tft-input-field">
-<!--            <label *ngIf="userPhone.value" for="phone">Телефон</label>-->
+            <label *ngIf="userPhone.value" for="phone">Телефон</label>
             <input formControlName="userPhone" placeholder="Телефон" id="phone" name="tel"
                    [ngStyle]="{
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div class="tft-input-field">
-<!--            <label *ngIf="userEmail.value" for="email">E-mail</label>-->
+            <label *ngIf="userEmail.value" for="email">E-mail</label>
             <input formControlName="userEmail" placeholder="E-mail" id="email" name="email" maxlength="100"
                    [ngStyle]="{
                  border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
+          <div class="form-password-errors">
+            <div *ngIf="userEmail.errors?.['email']">&bull;&nbsp;&nbsp;неправильно введена почта</div>
+          </div>
           <div class="tft-input-field">
-<!--            <label *ngIf="userLogin.value" for="login">Логин</label>-->
-            <input formControlName="userLogin" placeholder="Логин" id="login" name="login" maxlength="24"
+            <label *ngIf="userLogin.value" for="login">Логин</label>
+            <input formControlName="userLogin" placeholder="Логин" id="login" name="login" maxlength="30"
                    [ngStyle]="{
                  border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
+          <div *ngIf="userLogin.value" class="form-password-errors">
+            <div *ngIf="userLogin.errors?.['minlength']">&bull;&nbsp;&nbsp;логин слишком короткий</div>
+            <div *ngIf="userLogin.errors?.['english']">&bull;&nbsp;&nbsp;только буквы латинского алфавита</div>
+            <div *ngIf="userLogin.errors?.['number']">&bull;&nbsp;&nbsp;отсутствуют цифры</div>
+          </div>
           <div class="tft-input-field input-img-right">
-<!--            <label *ngIf="userPassword.value" for="password">Пароль</label>-->
+            <label *ngIf="userPassword.value" for="password">Пароль</label>
             <input formControlName="userPassword" placeholder="Пароль" id="password" name="password"
                    maxlength="20"
                    [ngClass]="{
@@ -625,9 +683,9 @@
           </ng-container>
           <ng-container *ngIf="userPassword.value.length > 0">
             <div class="tft-input-field input-img-right">
-<!--              <div class="tft-input">-->
-<!--                <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>-->
-<!--              </div>-->
+              <div class="tft-input">
+                <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>
+              </div>
               <input formControlName="userPasswordConfirm" placeholder="Подтверждение пароля" id="userPasswordConfirm"
                      name="userPasswordConfirm"
                      maxlength="51"
@@ -654,7 +712,7 @@
               <img [src]="getCaptchaLink() + guid" alt="">
             </div>
             <div class="tft-input-field">
-              <label *ngIf="userCaptcha.value" for="phone">Captcha</label>
+              <label for="phone">Введите код с картинки</label>
               <input formControlName="userCaptcha" placeholder="Captcha" id="captcha" name="tel"
                      [ngStyle]="{
                  border: userCaptcha.invalid && userCaptcha.touched ? '1px solid #FF2E24' : ''
@@ -672,26 +730,28 @@
         </button>
         <div class="tfr-question">
           <span>Уже являетесь нашим пользователем?</span>
-          <a href="https://irisapi.kase.kz/webterminal/auth" target="_blank">Войти в IRIS Finance</a>
+          <a href="https://irisfinance.kase.kz/auth" target="_blank">Войти в IRIS Finance</a>
         </div>
       </form>
-      <div class="tfr-rec_2"></div>
-      <div class="tfr-rec_3"></div>
       <!--      <div class="tfr-rec_4"></div>-->
     </div>
     <!--    <img class="tfr-rec" src="assets/images/Rectangle%20656.svg">-->
     <!--    <img class="tfr-rec_1" src="assets/images/Rectangle%20655.svg">-->
   </div>
-  <div class="middle-content" id="tf-contacts" #tfContacts>
-    <div class="copyright">
-      <div class="copyright-left">
-        <span class="rates-anim">IRIS Finance</span>
-        <span class="rates-anim">© 1993-2022 АО&nbsp;"Казахстанская фондовая биржа". Копирование материалов –&nbsp;только с&nbsp;письменного разрешения.</span>
-      </div>
-      <div class="copyright-right">
-        <span class="rates-anim">+7 727 2375322 </span>
-        <span class="rates-anim">Звоните и&nbsp;мы&nbsp;ответим на&nbsp;все&nbsp;вопросы</span>
+  <div>
+    <div style="z-index: 1001;" class="middle-content" id="tf-contacts" #tfContacts >
+      <div class="copyright">
+        <div class="copyright-left">
+          <span class="rates-anim">IRIS Finance</span>
+          <span class="rates-anim">© 1993-2022 АО&nbsp;"Казахстанская фондовая биржа". Копирование материалов –&nbsp;только с&nbsp;письменного разрешения.</span>
+        </div>
+        <div class="copyright-right">
+          <span class="rates-anim">+7 727 2375322 </span>
+          <span class="rates-anim">Звоните и&nbsp;мы&nbsp;ответим на&nbsp;все&nbsp;вопросы</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<!--style="-->
+<!--background: linear-gradient(90deg, #181B2A 0%, rgba(24, 27, 42, 0.93) 100%);"-->

@@ -18,6 +18,7 @@ setTimeout(() => {
   let rInfoText4 = document.getElementById('r-info-text4')
   let withYou = document.getElementById('with-you')
   let changeTheme = document.getElementById('changeTheme')
+  let animCompBg = document.getElementById('animCompBg')
 
   let scroll = 0
 
@@ -43,26 +44,26 @@ setTimeout(() => {
     '<span>Котировки в реальном времени' +
     '<br>для оперативного реагирования' +
     '<br> на изменения рынков – наблюдайте' +
-    '<br> за биржевым стаканом и отслеживайте настроения инвесторов.</span>',
+    '<br> за биржевым стаканом и отслеживайте настроения инвесторов</span>',
 
     '<span>Актуальные новости</span>' +
     '<span>Следите за событиями на рынке' +
     '<br>с помощью нашей новостной ленты' +
     '<br>KASE и добавляйте наиболее интересные' +
-    '<br>новости в раздел "Избранные",' +
+    '<br>новости в раздел "Избранные"' +
     '<br>чтобы иметь к ним оперативный доступ</span>',
 
     '<span>Заявки, сделки<br>и итоги</span>' +
     '<span>Определяйте динамику рынков' +
-    '<br>с помощью данных intraday,' +
+    '<br>с помощью данных intraday' +
     '<br>а также анализируйте исторические' +
     '<br>данные за любой период для лучшего' +
-    '<br>понимания картины рынка.</span>',
+    '<br>понимания картины рынка</span>',
 
     '<span>Индексы<br>и индикаторы</span>' +
     '<span>Оценивайте состояние рынка ценных' +
     '<br>бумаг помощью индексов' +
-    '<br>и индикаторов KASE. </span>'
+    '<br>и индикаторов KASE</span>'
   ]
 
   let firstArray = [
@@ -705,11 +706,14 @@ setTimeout(() => {
             if (scroll === 0) {
               document.body.style.overflow = 'hidden';
               scroll = 1;
-              console.log(changeTheme.offsetTop)
+              // console.log(changeTheme.offsetTop)
               window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
               setTimeout(() => {
                 window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
               }, 500)
+              setTimeout(() => {
+                window.scrollTo({top: changeTheme.offsetTop, behavior: 'smooth'});
+              }, 800)
               setTimeout(() => {
                 document.body.style.overflow = 'auto';
               }, 1000)

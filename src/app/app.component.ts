@@ -39,8 +39,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.height = this.appService.getElementHeight('right_panel-dark-img')
 
     this.formPromo = formBuilder.group({
-      "userFio": ["", [Validators.required, this.checkSpaces]],
-      "userLogin": ["", [Validators.required, this.checkPasswordUppercase, this.checkEnglish, this.checkNumbers]],
+      "userFio": ["", [Validators.required, this.checkSpaces, this.checkCyrillic]],
+      "userLogin": ["", [Validators.required, this.checkEnglish, this.checkNumbers, Validators.minLength(3)]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", Validators.required],
       "userPassword": ["", [Validators.required,
@@ -103,6 +103,25 @@ export class AppComponent implements OnInit, OnDestroy {
       return null;
     } else {
       return {'english': true};
+    }
+  }
+
+  checkCyrillic: ValidatorFn = (group: AbstractControl): ValidationErrors | null => { // тут походу костыль
+    let regex2 = '^[а-яА-Я]+$';
+    let pass = group.value;
+    let j = 0;
+    for (let i = 0; i < pass.length; i++) {
+      if (0 < Number.parseInt(pass[i]) && Number.parseInt(pass[i]) < 9) {
+        j++;
+      }
+    }
+    if (j === pass.length) {
+      return {'cyrillic': true};
+    }
+    if (pass.match(regex2)) {
+      return null;
+    } else {
+      return {'cyrillic': true};
     }
   }
 

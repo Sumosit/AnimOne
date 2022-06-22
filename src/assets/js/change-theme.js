@@ -1,5 +1,54 @@
 
 setTimeout(() => {
+  const animCompBg = document.getElementById('animCompBg');
+  const animField = document.getElementById('anim-field');
+  const withYou = document.getElementById('with-you');
+  const changeTheme1 = document.getElementById('changeTheme1');
+  const changeThemeText = document.getElementById('changeThemeText');
+  setAnimCompBg()
+  animCompBg.style.display = 'initial';
+  animCompBg.style.height = 550 + 'px';
+  animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height/2))-animCompBg.getBoundingClientRect().height/2 + 'px';
+  console.log(animCompBg.style.top)
+
+  changeTheme1.style.position = 'fixed'
+  changeTheme1.style.top = animCompBg.getBoundingClientRect().bottom+'px';
+  window.addEventListener('scroll', setAnimCompBg);
+
+  function setAnimCompBg() {
+    console.log(scrollY)
+
+    if (scrollY > 800) {
+      withYou.style.position = 'sticky'
+      withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height - 80 + 'px';
+    }
+
+    if (scrollY > 3300 || scrollY < 1000) {
+      changeTheme1.style.opacity = '0';
+      changeThemeText.style.display = 'initial';
+      // changeTheme1.style.position = 'relative'
+    }
+    if (scrollY <= 3500 && scrollY > 0) {
+      changeThemeText.style.display = 'none';
+      if (changeTheme1.style.opacity !== 0) {
+        changeTheme1.style.opacity = '1';
+      }
+      changeTheme1.style.display = 'flex';
+      changeTheme1.style.position = 'fixed'
+      changeTheme1.style.top = animCompBg.getBoundingClientRect().bottom+'px';
+    }
+
+    if (scrollY < 3800 && scrollY > -100) {
+      animCompBg.style.display = 'initial';
+      animCompBg.style.height = 550 + 'px';
+      animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height/2))-animCompBg.getBoundingClientRect().height/2 + 'px';
+      console.log(animCompBg.style.top)
+    }
+    else {
+      animCompBg.style.display = 'none';
+    }
+  }
+
   const animItems = document.querySelectorAll(".change-theme-anim");
   if (animItems.length > 0) {
     changeThemeOn()

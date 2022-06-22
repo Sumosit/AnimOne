@@ -9,6 +9,10 @@ export const environment = {
     protocol: 'wss',
     port: 443,
     directory: '/mqtt/iris/api20'
+    // server: '192.168.211.181',
+    // protocol: 'ws',
+    // port: 1883,
+    // directory: ''
   }
 };
 
