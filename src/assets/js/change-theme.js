@@ -5,6 +5,8 @@ setTimeout(() => {
   const withYou = document.getElementById('with-you');
   const changeTheme1 = document.getElementById('changeTheme1');
   const changeThemeText = document.getElementById('changeThemeText');
+
+  let qwe = 0;
   setAnimCompBg()
   animCompBg.style.display = 'initial';
   animCompBg.style.height = 550 + 'px';
@@ -28,14 +30,18 @@ setTimeout(() => {
       // changeTheme1.style.position = 'relative'
     }
     if (scrollY <= 3500 && scrollY > 0) {
-      changeThemeText.style.display = 'none';
-      changeTheme1.style.display = 'initial';
-      changeTheme1.style.display = 'flex';
-      changeTheme1.style.position = 'fixed'
-      changeTheme1.style.top = animCompBg.getBoundingClientRect().bottom+'px';
-    }else {
-
-      changeTheme1.style.display = 'none';
+      if (qwe === 0) {
+        changeThemeText.style.display = 'none';
+        changeTheme1.style.display = 'flex';
+        changeTheme1.style.position = 'fixed'
+        changeTheme1.style.top = animCompBg.getBoundingClientRect().bottom+'px';
+        qwe = 1;
+      }
+    } else if (scrollY > 3500) {
+      if (qwe === 1 ) {
+        changeTheme1.style.display = 'none';
+        qwe = 0;
+      }
     }
 
     if (scrollY < 3800 && scrollY > -100) {
