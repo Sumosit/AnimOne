@@ -1,4 +1,3 @@
-
 setInterval(() => {
 
 }, 0)
@@ -23,50 +22,65 @@ setTimeout(() => {
   // changeTheme1.style.position = 'fixed'
   // changeTheme1.style.top = animCompBg.getBoundingClientRect().bottom+'px';
   window.addEventListener('scroll', setAnimCompBg);
+  window.addEventListener('resize', setAnimCompBg);
 
   function setAnimCompBg() {
     // console.log(scrollY)
+    if (window.screen.width > 1440) {
 
-    if (scrollY > 800) {
-      withYou.style.position = 'sticky'
-      withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height - 20 + 'px';
-    }
+      if (scrollY > 800 && window.screen.width > 1440) {
+        withYou.style.position = 'sticky'
+        withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
+      }
 
-    if (scrollY > 3300 || scrollY < 1000) {
-      // changeThemeText.style.display = 'initial';
-    }
-    if (scrollY > 0 && scrollY <= 3600) {
-      // if (qwe === 0) {
-      // changeThemeText.style.display = 'none';
-      changeThemeText.style.display = 'initial'
-      changeThemeText1.style.opacity = '0';
-      // changeTheme.style.padding = '215px 0 143px'
-      changeTheme.style.padding = '50px 0 143px'
-      changeThemeText.style.transition = 'all 0s'
-      changeThemeText.style.position = 'fixed'
-      changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 120 + 'px';
-      // qwe = 1;
-      // }
-    } else if (scrollY > 3600) {
-      // if (qwe === 1 ) {
-      // changeTheme1.style.display = 'none';
-      changeThemeText.style.top = changeThemeText1.getBoundingClientRect().top + 'px';
-      changeThemeText.style.display = 'none'
-      changeThemeText1.style.opacity = '1';
-      // changeThemeText.style.transition = 'all 0s'
-      //   changeThemeText.style.position = 'initial'
-      changeTheme.style.padding = '50px 0 143px'
-      //   qwe = 0;
-      // }
-    }
+      if (scrollY > 3300 || scrollY < 1000) {
+        // changeThemeText.style.display = 'initial';
+      }
+      if (scrollY > 0 && scrollY <= 3600) {
+        // if (qwe === 0) {
+        // changeThemeText.style.display = 'none';
+        changeThemeText.style.display = 'initial'
+        changeThemeText1.style.opacity = '0';
+        // changeTheme.style.padding = '215px 0 143px'
+        changeTheme.style.padding = '50px 0 143px'
+        changeThemeText.style.transition = 'all 0s'
+        changeThemeText.style.position = 'fixed'
+        changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 120 + 'px';
+        // qwe = 1;
+        // }
+      } else if (scrollY > 3600) {
+        // if (qwe === 1 ) {
+        // changeTheme1.style.display = 'none';
+        changeThemeText.style.top = changeThemeText1.getBoundingClientRect().top + 'px';
+        changeThemeText.style.display = 'none'
+        changeThemeText1.style.opacity = '1';
+        // changeThemeText.style.transition = 'all 0s'
+        //   changeThemeText.style.position = 'initial'
+        changeTheme.style.padding = '50px 0 143px'
+        //   qwe = 0;
+        // }
+      }
 
-    if (scrollY < 4200 && scrollY > -100) {
-      animCompBg.style.display = 'initial';
-      animCompBg.style.height = 570 + 'px';
-      animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';
-      // console.log(animCompBg.style.top)
-    } else {
-      animCompBg.style.display = 'none';
+      if (scrollY < 4200 && scrollY > -100) {
+        animCompBg.style.display = 'initial';
+        animCompBg.style.height = 570 + 'px';
+        animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';
+        // console.log(animCompBg.style.top)
+      } else {
+        animCompBg.style.display = 'none';
+        withYou.style.position = 'initial'
+        withYou.classList.remove('with-you-go_up')
+      }
+
+    }
+    else {
+      changeThemeText.style.display = 'flex';
+      changeThemeText.style.position = 'relative';
+      changeThemeText.style.top = '0';
+      changeTheme.style.padding = '50px 0 65px'
+      if (window.screen.width <= 390) {
+        changeTheme.style.padding = '50px 16px 65px'
+      }
     }
   }
 

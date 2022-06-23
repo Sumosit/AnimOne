@@ -39,12 +39,13 @@
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
-    @media screen and (max-width: 960px) {
-      margin-top: 0;
+    background: #E9EDF3;
+    @media screen and (max-width: 768px) {
+      margin-top: 40px;
     }
     .option {
       display: flex;
-      padding: 0 0 48px 0;
+      padding: 0 0 34px 0;
       flex-direction: row-reverse;
       align-items: center;
       &:nth-child(1) {
@@ -56,13 +57,16 @@
           padding: 0 30px
         }
       }
+      &:nth-child(1) {
+        margin-top: 84px;
+      }
+      &:last-child {
+        padding: 0 0 84px 0;
+      }
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }
       @media screen and (max-width: 390px) {
-        &:nth-child(1) {
-          margin-top: 48px;
-        }
       }
       img {
         flex: 70%;

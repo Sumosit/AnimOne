@@ -1,10 +1,13 @@
 .trial-form-field {
   padding: 120px 0 0 0;
   color: rgba(255, 255, 255, 0.9);
-  @media screen and (max-width: 1024px) {
-    padding: 30px 0 30px 0;
-  }
   backdrop-filter: blur(25px);
+  @media screen and (max-width: 1024px) {
+    padding: 30px 16px 30px 16px;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 60px 16px 60px 16px;
+  }
 
   .rates-field {
 
@@ -53,8 +56,7 @@
       gap: 30px;
     }
     @media screen and (max-width: 500px) {
-      padding: 59px 16px;
-      backdrop-filter: blur(15px);
+      padding: 59px 0px;
     }
 
     .tf-left {
@@ -71,17 +73,19 @@
       display: flex;
       flex-direction: column;
       @media screen and (max-width: 960px) {
+        width: initial;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
       @media screen and (max-width: 500px) {
-        width: fit-content;
-        background: none;
-        border: none;
-        box-shadow: none;
-        backdrop-filter: blur(0);
+        width: inherit;
+        padding: 0;
+        //background: none;
+        //border: none;
+        //box-shadow: none;
+        //backdrop-filter: blur(0);
       }
 
       .r-pattern {
@@ -127,7 +131,7 @@
           @media screen and (max-width: 900px) {
             width: 100%;
             min-width: initial;
-            align-items: center;
+            align-items: start;
           }
           @media screen and (max-width: 768px) {
           }
@@ -215,12 +219,12 @@
             display: flex;
             align-items: center;
             @media screen and (max-width: 390px) {
-              text-align: center;
+              text-align: left;
             }
           }
 
           .rm-fork {
-            width: 100%;
+            width: auto;
             margin-top: 24px;
             display: flex;
             flex-direction: column;
@@ -238,13 +242,14 @@
 
                 tr {
                   td {
-                    padding: 14px 19px;
 
                     &:nth-child(1) {
                       width: 100%;
+                      padding: 14px 0 14px 19px;
                     }
 
                     &:nth-child(2) {
+                      padding: 14px 19px 14px 0;
                       width: max-content;
                     }
                   }
@@ -333,10 +338,10 @@
       }
       @media screen and (max-width: 500px) {
         width: fit-content;
-        background: none;
-        border: none;
-        box-shadow: none;
-        backdrop-filter: blur(0);
+        //background: none;
+        //border: none;
+        //box-shadow: none;
+        //backdrop-filter: blur(0);
       }
 
       .tfr-text {
@@ -506,6 +511,15 @@
       background: rgba(255, 255, 255, 0.05);
       border: 3px solid rgba(255, 255, 255, 0.05);
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      br {
+        display: none;
+      }
+      @media screen and (max-width: 500px) {
+        width: auto;
+        br {
+          display: initial;
+        }
+      }
       .tfrc-header {
         display: flex;
         flex-direction: column;

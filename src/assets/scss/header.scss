@@ -18,6 +18,16 @@
   margin-left: auto;
   margin-right: auto;
 
+  @media screen and (max-width: 1440px) {
+    max-height: initial;
+    min-height: initial;
+  }
+
+  @media screen and (max-width: 1280px) {
+    max-height: 700px;
+    min-height: 700px;
+  }
+
   @media screen and (max-width: 768px) {
     max-height: initial;
     min-height: initial;
@@ -271,7 +281,7 @@
         animation: scaleIn2 1.35s linear;
         @media screen and (max-width: 768px) {
           margin-right: auto;
-          margin-top: 80px !important;
+          margin-top: 50px !important;
         }
       }
     }

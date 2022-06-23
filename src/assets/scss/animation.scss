@@ -21,6 +21,9 @@ html, body, main, .left, .animation {
 #animCompBg {
   display: none;
   transition: all 0s;
+  @media screen and (max-width: 1440px) {
+    display: none !important;
+  }
 }
 
 .animation-comp {
@@ -28,6 +31,9 @@ html, body, main, .left, .animation {
   padding: 0 26px;
   @media screen and (min-width: 1441px) {
     display: block;
+  }
+  @media screen and (max-width: 1440px) {
+    padding: 0;
   }
 
   .with-you-go_up {
@@ -40,7 +46,84 @@ html, body, main, .left, .animation {
   }
 
   .expand {
+    margin-top: -80px;
+    @media screen and (max-width: 1440px) {
+      margin-top: 0;
+    }
+    @media screen and (max-width: 768px) {
+      margin-top: 40px;
+    }
+    @media screen and (max-width: 800px) {
+      padding: 0 16px;
+    }
 
+    > div {
+      &:nth-child(1) {
+        span {
+          &:nth-child(1) {
+            font-weight: 800;
+            font-size: 52px;
+            line-height: 100%;
+            text-align: center;
+            color: #1E2230;
+            @media screen and (max-width: 800px) {
+              font-weight: 800;
+              font-size: 48px;
+              line-height: 100%;
+            }
+          }
+
+          &:nth-child(2) {
+            width: 100%;
+            max-width: 912px;
+            margin-top: 16px;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 140%;
+            text-align: center;
+            color: #1E2230;
+            @media screen and (max-width: 800px) {
+              line-height: 150%;
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: 24px;
+        padding-bottom: 80px;
+        display: flex;
+        gap: 40px;
+        @media screen and (max-width: 1024px) {
+          gap: 40px;
+        }
+        @media screen and (max-width: 500px) {
+          padding-bottom: 80px;
+          margin-top: 16px;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 389px;
+          height: 228px;
+          @media screen and (max-width: 1024px) {
+            width: initial;
+            height: initial;
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+#changeThemeText1 {
+  @media screen and (max-width: 1440px) {
+    display: none;
   }
 }
 
@@ -111,6 +194,7 @@ html, body, main, .left, .animation {
       }
     }
   }
+
   .index-change {
     opacity: 0;
     display: none;
@@ -176,11 +260,13 @@ html, body, main, .left, .animation {
       transition: height 0.5s;
 
       color: rgba(255, 255, 255, 0.9);
+
       .anim-height {
         width: 0;
         height: 0px;
         max-height: 300px;
       }
+
       .anim-field {
         //min-height: 700px;
         //max-height: 700px;
@@ -1274,6 +1360,7 @@ html, body, main, .left, .animation {
                   &:nth-child(odd) {
                     background: #1C1F29;
                   }
+
                   &:nth-child(1) {
                     background: #262936;
                   }
@@ -1419,9 +1506,11 @@ html, body, main, .left, .animation {
                 flex-direction: row;
                 padding: 12px 24px;
                 display: none;
+
                 &:nth-child(odd) {
                   background: #1C1F29;
                 }
+
                 &:nth-child(1) {
                   background: #262936;
                 }
@@ -1456,6 +1545,7 @@ html, body, main, .left, .animation {
                     color: #B4B5BD;
                   }
                 }
+
                 &:nth-child(3), &:nth-child(4), &:nth-child(5),
                 &:nth-child(6), &:nth-child(7), &:nth-child(8),
                 &:nth-child(9), &:nth-child(10) {
@@ -1527,6 +1617,7 @@ html, body, main, .left, .animation {
                   width: 100%;
                   table-layout: auto;
                   border-collapse: collapse;
+
                   th, td {
                     padding: 8px 0;
                     text-align: left;
@@ -1540,17 +1631,20 @@ html, body, main, .left, .animation {
                     color: #9BA0B9;
                     border-bottom: 1px solid #53586D;
                   }
+
                   td {
                     font-weight: 600;
                     font-size: 14px;
                     line-height: 22px;
                     color: #FF524A;
+
                     &:nth-child(1) {
                       color: #18C35D;
                     }
                   }
                 }
               }
+
               img {
                 height: 230px;
                 margin-top: 24px;
