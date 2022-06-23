@@ -5,7 +5,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 24px;
+  padding: 16px;
   background: #181C28;
   color: rgba(255, 255, 255, 0.9);
   display: flex;
@@ -24,18 +24,24 @@
     }
 
     .mmh-close {
-      margin-left: 24px;
+      //margin-left: 24px;
     }
-  }
 
-  .mm-trial-button {
-    padding: 24px 0;
-    border-bottom: 1px solid #53586D;
-    display: flex;
-    justify-content: center;
+    .mmh-logo {
+      margin-left: 16px;
+    }
 
-    .button-primary {
+    .mmh-trial-button {
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 140%;
 
+      .button-primary {
+        padding: 8px 16px;
+      }
     }
   }
 
@@ -52,6 +58,22 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 28px;
+    }
+  }
+  .mm-lang {
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40.5px;
+    border-bottom: 1px solid #53586D;
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+      &:nth-child(2) {
+        font-weight: 600;
+        color: #13AB53;
+      }
     }
   }
 

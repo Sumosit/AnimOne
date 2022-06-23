@@ -156,6 +156,24 @@
           display: none;
         }
       }
+
+      .hr-lang {
+        z-index: 1001;
+        display: flex;
+        gap: 17.5px;
+        @media screen and (max-width: 850px) {
+          display: none;
+        }
+        span {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 120%;
+          &:nth-child(2) {
+            font-weight: 600;
+            color: #13AB53;
+          }
+        }
+      }
     }
   }
 
