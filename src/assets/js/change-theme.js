@@ -36,11 +36,11 @@ setTimeout(() => {
       if (scrollY > 3300 || scrollY < 1000) {
         // changeThemeText.style.display = 'initial';
       }
-      if (scrollY > 0 && scrollY <= 3600) {
+      if (scrollY > 0 && scrollY <= 3650) {
         // if (qwe === 0) {
         // changeThemeText.style.display = 'none';
         changeThemeText.style.display = 'initial'
-        changeThemeText1.style.opacity = '1';
+        changeThemeText1.style.opacity = '0';
         // changeTheme.style.padding = '215px 0 143px'
         changeTheme.style.padding = '50px 0 143px'
         changeThemeText.style.transition = 'all 0s'
@@ -48,7 +48,7 @@ setTimeout(() => {
         changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 90 + 'px';
         // qwe = 1;
         // }
-      } else if (scrollY > 3600) {
+      } else if (scrollY > 3650) {
         // if (qwe === 1 ) {
         // changeTheme1.style.display = 'none';
         changeThemeText.style.top = changeThemeText1.getBoundingClientRect().top + 'px';
