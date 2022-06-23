@@ -40,12 +40,12 @@ setTimeout(() => {
         // if (qwe === 0) {
         // changeThemeText.style.display = 'none';
         changeThemeText.style.display = 'initial'
-        changeThemeText1.style.opacity = '0';
+        changeThemeText1.style.opacity = '1';
         // changeTheme.style.padding = '215px 0 143px'
         changeTheme.style.padding = '50px 0 143px'
         changeThemeText.style.transition = 'all 0s'
         changeThemeText.style.position = 'fixed'
-        changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 120 + 'px';
+        changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 90 + 'px';
         // qwe = 1;
         // }
       } else if (scrollY > 3600) {
