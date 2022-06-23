@@ -242,6 +242,12 @@ setTimeout(() => {
           const animStart4 = 1.05;
 
 
+          rInfoText1.style.top = '32%';
+          rInfoText2.style.top = '26%';
+          rInfoText3.style.top = '26%';
+          rInfoText4.style.top = '32%';
+
+
           // let animItemPoint = window.innerHeight - animItemHeight / animStart;
           // let animItemPoint2 = window.innerHeight - animItemHeight / animStart2;
           // let animItemPoint3 = window.innerHeight - animItemHeight / animStart3;
@@ -703,7 +709,6 @@ setTimeout(() => {
 
           if (scrollY > 3400 && scrollY < 3800) {
             // setTimeout(() => {
-            rInfoText4.style.top = '28%';
             if (scroll === 0) {
 
               // document.body.style.overflow = 'hidden';
