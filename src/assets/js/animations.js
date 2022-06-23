@@ -243,8 +243,8 @@ setTimeout(() => {
 
 
           rInfoText1.style.top = '32%';
-          rInfoText2.style.top = '26%';
-          rInfoText3.style.top = '26%';
+          rInfoText2.style.top = '31%';
+          rInfoText3.style.top = '31%';
           rInfoText4.style.top = '32%';
 
 
