@@ -77,10 +77,7 @@ setTimeout(() => {
       changeThemeText.style.display = 'flex';
       changeThemeText.style.position = 'relative';
       changeThemeText.style.top = '0';
-      changeTheme.style.padding = '50px 0 65px'
-      if (window.screen.width <= 390) {
-        changeTheme.style.padding = '50px 16px 65px'
-      }
+      changeTheme.style.padding = '50px 16px 65px'
     }
   }
 
