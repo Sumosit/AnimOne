@@ -1,3 +1,8 @@
+
+setInterval(() => {
+
+}, 0)
+
 setTimeout(() => {
   const animCompBg = document.getElementById('animCompBg');
   const animField = document.getElementById('anim-field');
