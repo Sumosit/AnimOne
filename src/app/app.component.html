@@ -2,38 +2,38 @@
 
 <div class="header-bg" id="header-bg">
 </div>
-  <div class="header-field" id="header-field">
-    <!--    <div class="hf-bg"></div>-->
-    <div class="header" id="header">
-      <div class="header-left">
-        <img class="hl-menu" src="assets/images/menu.svg" (click)="appService.menu_show = true" alt="">
-        <img src="assets/images/LOGO.svg" alt="">
-        <div class="hi-texts">
-          <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">О продукте</span>
-          <!--        <a href="#with-you">Возможности</a>-->
-          <span (click)="appService.scrollTo('trial')">Тарифы</span>
-          <span (click)="appService.scrollTo('tf-contacts')">Контакты</span>
-        </div>
-      </div>
-      <div class="header-right">
-        <a class="hr-button" href="https://irisfinance.kase.kz/auth" target="_blank">Войти</a>
-        <a class="button-primary" (click)="appService.scrollTo('form')">Попробовать бесплатно</a>
+<div class="header-field" id="header-field">
+  <!--    <div class="hf-bg"></div>-->
+  <div class="header" id="header">
+    <div class="header-left">
+      <img class="hl-menu" src="assets/images/menu.svg" (click)="appService.menu_show = true" alt="">
+      <img src="assets/images/LOGO.svg" alt="">
+      <div class="hi-texts">
+        <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">О продукте</span>
+        <!--        <a href="#with-you">Возможности</a>-->
+        <span (click)="appService.scrollTo('trial')">Тарифы</span>
+        <span (click)="appService.scrollTo('tf-contacts')">Контакты</span>
       </div>
     </div>
-    <div class="header-big">
-      <div class="hb-left">
-        <div class="hb-text">
-          <span>IRIS Finance</span>
-          <span>Информационный терминал KASE для работы с&nbsp;финансовой информацией.</span>
-          <span>Принимайте взвешенные решения с&nbsp;помощью уникальных торговых данных, аналитики и&nbsp;новостей IRIS Finance.</span>
-        </div>
-        <div class="button"><a (click)="appService.scrollTo('form')">Попробовать бесплатно</a></div>
-      </div>
-      <div class="hb-right">
-        <img id="hb_right-img" src="assets/images/promomain%201.svg" alt="">
-      </div>
+    <div class="header-right">
+      <a class="hr-button" href="https://irisfinance.kase.kz/auth" target="_blank">Войти</a>
+      <a class="button-primary" (click)="appService.scrollTo('form')">Попробовать бесплатно</a>
     </div>
   </div>
+  <div class="header-big">
+    <div class="hb-left">
+      <div class="hb-text">
+        <span>IRIS Finance</span>
+        <span>Информационный терминал KASE для работы с&nbsp;финансовой информацией.</span>
+        <span>Принимайте взвешенные решения с&nbsp;помощью уникальных торговых данных, аналитики и&nbsp;новостей IRIS Finance.</span>
+      </div>
+      <div class="button"><a (click)="appService.scrollTo('form')">Попробовать бесплатно</a></div>
+    </div>
+    <div class="hb-right">
+      <img id="hb_right-img" src="assets/images/promomain%201.svg" alt="">
+    </div>
+  </div>
+</div>
 <div class="animation-comp animation-comp-with_you" style="display: flex; justify-content: center">
   <div class="expand" id="with-you" #withYou
        style="transition: all 0s; margin-top: -80px;display: flex; flex-direction: column; align-items: center">
@@ -63,323 +63,325 @@
   <div class="animation" id="animation">
     <main class="anim">
       <div class="left" id="leftAnim">
-        <div class="anim-field first" id="anim-field">
-          <div class="tabs" id="tabs">
-            <div class="tab">
-              Все новости
-            </div>
-            <div class="tab">
-              Новости рынков
-            </div>
-            <div class="tab">
-              Новости компаний
-            </div>
-            <div class="tab">
-              Новости Биржи
-            </div>
-            <div class="empty">
-            </div>
-            <div class="tab tab-favorite">
-              <img src="assets/images/bookmark-filled.svg" alt="">
-              Избранное
-            </div>
-          </div>
-          <div class="watch-cup">
-            <div class="watchlist">
-              <div class="button-field">
-                <div class="button" id="button">
-                  <img src="assets/images/Add.svg" alt="">
-                  Добавить инструмент
-                </div>
+<!--        <div style="">-->
+          <div class="anim-field first" id="anim-field">
+            <div class="tabs" id="tabs">
+              <div class="tab">
+                Все новости
               </div>
-              <div class="tabs-sec">
-                <div class="tab">Сделки</div>
-                <div class="tab">Заявки</div>
-                <div class="tab">Итоги торгового дня</div>
+              <div class="tab">
+                Новости рынков
               </div>
-              <div class="table table-zebra" id="table">
-                <div class="tr tr-header" id="tr-header">
-                  <div class="td" id="w-first-th">Тикер</div>
-                  <div class="td">Посл. цена</div>
-                  <div class="td">Объём</div>
-                  <div class="td">Минимум</div>
-                  <div class="td">Максимум</div>
-                  <div class="td">Время</div>
-                  <div class="td">Минимум</div>
-                  <div class="td">Максимум</div>
-                  <div class="td">Время</div>
-                  <div class="td"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
-                <div class="tr">
-                  <div class="td">CCBN</div>
-                  <div class="td">380,01</div>
-                  <div class="td">-</div>
-                  <div class="td">379,50</div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                  <div class="td">389,99</div>
-                  <div class="td">13.04.2022 13:59:04</div>
-                  <div class="td"><img src="assets/images/Vector.svg"></div>
-                </div>
+              <div class="tab">
+                Новости компаний
+              </div>
+              <div class="tab">
+                Новости Биржи
+              </div>
+              <div class="empty">
+              </div>
+              <div class="tab tab-favorite">
+                <img src="assets/images/bookmark-filled.svg" alt="">
+                Избранное
               </div>
             </div>
-            <div class="cup">
-              <div class="cup-header">
-                <div class="ch-td"></div>
-                <div class="ch-td"></div>
-                <div class="ch-td"></div>
-                <div class="ch-td"></div>
-                <div class="ch-td"></div>
-                <div class="ch-td"></div>
-              </div>
-              <div class="cup-table" id="cup-table">
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-                <td class="ct-td"></td>
-              </div>
-              <div class="index-change hide" id="index-change">
-                <div class="ic-change">
-                  <span class="ic-header">Изменение индикатора</span>
-                  <div class="ic-refresh">
-                    <div class="icr-item">
-                      <span>Дата обновления</span>
-                      <span>13.04.2022 12:44</span>
-                    </div>
-                    <div class="icr-item">
-                      <span>Значение</span>
-                      <span>3 182,79</span>
-                    </div>
+            <div class="watch-cup">
+              <div class="watchlist">
+                <div class="button-field">
+                  <div class="button" id="button">
+                    <img src="assets/images/Add.svg" alt="">
+                    Добавить инструмент
                   </div>
-                  <table class="ic-time">
-                    <thead>
-                    <tr>
-                      <th>1Д</th>
-                      <th>1Н</th>
-                      <th>1М</th>
-                      <th>3М</th>
-                      <th>6М</th>
-                      <th>1Г</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>+ 9,70</td>
-                      <td>- 80,44</td>
-                      <td>- 194,68</td>
-                      <td>- 194,68</td>
-                      <td>- 388,58</td>
-                      <td>- 98,15</td>
-                    </tr>
-                    </tbody>
-                  </table>
                 </div>
-                <img src="assets/images/chart.svg" alt="">
+                <div class="tabs-sec">
+                  <div class="tab">Сделки</div>
+                  <div class="tab">Заявки</div>
+                  <div class="tab">Итоги торгового дня</div>
+                </div>
+                <div class="table table-zebra" id="table">
+                  <div class="tr tr-header" id="tr-header">
+                    <div class="td" id="w-first-th">Тикер</div>
+                    <div class="td">Посл. цена</div>
+                    <div class="td">Объём</div>
+                    <div class="td">Минимум</div>
+                    <div class="td">Максимум</div>
+                    <div class="td">Время</div>
+                    <div class="td">Минимум</div>
+                    <div class="td">Максимум</div>
+                    <div class="td">Время</div>
+                    <div class="td"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">CCBN</div>
+                    <div class="td">380,01</div>
+                    <div class="td">-</div>
+                    <div class="td">379,50</div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                    <div class="td">389,99</div>
+                    <div class="td">13.04.2022 13:59:04</div>
+                    <div class="td"><img src="assets/images/Vector.svg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cup">
+                <div class="cup-header">
+                  <div class="ch-td"></div>
+                  <div class="ch-td"></div>
+                  <div class="ch-td"></div>
+                  <div class="ch-td"></div>
+                  <div class="ch-td"></div>
+                  <div class="ch-td"></div>
+                </div>
+                <div class="cup-table" id="cup-table">
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                  <td class="ct-td"></td>
+                </div>
+                <div class="index-change hide" id="index-change">
+                  <div class="ic-change">
+                    <span class="ic-header">Изменение индикатора</span>
+                    <div class="ic-refresh">
+                      <div class="icr-item">
+                        <span>Дата обновления</span>
+                        <span>13.04.2022 12:44</span>
+                      </div>
+                      <div class="icr-item">
+                        <span>Значение</span>
+                        <span>3 182,79</span>
+                      </div>
+                    </div>
+                    <table class="ic-time">
+                      <thead>
+                      <tr>
+                        <th>1Д</th>
+                        <th>1Н</th>
+                        <th>1М</th>
+                        <th>3М</th>
+                        <th>6М</th>
+                        <th>1Г</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>+ 9,70</td>
+                        <td>- 80,44</td>
+                        <td>- 194,68</td>
+                        <td>- 194,68</td>
+                        <td>- 388,58</td>
+                        <td>- 98,15</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <img src="assets/images/chart.svg" alt="">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+<!--      </div>-->
       <div class="right" id="rightAnim">
         <div class="r-info" id="r-info">
           <div class="fadeIn r-info-text" id="r-info-text1">
