@@ -25,8 +25,8 @@ setTimeout(() => {
   window.addEventListener('resize', setAnimCompBg);
 
   function setAnimCompBg() {
-    // console.log(scrollY)
-    if (window.screen.width > 1440) {
+    var w = window.innerWidth * window.devicePixelRatio;
+    if (w > 1440) {
 
       if (scrollY > 800 && window.screen.width > 1440) {
         withYou.style.position = 'sticky'
@@ -72,8 +72,7 @@ setTimeout(() => {
         withYou.classList.remove('with-you-go_up')
       }
 
-    }
-    else {
+    } else {
       changeThemeText.style.display = 'flex';
       changeThemeText.style.position = 'relative';
       changeThemeText.style.top = '0';
