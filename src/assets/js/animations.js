@@ -226,7 +226,7 @@ setTimeout(() => {
 
   if (animItems.length > 0) {
     // window.scrollTo({top: 3000, behavior: 'auto'});
-    window.scrollTo({top: 0, behavior: 'auto'});
+    // window.scrollTo({top: 0, behavior: 'auto'});
     first();
     window.addEventListener('scroll', animOnScroll);
 
@@ -282,7 +282,7 @@ setTimeout(() => {
 
             // rInfo.style.top = '500px';
 
-            rInfoText1.innerHTML = texts[0]
+            // rInfoText1.innerHTML = texts[0]
 
             rInfoText1.classList.add('opacity-1');
             rInfoText2.classList.remove('opacity-1');
@@ -426,7 +426,7 @@ setTimeout(() => {
             document.getElementById('table').classList.remove('table-zebra')
             // rInfo.style.top = '500px';
 
-            rInfoText2.innerHTML = texts[1];
+            // rInfoText2.innerHTML = texts[1];
 
             // console.log(rInfo.textContent)
             td[0].textContent = secondArray[0][0];
@@ -512,7 +512,7 @@ setTimeout(() => {
 
             document.getElementById('tabs').innerHTML = tabs[1];
 
-            rInfoText3.innerHTML = texts[2];
+            // rInfoText3.innerHTML = texts[2];
             // console.log(rInfo.innerHTML)
 
             td[0].textContent = thirdArray[0][0];
@@ -658,7 +658,7 @@ setTimeout(() => {
             rInfoText3.classList.remove('opacity-1');
             rInfoText4.classList.add('opacity-1');
 
-            rInfoText4.innerHTML = texts[3]
+            // rInfoText4.innerHTML = texts[3]
 
             // console.log( td)
             td[10].innerHTML = fourthWatchlistValues[0];
@@ -795,7 +795,7 @@ setTimeout(() => {
 
     // rInfo.style.top = '500px';
 
-    rInfoText1.innerHTML = texts[0]
+    // rInfoText1.innerHTML = texts[0]
 
     rInfoText1.classList.add('opacity-1');
     rInfoText2.classList.remove('opacity-1');

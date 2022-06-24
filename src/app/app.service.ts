@@ -3,6 +3,7 @@ import {IRIS} from "../../iris";
 import Language = IRIS.Language;
 import {MqttService} from "ngx-mqtt";
 import {map, Observable} from "rxjs";
+import {TranslateService} from "@ngx-translate/core";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,20 @@ import {map, Observable} from "rxjs";
 export class AppService {
   menu_show: boolean = false
 
-  constructor(private mqttService: MqttService) { }
+  constructor(private mqttService: MqttService,
+              public translateService: TranslateService) {
+    translateService.addLangs(['en', 'ru', 'kz']);
+    translateService.setDefaultLang('ru');
+    this.switchLang('ru');
+  }
+
+  switchLang(lang: string) {
+    this.translateService.use(lang);
+  }
+
+  getLang() {
+    return this.translateService.currentLang;
+  }
 
   sendUserFeedbackRequest(userEmail: string,
                           userPhone: string,

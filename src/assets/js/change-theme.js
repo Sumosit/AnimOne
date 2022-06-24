@@ -39,7 +39,7 @@ setTimeout(() => {
       if (scrollY > 0 && scrollY <= 3650) {
         // if (qwe === 0) {
         // changeThemeText.style.display = 'none';
-        changeThemeText.style.display = 'initial'
+        changeThemeText.style.display = 'flex'
         changeThemeText1.style.opacity = '0';
         // changeTheme.style.padding = '215px 0 143px'
         changeTheme.style.padding = '50px 0 143px'

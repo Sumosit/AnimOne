@@ -158,6 +158,8 @@
       }
 
       .hr-lang {
+        cursor: pointer;
+        user-select: none;
         z-index: 1001;
         display: flex;
         gap: 17.5px;
@@ -169,11 +171,10 @@
           font-size: 16px;
           line-height: 120%;
           &:nth-child(2) {
-            font-weight: 600;
-            color: #13AB53;
           }
         }
       }
+
     }
   }
 

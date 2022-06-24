@@ -9,30 +9,30 @@
         <img class="hl-menu" src="assets/images/menu.svg" (click)="appService.menu_show = true" alt="">
         <img src="assets/images/LOGO.svg" alt="">
         <div class="hi-texts">
-          <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">О продукте</span>
+          <span (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">{{'Header5' | translate}}</span>
           <!--        <a href="#with-you">Возможности</a>-->
-          <span (click)="appService.scrollTo('trial')">Тарифы</span>
-          <span (click)="appService.scrollTo('tf-contacts')">Контакты</span>
+          <span (click)="appService.scrollTo('trial')">{{'Header6' | translate}}</span>
+          <span (click)="appService.scrollTo('tf-contacts')">{{'Header7' | translate}}</span>
         </div>
       </div>
       <div class="header-right">
         <div class="hr-lang">
-          <span>KZ</span>
-          <span>RU</span>
-          <span>EN</span>
+          <span class="{{appService.getLang() === 'kz' ? 'accent-color' : ''}}" (click)="appService.switchLang('kz')">KZ</span>
+          <span class="{{appService.getLang() === 'ru' ? 'accent-color' : ''}}" (click)="appService.switchLang('ru')">RU</span>
+          <span class="{{appService.getLang() === 'en' ? 'accent-color' : ''}}" (click)="appService.switchLang('en')">EN</span>
         </div>
-        <a class="hr-button" href="https://irisfinance.kase.kz/auth" target="_blank">Войти</a>
-        <a class="button-primary" (click)="appService.scrollTo('form')">Попробовать бесплатно</a>
+        <a class="hr-button" href="https://irisfinance.kase.kz/auth" target="_blank">{{'Header4' | translate}}</a>
+        <a class="button-primary" (click)="appService.scrollTo('form')">{{'Header3' | translate}}</a>
       </div>
     </div>
     <div class="header-big">
       <div class="hb-left">
         <div class="hb-text">
           <span>IRIS Finance</span>
-          <span>Информационный терминал KASE для работы с&nbsp;финансовой информацией</span>
-          <span>Принимайте взвешенные решения с&nbsp;помощью уникальных торговых данных, аналитики &nbsp;<br>и новостей IRIS Finance</span>
+          <span [innerHTML]="'Header1' | translate"></span>
+          <span [innerHTML]="'Header2' | translate"></span>
         </div>
-        <div class="button"><a (click)="appService.scrollTo('form')">Попробовать бесплатно</a></div>
+        <div class="button"><a (click)="appService.scrollTo('form')">{{'Header3' | translate}}</a></div>
       </div>
       <div class="hb-right">
         <img id="hb_right-img" src="assets/images/promomain%201.svg" alt="">
@@ -43,21 +43,21 @@
   <div class="expand" id="with-you" #withYou
        style="transition: all 0s; display: flex; flex-direction: column; align-items: center">
     <div style="display: flex; flex-direction: column">
-      <span style="">Мы расширяем ваши возможности</span>
-      <span style="">Используйте преимущества IRIS Finance в вашей деятельности</span>
+      <span>{{'Expand1' | translate}}</span>
+      <span [innerHTML]="'Expand2' | translate"></span>
     </div>
     <div style="">
       <div>
         <img src="assets/images/Info.svg" alt="">
-        <span style="margin-top: 12px;text-align: center">Уникальная биржевая<br>информация</span>
+        <span style="margin-top: 12px;text-align: center" [innerHTML]="'Expand3' | translate"></span>
       </div>
       <div>
         <img src="assets/images/Real-time.svg" alt="">
-        <span style="margin-top: 12px;text-align: center">Оперативное обновление<br>данных</span>
+        <span style="margin-top: 12px;text-align: center" [innerHTML]="'Expand4' | translate"></span>
       </div>
       <div>
         <img src="assets/images/App.svg" alt="">
-        <span style="margin-top: 12px;text-align: center">Доступ<br>с любого устройства</span>
+        <span style="margin-top: 12px;text-align: center" [innerHTML]="'Expand5' | translate"></span>
       </div>
     </div>
   </div>
@@ -388,20 +388,20 @@
       <div class="right" id="rightAnim">
         <div class="r-info" id="r-info">
           <div class="fadeIn r-info-text" id="r-info-text1">
-            <span></span>
-            <span></span>
+            <span>Watchlist</span>
+            <span [innerHTML]="'Anim1' | translate"></span>
           </div>
           <div class="fadeIn r-info-text" id="r-info-text2">
-            <span></span>
-            <span></span>
+            <span [innerHTML]="'Anim2_Header' | translate"></span>
+            <span [innerHTML]="'Anim2' | translate"></span>
           </div>
           <div class="fadeIn r-info-text" id="r-info-text3">
-            <span></span>
-            <span></span>
+            <span [innerHTML]="'Anim3_Header' | translate"></span>
+            <span [innerHTML]="'Anim3' | translate"></span>
           </div>
           <div class="fadeIn r-info-text" id="r-info-text4">
-            <span></span>
-            <span></span>
+            <span [innerHTML]="'Anim4_Header' | translate"></span>
+            <span [innerHTML]="'Anim4' | translate"></span>
           </div>
         </div>
       </div>
@@ -413,28 +413,28 @@
     <div class="option">
       <div>
         <span>Watchlist</span>
-        <span>Котировки &nbsp;в реальном времени для&nbsp;оперативного реагирования на&nbsp;изменения рынков –&nbsp;наблюдайте за&nbsp;биржевымстаканом и&nbsp;отслеживайте настроения инвесторов</span>
+        <span [innerHTML]="'Anim1' | translate"></span>
       </div>
       <img src="assets/images/watchlist-cup.svg" alt="">
     </div>
     <div class="option">
       <div>
-        <span>Актуальные новости</span>
-        <span>Следите за&nbsp;событиями на&nbsp;рынке с&nbsp;помощью нашей новостной ленты KASE и&nbsp;добавляйте наиболее интересные новости в&nbsp;раздел "Избранные", чтобы иметь к&nbsp;ним&nbsp;доступ</span>
+        <span [innerHTML]="'Anim2_Header' | translate"></span>
+        <span [innerHTML]="'Anim2' | translate"></span>
       </div>
       <img src="assets/images/news.svg" alt="">
     </div>
     <div class="option">
       <div>
-        <span>Заявки, сделки и&nbsp;итоги</span>
-        <span>Определяйте динамику рынков с&nbsp;помощью данных intraday, а&nbsp;также анализируйте исторические данные за&nbsp;любой период для&nbsp;лучшего понимания картины рынка</span>
+        <span [innerHTML]="'Anim3_Header' | translate"></span>
+        <span [innerHTML]="'Anim3' | translate"></span>
       </div>
       <img src="assets/images/deals-totals.svg" alt="">
     </div>
     <div class="option">
       <div>
-        <span>Индексы и&nbsp;индикаторы</span>
-        <span>Оценивайте состояние рынка ценных бумаг с&nbsp;помощью индексов и&nbsp;индикаторов KASE</span>
+        <span [innerHTML]="'Anim4_Header' | translate"></span>
+        <span [innerHTML]="'Anim4' | translate"></span>
       </div>
       <img src="assets/images/indexes.svg" alt="">
     </div>
@@ -477,12 +477,12 @@
 <!--</div>-->
 <div id="changeTheme" #changeTheme class="change-theme">
   <div id="changeThemeText" class="middle-content change_theme-text">
-    <span>Темная или&nbsp;светлая сторона?</span>
-    <span>Никаких ограничений!<br> Выбирайте свою любимую тему</span>
+    <span [innerHTML]="'Theme1' | translate"></span>
+    <span [innerHTML]="'Theme2' | translate"></span>
   </div>
   <div id="changeThemeText1" class="middle-content change_theme-text">
-    <span>Темная или&nbsp;светлая сторона?</span>
-    <span>Никаких ограничений!<br> Выбирайте свою любимую тему</span>
+    <span [innerHTML]="'Theme1' | translate"></span>
+    <span [innerHTML]="'Theme2' | translate"></span>
   </div>
   <div class="middle-content change-theme-anim" id="container">
     <div>
@@ -512,7 +512,7 @@
   <div class="tfr-rec_3"></div>
   <div class="middle-content" style="z-index: 1001">
     <div class="rates-field">
-      <span class="rf-title">Тарифы</span>
+      <span class="rf-title" [innerHTML]="'Tariffs1' | translate"></span>
     </div>
   </div>
   <div class="middle-content" style="display: flex; justify-content: center">
@@ -520,10 +520,10 @@
       <div class="tf-left">
         <div class="rates" id="rates">
           <div class="r-base">
-            <span class="rb-text rates-anim">Базовый модуль</span>
-            <span class="rb-text rates-anim">Справочник по эмитентам</span>
-            <span class="rb-text rates-anim">Справочник по ценным бумагам</span>
-            <span class="rb-text rates-anim">Индексы и индикаторы</span>
+            <span class="rb-text rates-anim" [innerHTML]="'Tariffs2' | translate"></span>
+            <span class="rb-text rates-anim" [innerHTML]="'Tariffs3' | translate"></span>
+            <span class="rb-text rates-anim" [innerHTML]="'Tariffs4' | translate"></span>
+            <span class="rb-text rates-anim" [innerHTML]="'Tariffs5' | translate"></span>
             <div class="r-mrp">
               <span class="rates-anim">55 134</span>
               <span class="rates-anim">KZT</span>
@@ -544,51 +544,51 @@
                   </clipPath>
                 </defs>
               </svg>
-              <span>Обязательный</span>
+              <span [innerHTML]="'Tariffs6' | translate"></span>
             </div>
           </div>
           <div class="r-market">
-            <span class="rm-header rates-anim">Модули с&nbsp;рыночной информацией</span>
+            <span class="rm-header rates-anim" [innerHTML]="'Tariffs7' | translate"></span>
             <div class="rm-fork">
               <div class="rmf-items">
                 <table>
                   <tr class="rates-anim rmf-item">
-                    <td>Новости KASE</td>
+                    <td [innerHTML]="'Tariffs8' | translate"></td>
                     <td class="rmfi-price">
                       <span class="rates-anim">67&nbsp;386</span>
                       <span class="rates-anim">KZT</span>
                     </td>
                   </tr>
                   <tr class="rates-anim rmf-item">
-                    <td>Торги иностранными валютами</td>
+                    <td [innerHTML]="'Tariffs9' | translate"></td>
                     <td class="rmfi-price">
                       <span class="rates-anim">15&nbsp;315</span>
                       <span class="rates-anim">KZT</span>
                     </td>
                   </tr>
                   <tr class="rates-anim rmf-item">
-                    <td>Сделки с&nbsp;иностранными&nbsp;валютами</td>
+                    <td [innerHTML]="'Tariffs10' | translate"></td>
                     <td class="rmfi-price">
                       <span class="rates-anim">61&nbsp;260</span>
                       <span class="rates-anim">KZT</span>
                     </td>
                   </tr>
                   <tr class="rates-anim rmf-item">
-                    <td>Рынок акций</td>
+                    <td [innerHTML]="'Tariffs11' | translate"></td>
                     <td class="rmfi-price">
                       <span class="rates-anim">52&nbsp;071</span>
                       <span class="rates-anim">KZT</span>
                     </td>
                   </tr>
                   <tr class="rates-anim rmf-item">
-                    <td>Рынок корпоративных облигаций</td>
+                    <td [innerHTML]="'Tariffs12' | translate"></td>
                     <td class="rmfi-price">
                       <span class="rates-anim">52&nbsp;071</span>
                       <span class="rates-anim">KZT</span>
                     </td>
                   </tr>
                   <tr class="rates-anim rmf-item">
-                    <td>Рынок государственных ценных бумаг</td>
+                    <td [innerHTML]="'Tariffs13' | translate"></td>
                     <td class="rmfi-price">
                       <span class="rates-anim">52&nbsp;071</span>
                       <span class="rates-anim">KZT</span>
@@ -602,32 +602,29 @@
       </div>
       <div *ngIf="regSuccess" class="tf-right-success">
         <div class="tfrc-header">
-          <span>Еще один шаг<br> и вы у цели!</span>
-          <span>Мы отправили на адрес вашей электронной почты письмо со ссылкой. Пожалуйста, пройдите по данной ссылке для получения доступа к IRIS Finance</span>
-          <span>Если вы не получили письмо, пожалуйста, </span>
-          <a href="mailto:mds@kase.kz?subject=Обратная связь&body=Введите сообщение">свяжитесь с нами</a>
+          <span [innerHTML]="'Form1' | translate"></span>
+          <span [innerHTML]="'Form2' | translate"></span>
+          <span [innerHTML]="'Form3' | translate"></span>
+          <a href="mailto:mds@kase.kz?subject=Обратная связь&body=Введите сообщение" [innerHTML]="'Form4' | translate"></a>
           <img src="assets/images/trial-form-left.svg">
         </div>
       </div>
       <form class="tf-right" id="form"
             *ngIf="!regSuccess"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
-        <span class="rates-anim tfr-text">Пробный период на 7 дней</span>
-        <span class="rates-anim tfr-text">Воспользуйтесь бесплатным тестовым доступом после регистрации</span>
+        <span class="rates-anim tfr-text" [innerHTML]="'Form5' | translate"></span>
+        <span class="rates-anim tfr-text" [innerHTML]="'Form6' | translate"></span>
         <div class="tfr-inputs">
           <div class="tft-input-field">
-            <label *ngIf="userFio.value" for="fio">Имя</label>
-            <input formControlName="userFio" placeholder="Имя" id="fio" name="fio" maxlength="80"
+            <label *ngIf="userFio.value" for="fio" [innerHTML]="'Form7' | translate"></label>
+            <input formControlName="userFio" [placeholder]="'Form7' | translate" id="fio" name="fio" maxlength="80"
                    [ngStyle]="{
                    border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
                    }">
           </div>
-          <div class="" [ngStyle]="{marginTop: userPassword.valid ? '12px' : '4px'}">
-            <div *ngIf="userFio.errors?.['minlength']">&bull;&nbsp;&nbsp;не менее 6 символов</div>
-          </div>
           <div class="tft-input-field">
-            <label *ngIf="userPhone.value" for="phone">Телефон</label>
-            <input formControlName="userPhone" placeholder="Телефон" id="phone" name="tel"
+            <label *ngIf="userPhone.value" for="phone" [innerHTML]="'Form8' | translate"></label>
+            <input formControlName="userPhone" [placeholder]="'Form8' | translate" id="phone" name="tel"
                    [ngStyle]="{
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
@@ -639,8 +636,8 @@
                  border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
-          <div class="form-password-errors">
-            <div *ngIf="userEmail.errors?.['email']">&bull;&nbsp;&nbsp;неправильно введена почта</div>
+          <div *ngIf="userEmail.invalid" class="form-password-errors">
+            <div *ngIf="userEmail.errors?.['email']">&bull;&nbsp;&nbsp;{{'Error1' | translate}}</div>
           </div>
           <div class="tft-input-field">
             <label *ngIf="userLogin.value" for="login">Логин</label>
@@ -650,13 +647,13 @@
                  }">
           </div>
           <div *ngIf="userLogin.value" class="form-password-errors">
-            <div *ngIf="userLogin.errors?.['minlength']">&bull;&nbsp;&nbsp;логин слишком короткий</div>
-            <div *ngIf="userLogin.errors?.['english']">&bull;&nbsp;&nbsp;только буквы латинского алфавита</div>
-            <div *ngIf="userLogin.errors?.['number']">&bull;&nbsp;&nbsp;отсутствуют цифры</div>
+            <div *ngIf="userLogin.errors?.['minlength']">&bull;&nbsp;&nbsp;{{'Error2' | translate}}</div>
+            <div *ngIf="userLogin.errors?.['english']">&bull;&nbsp;&nbsp;{{'Error3' | translate}}</div>
+            <div *ngIf="userLogin.errors?.['number']">&bull;&nbsp;&nbsp;{{'Error4' | translate}}</div>
           </div>
           <div class="tft-input-field input-img-right">
-            <label *ngIf="userPassword.value" for="password">Пароль</label>
-            <input formControlName="userPassword" placeholder="Пароль" id="password" name="password"
+            <label *ngIf="userPassword.value" for="password">{{'Form9' | translate}}</label>
+            <input formControlName="userPassword" [placeholder]="'Form9' | translate" id="password" name="password"
                    maxlength="20"
                    [ngClass]="{
                    'input-password': !showPassword && userPassword.value
@@ -687,24 +684,22 @@
               <div class="form-segment"></div>
               <div class="form-segment"></div>
             </div>
-            <span class="form-segment-text form-segments-filled-1" *ngIf="getSegments() === 0 || getSegments() === 1">Слабый</span>
-            <span class="form-segment-text form-segments-filled-2" *ngIf="getSegments() === 2 || getSegments() === 3">Средний</span>
-            <span class="form-segment-text form-segments-filled-3" *ngIf="getSegments() === 4">Сильный</span>
+            <span class="form-segment-text form-segments-filled-1" *ngIf="getSegments() === 0 || getSegments() === 1">{{'Status1' | translate}}</span>
+            <span class="form-segment-text form-segments-filled-2" *ngIf="getSegments() === 2 || getSegments() === 3">{{'Status2' | translate}}</span>
+            <span class="form-segment-text form-segments-filled-3" *ngIf="getSegments() === 4">{{'Status3' | translate}}</span>
             <div class="form-password-errors" [ngStyle]="{marginTop: userPassword.valid ? '12px' : '4px'}">
-              <div *ngIf="userPassword.errors?.['minlength']">&bull;&nbsp;&nbsp;не менее 6 символов</div>
-              <div *ngIf="userPassword.errors?.['uppercase']">&bull;&nbsp;&nbsp;отсутствуют буквы верхнего регистра:
-                A-Z
-              </div>
-              <div *ngIf="userPassword.errors?.['number']">&bull;&nbsp;&nbsp;отсутствуют цифры 0-9</div>
-              <div *ngIf="userPassword.errors?.['english']">&bull;&nbsp;&nbsp;только буквы латинского алфавита</div>
+              <div *ngIf="userPassword.errors?.['minlength']">{{'Error5' | translate}}</div>
+              <div *ngIf="userPassword.errors?.['uppercase']">&bull;&nbsp;&nbsp;{{'Error6' | translate}}</div>
+              <div *ngIf="userPassword.errors?.['number']">&bull;&nbsp;&nbsp;{{'Error7' | translate}}</div>
+              <div *ngIf="userPassword.errors?.['english']">&bull;&nbsp;&nbsp;{{'Error8' | translate}}</div>
             </div>
           </ng-container>
           <ng-container *ngIf="userPassword.value.length > 0">
             <div class="tft-input-field input-img-right">
               <div class="tft-input">
-                <label *ngIf="userPasswordConfirm.value" for="password">Подтверждение пароля</label>
+                <label *ngIf="userPasswordConfirm.value" for="password">{{'Form10' | translate}}</label>
               </div>
-              <input formControlName="userPasswordConfirm" placeholder="Подтверждение пароля" id="userPasswordConfirm"
+              <input formControlName="userPasswordConfirm" [placeholder]="'Form10' | translate" id="userPasswordConfirm"
                      name="userPasswordConfirm"
                      maxlength="51"
                      [ngClass]="{
@@ -730,8 +725,8 @@
               <img [src]="getCaptchaLink() + guid" alt="">
             </div>
             <div class="tft-input-field">
-              <label for="phone">Введите код с картинки</label>
-              <input formControlName="userCaptcha" placeholder="Captcha" id="captcha" name="tel"
+              <label for="captcha">{{'Form11' | translate}}</label>
+              <input formControlName="userCaptcha" [placeholder]="'Form11' | translate" id="captcha" name="tel"
                      [ngStyle]="{
                  border: userCaptcha.invalid && userCaptcha.touched ? '1px solid #FF2E24' : ''
                  }">
@@ -739,16 +734,15 @@
           </ng-container>
         </div>
         <div class="tfr-line"></div>
-        <div class="rates-anim tfr-accept">
-          Нажимая&nbsp;на кнопку&nbsp;вы автоматически принимаете условия<span>&nbsp;Пользовательского соглашения</span>
-        </div>
+        <div class="rates-anim tfr-accept" [innerHTML]="'Form12' | translate"></div>
         <button class="{{formPromo.valid ? '' : 'button-disabled'}} tfr-button"
                 [disabled]="!formPromo.valid && loading">
-          {{loading ? 'загрузка...' : 'Зарегистрироваться'}}
+          <span *ngIf="loading">{{'Form16' | translate}}</span>
+          <span *ngIf="!loading">{{'Form15' | translate}}</span>
         </button>
         <div class="tfr-question">
-          <span>Уже являетесь нашим пользователем?</span>
-          <a href="https://irisfinance.kase.kz/auth" target="_blank">Войти в IRIS Finance</a>
+          <span>{{'Form13' | translate}}</span>
+          <a href="https://irisfinance.kase.kz/auth" target="_blank">{{'Form14' | translate}}</a>
         </div>
       </form>
       <!--      <div class="tfr-rec_4"></div>-->
@@ -761,14 +755,14 @@
       <div class="copyright">
         <div class="copyright-left">
           <span class="rates-anim">IRIS Finance</span>
-          <span class="rates-anim">Пользовательское соглашение</span>
-          <span class="rates-anim">© 1993-2022 АО "Казахстанская фондовая биржа". Копирование материалов – только с письменного разрешения.</span>
+          <span class="rates-anim">{{'Copyright1' | translate}}</span>
+          <span class="rates-anim">{{'Copyright2' | translate}}</span>
         </div>
         <div class="copyright-right">
-          <span class="rates-anim">Консультация по информационным услугам KASE:</span>
+          <span class="rates-anim">{{'Copyright3' | translate}}</span>
           <span class="rates-anim">+7 (727) 237 53 22 </span>
           <span class="rates-anim">mds@kase.kz</span>
-          <span class="rates-anim">© 1993-2022 АО "Казахстанская фондовая биржа". Копирование материалов – только с письменного разрешения.</span>
+          <span class="rates-anim">{{'Copyright2' | translate}}</span>
         </div>
       </div>
     </div>
