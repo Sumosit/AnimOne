@@ -42,13 +42,21 @@ export class AppComponent implements OnInit, OnDestroy {
       "userFio": ["", [Validators.required, this.checkSpaces, this.checkCyrillic]],
       "userLogin": ["", [Validators.required, this.checkEnglish, this.checkNumbers, Validators.minLength(3)]],
       "userEmail": ["", [Validators.required, Validators.email]],
-      "userPhone": ["", Validators.required],
+      "userPhone": ["", [Validators.required, Validators.minLength(6), Validators.pattern('^[-+()0-9]+$')]],
       "userPassword": ["", [Validators.required,
         Validators.minLength(6), Validators.maxLength(50),
         Validators.pattern('^[a-zA-Z0-9]+$'), this.checkPasswordUppercase, this.checkEnglish, this.checkNumbers]],
       "userPasswordConfirm": ["", [Validators.required]],
       "userCaptcha": ["", [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
     }, {validators: this.checkPasswords});
+  }
+
+  getHeight(value: string) {
+    if (this.screenWidth <= 1100) {
+      return 'auto'
+    }
+    // @ts-ignore
+    return document.getElementById(value).getBoundingClientRect().height+'px';
   }
 
   public checkPasswords: ValidatorFn = (control: any): ValidationErrors | null => {

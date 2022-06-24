@@ -517,7 +517,7 @@
   </div>
   <div class="middle-content" style="display: flex; justify-content: center">
     <div class="trial-form">
-      <div class="tf-left">
+      <div class="tf-left" id="tf-left">
         <div class="rates" id="rates">
           <div class="r-base">
             <span class="rb-text rates-anim" [innerHTML]="'Tariffs2' | translate"></span>
@@ -609,9 +609,10 @@
           <img src="assets/images/trial-form-left.svg">
         </div>
       </div>
-      <form class="tf-right" id="form"
+      <form class="tf-right" [ngStyle]="{height: getHeight('tf-left')}" id="form"
             *ngIf="!regSuccess"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
+        <div>
         <span class="rates-anim tfr-text" [innerHTML]="'Form5' | translate"></span>
         <span class="rates-anim tfr-text" [innerHTML]="'Form6' | translate"></span>
         <div class="tfr-inputs">
@@ -624,7 +625,7 @@
           </div>
           <div class="tft-input-field">
             <label *ngIf="userPhone.value" for="phone" [innerHTML]="'Form8' | translate"></label>
-            <input formControlName="userPhone" [placeholder]="'Form8' | translate" id="phone" name="tel"
+            <input maxlength="100" formControlName="userPhone" [placeholder]="'Form8' | translate" id="phone" name="tel"
                    [ngStyle]="{
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
@@ -725,7 +726,7 @@
               <img [src]="getCaptchaLink() + guid" alt="">
             </div>
             <div class="tft-input-field">
-              <label for="captcha">{{'Form11' | translate}}</label>
+              <label *ngIf="userCaptcha.value" for="captcha">{{'Form11' | translate}}</label>
               <input formControlName="userCaptcha" [placeholder]="'Form11' | translate" id="captcha" name="tel"
                      [ngStyle]="{
                  border: userCaptcha.invalid && userCaptcha.touched ? '1px solid #FF2E24' : ''
@@ -743,6 +744,7 @@
         <div class="tfr-question">
           <span>{{'Form13' | translate}}</span>
           <a href="https://irisfinance.kase.kz/auth" target="_blank">{{'Form14' | translate}}</a>
+        </div>
         </div>
       </form>
       <!--      <div class="tfr-rec_4"></div>-->
