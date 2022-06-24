@@ -4,15 +4,15 @@
     <img class="mmh-logo" src="assets/images/LOGO.svg" alt="">
     <div class="mmh-trial-button">
       <div class="button-primary">
-        <a class="" (click)="appService.scrollTo('form')">Попробовать бесплатно</a>
+        <a class="" (click)="appService.scrollTo('form')">{{'Header3' | translate}}</a>
       </div>
     </div>
   </div>
   <div class="mm-links">
-    <div class="mm-link" (click)="appService.scrollToBehavior( 'with-you1')">О продукте</div>
-    <div class="mm-link" (click)="appService.scrollTo('rates')">Тарифы</div>
-    <div class="mm-link" (click)="appService.scrollTo('tf-contacts')">Контакты</div>
-    <a class="mm-link" href="https://irisfinance.kase.kz/auth" target="_blank">Войти</a>
+    <div class="mm-link" (click)="appService.scrollToBehavior( 'with-you1')">{{'Header5' | translate}}</div>
+    <div class="mm-link" (click)="appService.scrollTo('rates')">{{'Header6' | translate}}</div>
+    <div class="mm-link" (click)="appService.scrollTo('tf-contacts')">{{'Header7' | translate}}</div>
+    <a class="mm-link" href="https://irisfinance.kase.kz/auth" target="_blank">{{'Header4' | translate}}</a>
   </div>
   <div class="mm-lang">
     <span class="{{appService.getLang() === 'kz' ? 'accent-color' : ''}}" (click)="appService.switchLang('kz')">KZ</span>
@@ -21,7 +21,7 @@
   </div>
   <div class="mm-contacts">
     <div class="mm-contact">
-      <span class="mmc-title">Телефон</span>
+      <span class="mmc-title">{{'Form8' | translate}}</span>
       <span class="mmc-content">+7 727 2375322 </span>
     </div>
       <div class="mm-contact">

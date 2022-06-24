@@ -158,7 +158,6 @@
       }
 
       .hr-lang {
-        cursor: pointer;
         user-select: none;
         z-index: 1001;
         display: flex;
@@ -167,6 +166,7 @@
           display: none;
         }
         span {
+          cursor: pointer;
           font-weight: 400;
           font-size: 16px;
           line-height: 120%;
