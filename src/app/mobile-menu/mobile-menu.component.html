@@ -15,9 +15,9 @@
     <a class="mm-link" href="https://irisfinance.kase.kz/auth" target="_blank">Войти</a>
   </div>
   <div class="mm-lang">
-    <span>KZ</span>
-    <span>RU</span>
-    <span>EN</span>
+    <span class="{{appService.getLang() === 'kz' ? 'accent-color' : ''}}" (click)="appService.switchLang('kz')">KZ</span>
+    <span class="{{appService.getLang() === 'ru' ? 'accent-color' : ''}}" (click)="appService.switchLang('ru')">RU</span>
+    <span class="{{appService.getLang() === 'en' ? 'accent-color' : ''}}" (click)="appService.switchLang('en')">EN</span>
   </div>
   <div class="mm-contacts">
     <div class="mm-contact">
