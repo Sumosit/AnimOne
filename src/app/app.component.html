@@ -621,21 +621,21 @@
             <label for="fio" [innerHTML]="'Form7' | translate"></label>
             <input formControlName="userFio" [placeholder]="'Placeholder1' | translate" id="fio" name="fio" maxlength="80"
                    [ngStyle]="{
-                   border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
+                   border: userFio.invalid && userFio.dirty ? '1px solid #FF2E24' : ''
                    }">
           </div>
           <div class="tft-input-field">
             <label for="phone" [innerHTML]="'Form8' | translate"></label>
             <input maxlength="100" formControlName="userPhone" [placeholder]="'+7'" id="phone" name="tel"
                    [ngStyle]="{
-                 border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
+                 border: userPhone.invalid && userPhone.dirty ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div class="tft-input-field">
             <label for="email">E-mail</label>
             <input formControlName="userEmail" [placeholder]="'Placeholder2' | translate" id="email" name="email" maxlength="100"
                    [ngStyle]="{
-                 border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
+                 border: userEmail.invalid && userEmail.dirty ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div *ngIf="userEmail.invalid" class="form-password-errors">
@@ -645,7 +645,7 @@
             <label for="login">Логин</label>
             <input formControlName="userLogin" [placeholder]="'Placeholder2' | translate" id="login" name="login" maxlength="30"
                    [ngStyle]="{
-                 border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
+                 border: userLogin.invalid && userLogin.dirty ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div *ngIf="userLogin.value" class="form-password-errors">
@@ -709,7 +709,7 @@
                    }"
                      [type]="showPasswordConfirm ? '' : 'password'"
                      [ngStyle]="{
-                 border: !userPassword.valid && userPassword.touched || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
+                 border: !userPassword.valid && userPassword.dirty || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
                  }">
               <svg (click)="showPasswordConfirm = !showPasswordConfirm" width="24" height="24" viewBox="0 0 24 24"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -730,7 +730,7 @@
               <label *ngIf="userCaptcha.value" for="captcha">{{'Form11' | translate}}</label>
               <input formControlName="userCaptcha" [placeholder]="'Form11' | translate" id="captcha" name="tel"
                      [ngStyle]="{
-                 border: userCaptcha.invalid && userCaptcha.touched ? '1px solid #FF2E24' : ''
+                 border: userCaptcha.invalid && userCaptcha.dirty ? '1px solid #FF2E24' : ''
                  }">
             </div>
           </ng-container>
