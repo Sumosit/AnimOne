@@ -789,6 +789,11 @@
               </div>
             </ng-container>
           </div>
+          <div class="form-password-errors" [ngStyle]="{marginTop: userPassword.valid ? '12px' : '4px'}">
+            <div *ngFor="let regError of this.regErrorText">
+              {{regError}}
+            </div>
+          </div>
           <div class="tfr-line"></div>
           <div class="rates-anim tfr-accept" [innerHTML]="'Form12' | translate"></div>
           <button class="{{formPromo.valid ? '' : 'button-disabled'}} tfr-button"

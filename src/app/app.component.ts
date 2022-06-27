@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.formPromo = formBuilder.group({
       "userFio": ["", [Validators.required, this.checkSpaces, this.checkCyrillic]],
-      "userLogin": ["", [Validators.required, this.checkEnglish, Validators.minLength(3)]],
+      "userLogin": ["", [Validators.required, this.checkEnglish, Validators.minLength(6)]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", [Validators.required, Validators.minLength(6), Validators.pattern('^[-+()0-9]+$')]],
       "userPassword": ["", [Validators.required,
@@ -201,6 +201,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   promoFormSubmit() {
     // if (this.formPromo.valid) {
+    this.regErrorText = [];
     console.log('promo is valid');
     const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
       hostname: env.mqtt.server,
@@ -222,7 +223,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
       }
       if (state === 2) {
-        // console.log("start send");
+        this.regSubscription?.unsubscribe();
+        console.log("start send");
         this.loading = true;
 
         let fio = this.userFio.value.trim().replace(/\s+/g, ' ').split(' ');
@@ -237,14 +239,15 @@ export class AppComponent implements OnInit, OnDestroy {
           this.userCaptcha.value,
           this.guid
         );
-
         this.regSubscription = this.appService.getInfoRegRequest()
           .subscribe((regReply: IRIS.OpenInfoApiReply) => {
             if (regReply.userRegReply?.ok) {
+              this.regErrorText = [];
               console.log('ok');
               this.regSuccess = true;
               this.loading = false;
             } else if (!regReply.userRegReply?.ok) {
+              this.regErrorText = [];
               console.log('not ok');
               this.loading = false;
               this.guid = this.generateUuid();
@@ -255,6 +258,11 @@ export class AppComponent implements OnInit, OnDestroy {
                 })
               }
             }
+            else {
+              console.log(regReply);
+              this.loading = false;
+            }
+
           })
       }
     })
@@ -272,6 +280,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.regSubscription?.unsubscribe();
     this.mqttSubscription?.unsubscribe();
   }
 }
