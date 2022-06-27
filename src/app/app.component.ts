@@ -51,6 +51,10 @@ export class AppComponent implements OnInit, OnDestroy {
     }, {validators: this.checkPasswords});
   }
 
+  openUserAgreement() {
+    window.open('assets/pdf/user-agreement.pdf', '_blank');
+  }
+
   getHeight(value: string) {
     if (this.screenWidth <= 1100) {
       return 'auto'

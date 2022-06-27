@@ -58,6 +58,7 @@ html {
 }
 
 .button-primary {
+  user-select: none;
   cursor: pointer;
   z-index: 1001;
   //width: fit-content;
