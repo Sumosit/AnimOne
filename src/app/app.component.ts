@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.formPromo = formBuilder.group({
       "userFio": ["", [Validators.required, this.checkSpaces, this.checkCyrillic]],
-      "userLogin": ["", [Validators.required, this.checkEnglish, this.checkNumbers, Validators.minLength(3)]],
+      "userLogin": ["", [Validators.required, this.checkEnglish, Validators.minLength(3)]],
       "userEmail": ["", [Validators.required, Validators.email]],
       "userPhone": ["", [Validators.required, Validators.minLength(6), Validators.pattern('^[-+()0-9]+$')]],
       "userPassword": ["", [Validators.required,

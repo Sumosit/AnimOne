@@ -645,7 +645,7 @@
                  border: userEmail.invalid && userEmail.dirty ? '1px solid #FF2E24' : ''
                  }">
             </div>
-            <div *ngIf="userEmail.invalid" class="form-password-errors">
+            <div *ngIf="userEmail.invalid && userEmail.value" class="form-password-errors">
               <div *ngIf="userEmail.errors?.['email']">&bull;&nbsp;&nbsp;{{'Error1' | translate}}</div>
             </div>
             <div class="tft-input-field">
