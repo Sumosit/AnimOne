@@ -97,13 +97,22 @@ export class AppService {
 
 
   scrollTo(id: any) {
-    this.menu_show = false
-    let el = document.getElementById(id);
+    const animItems = document.querySelectorAll(".change-theme-anim");
+    for (let i = 0; i < animItems.length; i++) {
+      animItems[i].classList.add('showChangeTheme')
+    }
     setTimeout(() => {
-      console.log(el)
-      // @ts-ignore
-      el.scrollIntoView({block: "nearest"})
-    }, 0)
+      this.menu_show = false
+      let el = document.getElementById(id);
+      setTimeout(() => {
+        console.log(el)
+        // @ts-ignore
+        el.scrollIntoView({block: "center"})
+      }, 0)
+    }, 300)
+    // @ts-ignore
+    // document.getElementById('change_theme-text').style.display = 'flex';
+
   }
   scrollToBehavior(value: any) {
     this.menu_show = false
