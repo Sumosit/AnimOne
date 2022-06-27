@@ -727,8 +727,8 @@
               <img [src]="getCaptchaLink() + guid" alt="">
             </div>
             <div class="tft-input-field">
-              <label *ngIf="userCaptcha.value" for="captcha">{{'Form11' | translate}}</label>
-              <input formControlName="userCaptcha" [placeholder]="'Form11' | translate" id="captcha" name="tel"
+              <label for="captcha">{{'Form11' | translate}}</label>
+              <input formControlName="userCaptcha" [placeholder]="" id="captcha" name="tel"
                      [ngStyle]="{
                  border: userCaptcha.invalid && userCaptcha.dirty ? '1px solid #FF2E24' : ''
                  }">
