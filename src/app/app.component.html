@@ -609,7 +609,8 @@
           <img src="assets/images/trial-form-left.svg">
         </div>
       </div>
-      <form class="tf-right" [ngStyle]="{height: getHeight('tf-left')}" id="form"
+<!--      [ngStyle]="{height: getHeight('tf-left')}"-->
+      <form class="tf-right"  id="form"
             *ngIf="!regSuccess"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
         <div>
@@ -617,22 +618,22 @@
         <span class="rates-anim tfr-text" [innerHTML]="'Form6' | translate"></span>
         <div class="tfr-inputs">
           <div class="tft-input-field">
-            <label *ngIf="userFio.value" for="fio" [innerHTML]="'Form7' | translate"></label>
-            <input formControlName="userFio" [placeholder]="'Form7' | translate" id="fio" name="fio" maxlength="80"
+            <label for="fio" [innerHTML]="'Form7' | translate"></label>
+            <input formControlName="userFio" [placeholder]="'Placeholder1' | translate" id="fio" name="fio" maxlength="80"
                    [ngStyle]="{
                    border: userFio.invalid && userFio.touched ? '1px solid #FF2E24' : ''
                    }">
           </div>
           <div class="tft-input-field">
-            <label *ngIf="userPhone.value" for="phone" [innerHTML]="'Form8' | translate"></label>
-            <input maxlength="100" formControlName="userPhone" [placeholder]="'Form8' | translate" id="phone" name="tel"
+            <label for="phone" [innerHTML]="'Form8' | translate"></label>
+            <input maxlength="100" formControlName="userPhone" [placeholder]="'+7'" id="phone" name="tel"
                    [ngStyle]="{
                  border: userPhone.invalid && userPhone.touched ? '1px solid #FF2E24' : ''
                  }">
           </div>
           <div class="tft-input-field">
-            <label *ngIf="userEmail.value" for="email">E-mail</label>
-            <input formControlName="userEmail" placeholder="E-mail" id="email" name="email" maxlength="100"
+            <label for="email">E-mail</label>
+            <input formControlName="userEmail" [placeholder]="'Placeholder2' | translate" id="email" name="email" maxlength="100"
                    [ngStyle]="{
                  border: userEmail.invalid && userEmail.touched ? '1px solid #FF2E24' : ''
                  }">
@@ -641,8 +642,8 @@
             <div *ngIf="userEmail.errors?.['email']">&bull;&nbsp;&nbsp;{{'Error1' | translate}}</div>
           </div>
           <div class="tft-input-field">
-            <label *ngIf="userLogin.value" for="login">Логин</label>
-            <input formControlName="userLogin" placeholder="Логин" id="login" name="login" maxlength="30"
+            <label for="login">Логин</label>
+            <input formControlName="userLogin" [placeholder]="'Placeholder2' | translate" id="login" name="login" maxlength="30"
                    [ngStyle]="{
                  border: userLogin.invalid && userLogin.touched ? '1px solid #FF2E24' : ''
                  }">
@@ -653,8 +654,8 @@
             <div *ngIf="userLogin.errors?.['number']">&bull;&nbsp;&nbsp;{{'Error4' | translate}}</div>
           </div>
           <div class="tft-input-field input-img-right">
-            <label *ngIf="userPassword.value" for="password">{{'Form9' | translate}}</label>
-            <input formControlName="userPassword" [placeholder]="'Form9' | translate" id="password" name="password"
+            <label for="password">{{'Form9' | translate}}</label>
+            <input formControlName="userPassword" [placeholder]="'Placeholder3' | translate" id="password" name="password"
                    maxlength="20"
                    [ngClass]="{
                    'input-password': !showPassword && userPassword.value
@@ -695,12 +696,12 @@
               <div *ngIf="userPassword.errors?.['english']">&bull;&nbsp;&nbsp;{{'Error8' | translate}}</div>
             </div>
           </ng-container>
-          <ng-container *ngIf="userPassword.value.length > 0">
+          <ng-container>
             <div class="tft-input-field input-img-right">
               <div class="tft-input">
-                <label *ngIf="userPasswordConfirm.value" for="password">{{'Form10' | translate}}</label>
+                <label for="password">{{'Form10' | translate}}</label>
               </div>
-              <input formControlName="userPasswordConfirm" [placeholder]="'Form10' | translate" id="userPasswordConfirm"
+              <input formControlName="userPasswordConfirm" [placeholder]="'Placeholder4' | translate" id="userPasswordConfirm"
                      name="userPasswordConfirm"
                      maxlength="51"
                      [ngClass]="{
@@ -708,7 +709,7 @@
                    }"
                      [type]="showPasswordConfirm ? '' : 'password'"
                      [ngStyle]="{
-                 border: !userPassword.valid || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
+                 border: !userPassword.valid && userPassword.touched || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
                  }">
               <svg (click)="showPasswordConfirm = !showPasswordConfirm" width="24" height="24" viewBox="0 0 24 24"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -742,7 +743,7 @@
           <span *ngIf="!loading">{{'Form15' | translate}}</span>
         </button>
         <div class="tfr-question">
-          <span>{{'Form13' | translate}}</span>
+          <span [innerHTML]="'Form13' | translate"></span>
           <a href="https://irisfinance.kase.kz/auth" target="_blank">{{'Form14' | translate}}</a>
         </div>
         </div>

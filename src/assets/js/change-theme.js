@@ -1,5 +1,16 @@
 setInterval(() => {
+  const withYou = document.getElementById('with-you');
+  setAnimCompBg()
+  function setAnimCompBg() {
+    var w = window.innerWidth * window.devicePixelRatio;
+    if (w > 1440) {
 
+      if (scrollY > 800 && window.screen.width > 1440) {
+        withYou.style.position = 'sticky'
+        withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
+      }
+    }
+  }
 }, 0)
 
 setTimeout(() => {
@@ -28,10 +39,10 @@ setTimeout(() => {
     var w = window.innerWidth * window.devicePixelRatio;
     if (w > 1440) {
 
-      if (scrollY > 800 && window.screen.width > 1440) {
-        withYou.style.position = 'sticky'
-        withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
-      }
+      // if (scrollY > 800 && window.screen.width > 1440) {
+      //   withYou.style.position = 'sticky'
+      //   withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
+      // }
 
       if (scrollY > 3300 || scrollY < 1000) {
         // changeThemeText.style.display = 'initial';
