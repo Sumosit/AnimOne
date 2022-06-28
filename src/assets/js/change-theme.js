@@ -28,7 +28,7 @@ setTimeout(() => {
   window.addEventListener('resize', scrollToStart);
 
   function scrollToStart() {
-    var w = window.innerWidth * window.devicePixelRatio;
+    var w = window.innerWidth * window.devicePixelRatio / 2;
     if (w > 1440) {
       window.scrollTo({top: 0, behavior: 'auto'});
     }
@@ -44,7 +44,7 @@ setTimeout(() => {
   window.addEventListener('resize', setAnimCompBg);
 
   function setAnimCompBg() {
-    var w = window.innerWidth * window.devicePixelRatio;
+    var w = window.innerWidth * window.devicePixelRatio / 2;
     if (w > 1440) {
 
       // if (scrollY > 800 && window.screen.width > 1440) {

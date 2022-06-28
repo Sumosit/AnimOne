@@ -26,11 +26,11 @@
               (click)="appService.switchLang('en')">EN</span>
       </div>
       <a class="hr-button" href="https://irisfinance.kase.kz/auth" target="_blank">{{'Header4' | translate}}</a>
-      <a class="button-primary" (click)="appService.scrollTo('form')">{{'Header3' | translate}}</a>
+      <a class="button-primary" id="header3" (click)="appService.scrollTo('form')">{{'Header3' | translate}}</a>
     </div>
   </div>
   <div class="header-big">
-    <div class="hb-left">
+    <div class="hb-left" id="hb-left">
       <div class="hb-text">
         <span>IRIS Finance</span>
         <span [innerHTML]="'Header1' | translate"></span>
@@ -38,7 +38,7 @@
       </div>
       <div class="button"><a (click)="appService.scrollTo('form')">{{'Header3' | translate}}</a></div>
     </div>
-    <div class="hb-right">
+    <div class="hb-right" id="hb-right">
       <img id="hb_right-img" src="assets/images/promomain%201.svg" alt="">
     </div>
   </div>
