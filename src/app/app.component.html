@@ -604,7 +604,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="regSuccess" class="tf-right-success">
+      <div *ngIf="!regSuccess" class="tf-right-success">
         <div class="tfrc-header">
           <span [innerHTML]="'Form1' | translate"></span>
           <span [innerHTML]="'Form2' | translate"></span>
@@ -618,7 +618,7 @@
       </div>
       <!--      [ngStyle]="{height: getHeight('tf-left')}"-->
       <form class="tf-right" id="form"
-            *ngIf="!regSuccess"
+            *ngIf="regSuccess"
             [formGroup]="formPromo" (ngSubmit)="promoFormSubmit()">
         <div>
           <span class="rates-anim tfr-text" [innerHTML]="'Form5' | translate"></span>
