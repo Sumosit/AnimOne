@@ -25,6 +25,14 @@ setTimeout(() => {
 
   let qwe = 0;
   setAnimCompBg()
+  window.addEventListener('resize', scrollToStart);
+
+  function scrollToStart() {
+    var w = window.innerWidth * window.devicePixelRatio;
+    if (w > 1440) {
+      window.scrollTo({top: 0, behavior: 'auto'});
+    }
+  }
   animCompBg.style.display = 'initial';
   animCompBg.style.height = 570 + 'px';
   animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';

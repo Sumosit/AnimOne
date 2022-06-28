@@ -7,7 +7,7 @@
   <div class="header" id="header">
     <div class="header-left">
       <img class="hl-menu" src="assets/images/menu.svg" (click)="appService.menu_show = true" alt="">
-      <img src="assets/images/LOGO.svg" alt="">
+      <img class="hl-logo" src="assets/images/LOGO.svg" alt="">
       <div class="hi-texts">
         <span
           (click)="appService.scrollToBehavior(screenWidth > 1440 ? 'with-you' : 'with-you1')">{{'Header5' | translate}}</span>
@@ -608,9 +608,11 @@
         <div class="tfrc-header">
           <span [innerHTML]="'Form1' | translate"></span>
           <span [innerHTML]="'Form2' | translate"></span>
-          <span [innerHTML]="'Form3' | translate"></span>
-          <a href="mailto:mds@kase.kz?subject=Обратная связь&body=Введите сообщение"
-             [innerHTML]="'Form4' | translate"></a>
+          <div>
+            <span [innerHTML]="'Form3' | translate"></span>
+            <a href="mailto:mds@kase.kz?subject=Обратная связь&body=Введите сообщение"
+               [innerHTML]="'Form4' | translate"></a>
+          </div>
           <img src="assets/images/trial-form-left.svg">
         </div>
       </div>

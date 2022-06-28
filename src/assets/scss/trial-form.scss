@@ -561,15 +561,17 @@
             font-size: 16px;
             line-height: 24px;
           }
-
-          &:nth-child(3), &:nth-child(4) {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 140%;
-          }
-
-          &:nth-child(3) {
-            margin-top: 16px;
+        }
+        div {
+          margin-top: 16px;
+          display: flex;
+          align-items: center;
+          span {
+            &:nth-child(1), &:nth-child(2) {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+            }
           }
         }
 

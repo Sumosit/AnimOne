@@ -15,10 +15,16 @@ export class AppService {
               public translateService: TranslateService) {
     translateService.addLangs(['en', 'ru', 'kz']);
     translateService.setDefaultLang('ru');
-    this.switchLang('ru');
+    if (localStorage.getItem('lang')) {
+      // @ts-ignore
+      this.switchLang(localStorage.getItem('lang'));
+    } else {
+      this.switchLang('ru');
+    }
   }
 
   switchLang(lang: string) {
+    localStorage.setItem('lang', lang);
     this.translateService.use(lang);
   }
 

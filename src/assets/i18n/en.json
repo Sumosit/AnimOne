@@ -41,7 +41,7 @@
   "Form1": "One more step and&nbsp;you are&nbsp;at&nbsp;the&nbsp;goal!",
   "Form2": "We have sent an email to your email address with a link. Please follow this link to access IRIS Finance",
   "Form3": "If you have not received an email, please",
-  "Form4": "Contact us",
+  "Form4": "&nbsp;Contact us",
   "Form5": "Trial period for 7 days",
   "Form6": "Take advantage of free trial access after registration",
   "Form7": "Name",
@@ -62,7 +62,7 @@
 
   "Error1": "email entered incorrectly",
   "Error2": "login is too short",
-  "Error3": "no letters of the latin alphabet",
+  "Error3": "only latin letters",
   "Error4": "no numbers",
   "Error5": "at least 6 characters",
   "Error6": "missing uppercase letters: A-Z",
