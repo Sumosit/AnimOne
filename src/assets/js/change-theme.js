@@ -1,6 +1,7 @@
 setInterval(() => {
   const withYou = document.getElementById('with-you');
   setAnimCompBg()
+
   function setAnimCompBg() {
     var w = window.innerWidth * window.devicePixelRatio;
     if (w > 1440) {
@@ -33,6 +34,7 @@ setTimeout(() => {
       window.scrollTo({top: 0, behavior: 'auto'});
     }
   }
+
   animCompBg.style.display = 'initial';
   animCompBg.style.height = 570 + 'px';
   animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';
@@ -105,18 +107,21 @@ setTimeout(() => {
     window.addEventListener('scroll', changeThemeOn);
 
     function changeThemeOn() {
-      // console.log(animItems)
-      for (let i = 0; i < animItems.length; i++) {
-        const animItemHeight = animItems[i].offsetHeight;
-        const animItemOffset = offset(animItems[i]).top;
+      var w = window.innerWidth * window.devicePixelRatio / 2;
+      if (w > 768) {
+        // console.log(animItems)
+        for (let i = 0; i < animItems.length; i++) {
+          const animItemHeight = animItems[i].offsetHeight;
+          const animItemOffset = offset(animItems[i]).top;
 
-        const animStart = 10;
-        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+          const animStart = 10;
+          let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
-        if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
-          animItems[i].classList.add('showChangeTheme')
-        } else {
-          // animItems[i].classList.remove('showChangeTheme')
+          if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+            animItems[i].classList.add('showChangeTheme')
+          } else {
+            // animItems[i].classList.remove('showChangeTheme')
+          }
         }
       }
     }
@@ -129,18 +134,21 @@ setTimeout(() => {
     window.addEventListener('scroll', ratesOn);
 
     function ratesOn() {
-      // console.log(rateItems)
-      for (let i = 0; i < rateItems.length; i++) {
-        const animItemHeight = rateItems[i].offsetHeight;
-        const animItemOffset = offset(rateItems[i]).top;
+      var w = window.innerWidth * window.devicePixelRatio / 2;
+      if (w > 768) {
+        // console.log(rateItems)
+        for (let i = 0; i < rateItems.length; i++) {
+          const animItemHeight = rateItems[i].offsetHeight;
+          const animItemOffset = offset(rateItems[i]).top;
 
-        const animStart = 4;
-        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+          const animStart = 4;
+          let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
-        if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
-          rateItems[i].classList.add('showRates')
-        } else {
-          // rateItems[i].classList.remove('showRates')
+          if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+            rateItems[i].classList.add('showRates')
+          } else {
+            // rateItems[i].classList.remove('showRates')
+          }
         }
       }
     }
