@@ -160,6 +160,9 @@
 
 .change-theme-anim {
   transition: all 0.7s ease 0s;
+  @media screen and (max-width: 768px) {
+    transition: none;
+  }
 }
 
 .change-theme {

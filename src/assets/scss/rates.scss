@@ -5,4 +5,7 @@
 .rates-anim {
   opacity: 0;
   transition: all 0.9s ease 0s;
+  @media screen and (max-width: 768px) {
+    transition: none;
+  }
 }
