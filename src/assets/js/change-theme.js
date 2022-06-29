@@ -133,8 +133,8 @@ setTimeout(() => {
 
     function ratesOn() {
       var w = window.innerWidth;
-      // console.log(w)
-      if (w < 768) {
+      console.log(w)
+      if (w > 768) {
         // console.log(rateItems)
         for (let i = 0; i < rateItems.length; i++) {
           const animItemHeight = rateItems[i].offsetHeight;

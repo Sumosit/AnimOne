@@ -1,7 +1,8 @@
 .showRates {
   opacity: 1 !important;
   @media screen and (max-width: 768px) {
-    transition: all 0s;
+    opacity: 1 !important;
+    transition: all 0s ease 0s;
   }
 }
 
