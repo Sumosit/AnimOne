@@ -1,11 +1,14 @@
 .showRates {
   opacity: 1 !important;
+  @media screen and (max-width: 768px) {
+    transition: all 0s;
+  }
 }
 
 .rates-anim {
   opacity: 0;
   transition: all 0.9s ease 0s;
   @media screen and (max-width: 768px) {
-    transition: none;
+    transition: all 0s ease 0s;
   }
 }
