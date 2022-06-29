@@ -47,59 +47,59 @@ setTimeout(() => {
   window.addEventListener('resize', setAnimCompBg);
 
   function setAnimCompBg() {
-    // var w = window.innerWidth;
-    // if (w > 1440) {
-    //
-    //   // if (scrollY > 800 && window.screen.width > 1440) {
-    //   //   withYou.style.position = 'sticky'
-    //   //   withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
-    //   // }
-    //
-    //   if (scrollY > 3300 || scrollY < 1000) {
-    //     // changeThemeText.style.display = 'initial';
-    //   }
-    //   if (scrollY > 0 && scrollY <= 3650) {
-    //     // if (qwe === 0) {
-    //     // changeThemeText.style.display = 'none';
-    //     changeThemeText.style.display = 'flex'
-    //     changeThemeText1.style.opacity = '0';
-    //     // changeTheme.style.padding = '215px 0 143px'
-    //     changeTheme.style.padding = '50px 0 143px'
-    //     changeThemeText.style.transition = 'all 0s'
-    //     changeThemeText.style.position = 'fixed'
-    //     changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 90 + 'px';
-    //     // qwe = 1;
-    //     // }
-    //   } else if (scrollY > 3650) {
-    //     // if (qwe === 1 ) {
-    //     // changeTheme1.style.display = 'none';
-    //     changeThemeText.style.top = changeThemeText1.getBoundingClientRect().top + 'px';
-    //     changeThemeText.style.display = 'none'
-    //     changeThemeText1.style.opacity = '1';
-    //     // changeThemeText.style.transition = 'all 0s'
-    //     //   changeThemeText.style.position = 'initial'
-    //     changeTheme.style.padding = '50px 0 143px'
-    //     //   qwe = 0;
-    //     // }
-    //   }
-    //
-    //   if (scrollY < 4200 && scrollY > -100) {
-    //     animCompBg.style.display = 'initial';
-    //     animCompBg.style.height = 570 + 'px';
-    //     animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';
-    //     // console.log(animCompBg.style.top)
-    //   } else {
-    //     animCompBg.style.display = 'none';
-    //     withYou.style.position = 'initial'
-    //     withYou.classList.remove('with-you-go_up')
-    //   }
-    //
-    // } else {
-    //   changeThemeText.style.display = 'flex';
-    //   changeThemeText.style.position = 'relative';
-    //   changeThemeText.style.top = '0';
-    //   changeTheme.style.padding = '50px 16px 65px'
-    // }
+    var w = window.innerWidth;
+    if (w > 1440) {
+
+      // if (scrollY > 800 && window.screen.width > 1440) {
+      //   withYou.style.position = 'sticky'
+      //   withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
+      // }
+
+      if (scrollY > 3300 || scrollY < 1000) {
+        // changeThemeText.style.display = 'initial';
+      }
+      if (scrollY > 0 && scrollY <= 3650) {
+        // if (qwe === 0) {
+        // changeThemeText.style.display = 'none';
+        changeThemeText.style.display = 'flex'
+        changeThemeText1.style.opacity = '0';
+        // changeTheme.style.padding = '215px 0 143px'
+        changeTheme.style.padding = '50px 0 143px'
+        changeThemeText.style.transition = 'all 0s'
+        changeThemeText.style.position = 'fixed'
+        changeThemeText.style.top = animCompBg.getBoundingClientRect().bottom + 90 + 'px';
+        // qwe = 1;
+        // }
+      } else if (scrollY > 3650) {
+        // if (qwe === 1 ) {
+        // changeTheme1.style.display = 'none';
+        changeThemeText.style.top = changeThemeText1.getBoundingClientRect().top + 'px';
+        changeThemeText.style.display = 'none'
+        changeThemeText1.style.opacity = '1';
+        // changeThemeText.style.transition = 'all 0s'
+        //   changeThemeText.style.position = 'initial'
+        changeTheme.style.padding = '50px 0 143px'
+        //   qwe = 0;
+        // }
+      }
+
+      if (scrollY < 4200 && scrollY > -100) {
+        animCompBg.style.display = 'initial';
+        animCompBg.style.height = 570 + 'px';
+        animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';
+        // console.log(animCompBg.style.top)
+      } else {
+        animCompBg.style.display = 'none';
+        withYou.style.position = 'initial'
+        withYou.classList.remove('with-you-go_up')
+      }
+
+    } else {
+      changeThemeText.style.display = 'flex';
+      changeThemeText.style.position = 'relative';
+      changeThemeText.style.top = '0';
+      changeTheme.style.padding = '50px 16px 65px'
+    }
   }
 
   const animItems = document.querySelectorAll(".change-theme-anim");
@@ -161,74 +161,38 @@ setTimeout(() => {
   }
 }, 500)
 
-// setTimeout(() => {
-//   var isResizing = false;
-//
-//   (function () {
-//     var container = document.getElementById("container"),
-//       left = document.getElementById("left_panel"),
-//       right = document.getElementById("right_panel"),
-//       handle = document.getElementById("drag");
-//     handle1 = document.getElementById("drag1");
-//
-//     handle.onmousedown = function (e) {
-//       isResizing = true;
-//     };
-//     handle1.onmousedown = function (e) {
-//       isResizing = true;
-//     };
-//
-//     document.onmousemove = function (e) {
-//       // we don't want to do anything if we aren't resizing.
-//       if (!isResizing) {
-//         return;
-//       }
-//
-//       var offsetRight = container.clientWidth - (e.clientX - container.offsetLeft);
-//
-//       left.style.right = offsetRight + "px";
-//       right.style.width = offsetRight + "px";
-//     }
-//
-//     document.onmouseup = function (e) {
-//       // stop resizing
-//       isResizing = false;
-//     }
-//   })();
-// }, 500)
-//
-// setTimeout(() => {
-//   var isResizing = false;
-//
-//   (function () {
-//     var container = document.getElementById("container"),
-//       left = document.getElementById("left_panel"),
-//       right = document.getElementById("right_panel"),
-//       handle = document.getElementById("drag");
-//     handle1 = document.getElementById("drag1");
-//
-//     handle.onmousedown = function (e) {
-//       isResizing = true;
-//     };
-//     handle1.onmousedown = function (e) {
-//       isResizing = true;
-//     };
-//
-//     document.onmousemove = function (e) {
-//       // we don't want to do anything if we aren't resizing.
-//       if (!isResizing) {
-//         return;
-//       }
-//
-//       var offsetRight = container.clientWidth - (e.clientX - container.offsetLeft);
-//
-//       left.style.right = offsetRight + "px";
-//       right.style.width = offsetRight + "px";
-//     }
-//
-//     document.onmouseup = function (e) {
-//       // stop resizing
-//       isResizing = false;
-//     }
-//   })();
-// }, 500)
+setTimeout(() => {
+  var isResizing = false;
+
+  (function () {
+    var container = document.getElementById("container"),
+      left = document.getElementById("left_panel"),
+      right = document.getElementById("right_panel"),
+      handle = document.getElementById("drag");
+    handle1 = document.getElementById("drag1");
+
+    handle.onmousedown = function (e) {
+      isResizing = true;
+    };
+    handle1.onmousedown = function (e) {
+      isResizing = true;
+    };
+
+    document.onmousemove = function (e) {
+      if (!isResizing) {
+        return;
+      }
+
+      var offsetRight = container.clientWidth - (e.clientX - container.offsetLeft);
+
+      left.style.right = offsetRight + "px";
+      right.style.width = offsetRight + "px";
+    }
+
+    document.onmouseup = function (e) {
+      // stop resizing
+      isResizing = false;
+    }
+  })();
+}, 500)
+
