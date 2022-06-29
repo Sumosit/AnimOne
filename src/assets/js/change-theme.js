@@ -1,8 +1,10 @@
 setInterval(() => {
+  const animCompBg = document.getElementById('animCompBg');
   const withYou = document.getElementById('with-you');
   setAnimCompBg()
+
   function setAnimCompBg() {
-    var w = window.innerWidth * window.devicePixelRatio;
+    var w = window.innerWidth;
     if (w > 1440) {
 
       if (scrollY > 800 && window.screen.width > 1440) {
@@ -28,11 +30,12 @@ setTimeout(() => {
   window.addEventListener('resize', scrollToStart);
 
   function scrollToStart() {
-    var w = window.innerWidth * window.devicePixelRatio / 2;
+    var w = window.innerWidth;
     if (w > 1440) {
       window.scrollTo({top: 0, behavior: 'auto'});
     }
   }
+
   animCompBg.style.display = 'initial';
   animCompBg.style.height = 570 + 'px';
   animCompBg.style.top = (animField.getBoundingClientRect().top + (animField.getBoundingClientRect().height / 2)) - animCompBg.getBoundingClientRect().height / 2 + 'px';
@@ -44,7 +47,7 @@ setTimeout(() => {
   window.addEventListener('resize', setAnimCompBg);
 
   function setAnimCompBg() {
-    var w = window.innerWidth * window.devicePixelRatio / 2;
+    var w = window.innerWidth;
     if (w > 1440) {
 
       // if (scrollY > 800 && window.screen.width > 1440) {
@@ -129,18 +132,22 @@ setTimeout(() => {
     window.addEventListener('scroll', ratesOn);
 
     function ratesOn() {
-      // console.log(rateItems)
-      for (let i = 0; i < rateItems.length; i++) {
-        const animItemHeight = rateItems[i].offsetHeight;
-        const animItemOffset = offset(rateItems[i]).top;
+      var w = window.innerWidth;
+      // console.log(w)
+      if (w < 768) {
+        // console.log(rateItems)
+        for (let i = 0; i < rateItems.length; i++) {
+          const animItemHeight = rateItems[i].offsetHeight;
+          const animItemOffset = offset(rateItems[i]).top;
 
-        const animStart = 4;
-        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+          const animStart = 4;
+          let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
-        if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
-          rateItems[i].classList.add('showRates')
-        } else {
-          // rateItems[i].classList.remove('showRates')
+          if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+            rateItems[i].classList.add('showRates')
+          } else {
+            // rateItems[i].classList.remove('showRates')
+          }
         }
       }
     }

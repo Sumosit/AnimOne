@@ -19,12 +19,12 @@ setTimeout(() => {
 
       // 15 100%
       // ?  prev ? %
-      console.log(hbRightImg.style.top)
-      console.log(hbRight.getBoundingClientRect().width)
+      // console.log(hbRightImg.style.top)
+      // console.log(hbRight.getBoundingClientRect().width)
       hbRightImg.style.left = hbRight.getBoundingClientRect().x + 'px';
       hbRightImg.style.width = hbRight.getBoundingClientRect().width + 'px';
-      console.log(hbRightImg.style.left)
-      console.log(hbRightImg.style.width)
+      // console.log(hbRightImg.style.left)
+      // console.log(hbRightImg.style.width)
       if (scrollY < maxScroll) {
         formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) - 5;
       }
@@ -54,12 +54,12 @@ setInterval(() => {
 
     // 15 100%
     // ?  prev ? %
-    console.log(hbRightImg.style.top)
-    console.log(hbRight.getBoundingClientRect().width)
+    // console.log(hbRightImg.style.top)
+    // console.log(hbRight.getBoundingClientRect().width)
     hbRightImg.style.left = hbRight.getBoundingClientRect().x + 'px';
     hbRightImg.style.width = hbRight.getBoundingClientRect().width + 'px';
-    console.log(hbRightImg.style.left)
-    console.log(hbRightImg.style.width)
+    // console.log(hbRightImg.style.left)
+    // console.log(hbRightImg.style.width)
     if (scrollY < maxScroll) {
       formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) - 5;
     }
