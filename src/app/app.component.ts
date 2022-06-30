@@ -8,6 +8,7 @@ import {Subscription} from "rxjs";
 import {IRIS} from "../../iris";
 import {v4 as uuidv4} from 'uuid'
 import {group} from "@angular/animations";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(public appService: AppService,
               private mqttService: MqttService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              public translateService: TranslateService) {
     this.screenWidth = window.innerWidth;
     this.height = this.appService.getElementHeight('right_panel-dark-img')
 
@@ -95,6 +97,10 @@ export class AppComponent implements OnInit, OnDestroy {
     else if (name === 'passwordConfirm' && value.length <= 0) {
       this.passwordConfirmTextArea = false
     }
+  }
+
+  getPlaceholder(value: string) {
+    return this.translateService.instant(value)
   }
 
   textAreaValue(value: string, elementRef: string): boolean {

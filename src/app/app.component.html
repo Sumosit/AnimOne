@@ -680,7 +680,7 @@
                 <input *ngIf="passwordTextArea || screenWidth > 580"
                        formControlName="userPassword"
                        (ngModelChange)="changeTextAreaValue('password', userPassword.value)"
-                       [placeholder]="" id="password"
+                       [placeholder]="screenWidth > 580 ? getPlaceholder('Placeholder3') : ''" id="password"
                        name="password"
                        #userPasswordInput
                        (focusout)="changeTextAreaValue('password', userPassword.value)"
