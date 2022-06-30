@@ -1,19 +1,19 @@
-setInterval(() => {
-  const animCompBg = document.getElementById('animCompBg');
-  const withYou = document.getElementById('with-you');
-  setAnimCompBg()
-
-  function setAnimCompBg() {
-    var w = window.innerWidth;
-    if (w > 1440) {
-
-      if (scrollY > 800 && window.screen.width > 1440) {
-        withYou.style.position = 'sticky'
-        withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
-      }
-    }
-  }
-}, 0)
+// setInterval(() => {
+//   const animCompBg = document.getElementById('animCompBg');
+//   const withYou = document.getElementById('with-you');
+//   setAnimCompBg()
+//
+//   function setAnimCompBg() {
+//     var w = window.innerWidth;
+//     if (w > 1440) {
+//
+//       if (scrollY > 800 && window.screen.width > 1440) {
+//         withYou.style.position = 'sticky'
+//         withYou.style.top = animCompBg.getBoundingClientRect().top - withYou.getBoundingClientRect().height + 15 + 'px';
+//       }
+//     }
+//   }
+// }, 0)
 
 setTimeout(() => {
   const animCompBg = document.getElementById('animCompBg');
@@ -24,6 +24,8 @@ setTimeout(() => {
   const changeThemeText = document.getElementById('changeThemeText');
   const changeThemeText1 = document.getElementById('changeThemeText1');
   const container = document.getElementById('container');
+
+
 
   let qwe = 0;
   setAnimCompBg()
