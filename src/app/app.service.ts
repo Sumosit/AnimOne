@@ -111,7 +111,7 @@ export class AppService {
       this.menu_show = false
       let el = document.getElementById(id);
       setTimeout(() => {
-        console.log(el)
+        // console.log(el)
         // @ts-ignore
         el.scrollIntoView({block: "center"})
       }, 0)

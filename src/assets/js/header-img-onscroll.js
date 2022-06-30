@@ -21,6 +21,7 @@ setTimeout(() => {
       // ?  prev ? %
       // console.log(hbRightImg.style.top)
       // console.log(hbRight.getBoundingClientRect().width)
+      hbRightImg.style.position = 'absolute';
       hbRightImg.style.left = hbRight.getBoundingClientRect().x + 'px';
       hbRightImg.style.width = hbRight.getBoundingClientRect().width + 'px';
       // console.log(hbRightImg.style.left)
@@ -32,7 +33,8 @@ setTimeout(() => {
       if (formula !== 0) {
         hbRightImg.style.top = formula + '%';
       }
-    } else {
+    }
+    else {
       hbRightImg.style.position = 'initial'
     }
   }

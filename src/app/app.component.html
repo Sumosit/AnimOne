@@ -519,8 +519,8 @@
       <span class="rf-title" [innerHTML]="'Tariffs1' | translate"></span>
     </div>
   </div>
-  <div class="middle-content" style="display: flex; justify-content: center">
-    <div class="outer" style="position: relative;" #trial id="trial">
+  <div class="middle-content" style="display: flex;position: relative;; justify-content: center">
+    <div class="outer" style="position: relative;">
       <div class="trial-form">
         <div class="tf-left" id="tf-left">
           <div class="rates" id="rates">
@@ -665,7 +665,7 @@
                 <div *ngIf="userLogin.errors?.['number']">&bull;&nbsp;&nbsp;{{'Error4' | translate}}</div>
               </div>
               <div class="tft-input-field input-img-right"
-              [ngClass]="{
+                   [ngClass]="{
               'textarea': !passwordTextArea && screenWidth < 580,
               'input': passwordTextArea || screenWidth > 580
               }"
@@ -753,26 +753,26 @@
                   <div class="tft-input">
                     <label for="password">{{'Form10' | translate}}</label>
                   </div>
-<!--                  <textarea formControlName="userPasswordConfirm"-->
-<!--                            (click)="clickTextAreaValue('passwordConfirm')"-->
-<!--                            *ngIf="!passwordConfirmTextArea && screenWidth < 580"-->
-<!--                            [ngStyle]="{-->
-<!--                 border: !userPasswordConfirm.valid && userPasswordConfirm.dirty || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''-->
-<!--                 }"-->
-<!--                             [placeholder]= "" maxlength="51"></textarea>-->
+                  <!--                  <textarea formControlName="userPasswordConfirm"-->
+                  <!--                            (click)="clickTextAreaValue('passwordConfirm')"-->
+                  <!--                            *ngIf="!passwordConfirmTextArea && screenWidth < 580"-->
+                  <!--                            [ngStyle]="{-->
+                  <!--                 border: !userPasswordConfirm.valid && userPasswordConfirm.dirty || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''-->
+                  <!--                 }"-->
+                  <!--                             [placeholder]= "" maxlength="51"></textarea>-->
                   <input
-                         formControlName="userPasswordConfirm"
-                         [placeholder]=""
-                         id="passwordConfirm"
-                         (ngModelChange)="changeTextAreaValue('passwordConfirm', userPasswordConfirm.value)"
-                         #userPasswordConfirmInput
-                         name="userPasswordConfirm"
-                         maxlength="51"
-                         [ngClass]="{
+                    formControlName="userPasswordConfirm"
+                    [placeholder]=""
+                    id="passwordConfirm"
+                    (ngModelChange)="changeTextAreaValue('passwordConfirm', userPasswordConfirm.value)"
+                    #userPasswordConfirmInput
+                    name="userPasswordConfirm"
+                    maxlength="51"
+                    [ngClass]="{
                    'input-password': !showPasswordConfirm && userPasswordConfirm.value
                    }"
-                         [type]="showPasswordConfirm ? '' : 'password'"
-                         [ngStyle]="{
+                    [type]="showPasswordConfirm ? '' : 'password'"
+                    [ngStyle]="{
                  border: !userPassword.valid && userPassword.dirty || formPromo.hasError('mismatch') ? '1px solid #FF2E24' : ''
                  }">
                   <svg *ngIf="showPasswordConfirm" (click)="showPasswordConfirm = !showPasswordConfirm" width="24"
