@@ -530,7 +530,7 @@
         flex-direction: row;
 
         @media screen and (max-width: 680px) {
-          display: initial;
+          flex-direction: column;
           text-align: initial;
         }
 
