@@ -1,4 +1,4 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {AppService} from "./app.service";
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
@@ -16,8 +16,14 @@ import {group} from "@angular/animations";
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'animOne';
+  @ViewChild('userPassword') userPasswordInput: ElementRef | any;
+  @ViewChild('userPasswordConfirm') userPasswordConfirmInput: ElementRef | any;
+
   public screenWidth: any;
   public height: any;
+
+  public passwordTextArea: boolean = false;
+  public passwordConfirmTextArea: boolean = false;
 
   public formPromo: FormGroup;
   public segments: number = 0;
@@ -68,6 +74,42 @@ export class AppComponent implements OnInit, OnDestroy {
       return null;
     }
     return {'mismatch': true};
+  }
+  clickTextAreaValue(name: string) {
+    if (name === 'password') {
+      this.passwordTextArea = true
+    }
+    else if (name === 'passwordConfirm') {
+      this.passwordConfirmTextArea = true
+    }
+    setTimeout(() => {
+      // @ts-ignore
+      document.getElementById(name).focus();
+    })
+  }
+
+  changeTextAreaValue(name: string, value: string) {
+    if (name === 'password' && value.length === 0) {
+      this.passwordTextArea = false
+    }
+    else if (name === 'passwordConfirm' && value.length <= 0) {
+      this.passwordConfirmTextArea = false
+    }
+  }
+
+  textAreaValue(value: string, elementRef: string): boolean {
+    let t = 0;
+    if (value.length > 0) {
+      if (t === 0) {
+        setTimeout(() => {
+          console.log(123)
+          // @ts-ignore
+          document.getElementById(elementRef).focus();
+        })
+      }
+      return true
+    }
+    return false;
   }
 
   checkFio: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
