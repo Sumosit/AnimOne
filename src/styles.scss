@@ -4,6 +4,7 @@ body {
 
 html {
   overflow-y: initial;
+  -ms-overflow-y: initial;
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
@@ -27,13 +28,20 @@ html {
 
 * {
   overflow-y: hidden;
+  -ms-overflow-y: hidden;
   overflow-x: hidden;
+  -ms-overflow-x: hidden;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   font-style: normal;
   font-family: "Open Sans", "sans-serif" !important;
   transition: all 0.15s ease 0s;
+  -webkit-transition: all 0.15s ease 0s;
+  -o-transition: all 0.15s ease 0s;
+  -moz-transition: all 0.15s ease 0s;
 }
 
 .middle-content {
@@ -59,10 +67,15 @@ html {
 
 .button-primary {
   user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
   cursor: pointer;
   z-index: 1001;
   //width: fit-content;
   flex: none;
+  -ms-flex: none;
+  -webkit-flex: none;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -81,6 +94,7 @@ html {
 
 .button-disabled {
   opacity: 0.5 !important;
+  -moz-opacity: 0.5 !important;
 }
 
 html {

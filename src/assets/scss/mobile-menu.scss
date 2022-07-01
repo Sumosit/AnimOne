@@ -9,7 +9,16 @@
   background: #181C28;
   color: rgba(255, 255, 255, 0.9);
   display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -moz-box;
   flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+
   .mm-header {
     padding-bottom: 16px;
     font-weight: 400;
@@ -17,15 +26,18 @@
     line-height: 24px;
     letter-spacing: 0.02em;
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -moz-box;
     border-bottom: 1px solid #53586D;
+
     a {
       margin-left: auto;
       padding: 8px 16px;
     }
 
-    .mmh-close {
-      //margin-left: 24px;
-    }
+    .mmh-close {}
 
     .mmh-logo {
       margin-left: 16px;
@@ -34,7 +46,12 @@
     .mmh-trial-button {
       margin-left: auto;
       display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: -moz-flex;
+      display: -moz-box;
       justify-content: center;
+      -webkit-justify-content: center;
       font-weight: 600;
       font-size: 14px;
       line-height: 140%;
@@ -50,8 +67,18 @@
     padding: 24px 0;
     border-bottom: 1px solid #53586D;
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -moz-box;
     flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
     align-self: center;
+    -webkit-align-self: center;
+
     .mm-link {
       padding: 12px 0;
       text-align: center;
@@ -60,12 +87,19 @@
       line-height: 28px;
     }
   }
+
   .mm-lang {
     padding: 24px 0;
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -moz-box;
     justify-content: center;
+    -webkit-justify-content: center;
     gap: 40.5px;
     border-bottom: 1px solid #53586D;
+
     span {
       cursor: pointer;
       font-weight: 400;
@@ -76,20 +110,32 @@
 
   .mm-contacts {
     margin-top: 40px;
+
     .mm-contact {
       margin-top: 12px;
       display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: -moz-flex;
+      display: -moz-box;
       flex-direction: column;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
       text-align: center;
+
       &:nth-child(1) {
         margin-top: 0;
       }
+
       .mmc-title {
         font-weight: 400;
         font-size: 12px;
         line-height: 120%;
         text-transform: uppercase;
       }
+
       .mmc-content {
         font-weight: 400;
         font-size: 18px;
