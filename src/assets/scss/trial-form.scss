@@ -8,6 +8,7 @@ $color_7: #FF524A;
 $color_8: #E66407;
 
 .trial-form-field {
+  position: relative;
   padding: 120px 0 0 0;
   color: $color_1;
   backdrop-filter: blur(25px);
