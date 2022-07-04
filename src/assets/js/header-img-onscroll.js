@@ -50,7 +50,7 @@ qwe = setInterval(() => {
   let t = 0;
   if (t < 10) {
     var w = window.innerWidth;
-    console.log(w)
+    // console.log(w)
     if (w > 768) {
       let formula = 0;
       let scr = scrollY;
