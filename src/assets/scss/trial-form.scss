@@ -783,10 +783,10 @@ $color_8: #E66407;
     height: 100%;
     background: url(../../assets/images/trial-form-bg.svg) 0 0 / no-repeat center center;
     background: url('../../assets/images/trial-form-bg.svg') no-repeat center center;
-    background-size: cover;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    -webkit-background-size: cover;
+    background-size: cover;
     opacity: 0.6;
     -moz-opacity: 0.6;
   }
