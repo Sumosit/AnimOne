@@ -461,19 +461,11 @@ $color_2: #FFFFFF;
   }
 }
 .hbRightImg1 {
-  margin: 120px auto 0 !important;
+  margin: 40px auto 0 !important;
   display: none;
   @media screen and (max-width: 768px) {
-    display: initial;
-  }
-  @media screen and (max-width: 500px) {
-    margin: 180px auto 0 !important;
-  }
-  @media screen and (max-width: 430px) {
-    margin: 140px auto 0 !important;
-  }
-  @media screen and (max-width: 430px) {
-    margin: 70px auto 0 !important;
+    display: flex;
+    justify-content: center;
   }
 }
 .hbRightImg {

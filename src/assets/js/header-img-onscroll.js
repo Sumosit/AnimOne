@@ -3,7 +3,9 @@ setTimeout(() => {
   let hbRightImg = document.getElementById('hb_right-img');
   let hbLeft = document.getElementById('hb-left');
   let header3 = document.getElementById('header3');
+  let headerBg = document.getElementById('header-bg');
   let hbRight = document.getElementById('hb-right');
+  let headerField = document.getElementById('header-field');
   window.addEventListener('scroll', headerImgOnScroll);
   window.addEventListener('resize', headerImgOnScroll);
   // setInterval(() => {
@@ -35,7 +37,8 @@ setTimeout(() => {
       }
     }
     else {
-      hbRightImg.style.position = 'initial'
+      headerBg.style.height = headerField.getBoundingClientRect().height + 20 + 'px'
+      // hbRightImg.style.position = 'initial'
     }
   }
 
@@ -48,6 +51,7 @@ qwe = setInterval(() => {
   let hbLeft = document.getElementById('hb-left');
   let header3 = document.getElementById('header3');
   let headerBg = document.getElementById('header-bg');
+  let headerField = document.getElementById('header-field');
   let hbRight = document.getElementById('hb-right');
   let t = 0;
   if (t < 10) {
@@ -74,6 +78,7 @@ qwe = setInterval(() => {
       }
       // console.log(formula)
       if (formula !== 0) {
+        headerBg.style.height = headerField.getBoundingClientRect().height + 20 + 'px'
         hbRightImg.style.top = formula + '%';
       }
     }
