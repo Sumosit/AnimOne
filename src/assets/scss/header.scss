@@ -134,7 +134,13 @@ $color_2: #FFFFFF;
   position: absolute;
   width: 100%;
   height: 691px;
-  background: url("../../assets/images/unsplash_fiXLQXAhCfk.svg") no-repeat top center;
+  background-image: url("../../assets/images/unsplash_fiXLQXAhCfk.svg");
+  -moz-background-image: url("../../assets/images/unsplash_fiXLQXAhCfk.svg");
+  -o-background-image: url("../../assets/images/unsplash_fiXLQXAhCfk.svg");
+  -webkit-background-image: url("../../assets/images/unsplash_fiXLQXAhCfk.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 .header-field {
