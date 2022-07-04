@@ -387,7 +387,7 @@ $color_2: #FFFFFF;
       display: -ms-flex;
       display: -moz-flex;
       display: -moz-box;
-      img, object {
+      img, object, svg {
         z-index: 2999;
         position: absolute;
         width: auto;
@@ -449,7 +449,7 @@ $color_2: #FFFFFF;
       }
       .hb-right {
         padding-top: 0px;
-        img, object {
+        img, object, svg {
           margin-right: auto;
           margin-top: 50px !important;
         }
@@ -483,7 +483,7 @@ $color_2: #FFFFFF;
     }
     .header-big {
       .hb-right {
-        img, object {
+        img, object, svg {
           animation: none;
           -webkit-animation: none;
           -moz-animation: none;
