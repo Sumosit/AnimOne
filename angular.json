@@ -34,10 +34,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/animations.js",
-              "src/assets/js/change-theme.js",
-              "src/assets/js/header-img-onscroll.js",
-              "src/assets/js/with-you.js"
             ]
           },
           "configurations": {
