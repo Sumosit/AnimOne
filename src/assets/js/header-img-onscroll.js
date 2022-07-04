@@ -27,7 +27,7 @@ setTimeout(() => {
       // console.log(hbRightImg.style.left)
       // console.log(hbRightImg.style.width)
       if (scrollY < maxScroll) {
-        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) - 4;
+        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) + 20;
       }
       // console.log(formula)
       if (formula !== 0) {
@@ -43,9 +43,11 @@ setTimeout(() => {
 }, 500)
 
 qwe = setInterval(() => {
+  let hbRightImg1 = document.getElementById('hb_right-img1');
   let hbRightImg = document.getElementById('hb_right-img');
   let hbLeft = document.getElementById('hb-left');
   let header3 = document.getElementById('header3');
+  let headerBg = document.getElementById('header-bg');
   let hbRight = document.getElementById('hb-right');
   let t = 0;
   if (t < 10) {
@@ -68,7 +70,7 @@ qwe = setInterval(() => {
       // console.log(hbRightImg.style.left)
       // console.log(hbRightImg.style.width)
       if (scrollY < maxScroll) {
-        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) - 4;
+        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) + 20;
       }
       // console.log(formula)
       if (formula !== 0) {
@@ -76,7 +78,7 @@ qwe = setInterval(() => {
       }
     }
     else {
-      hbRightImg.style.position = 'initial'
+      // hbRightImg1.style.display = 'none'
     }
   }
   else {

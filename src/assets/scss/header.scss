@@ -387,7 +387,10 @@ $color_2: #FFFFFF;
       display: -ms-flex;
       display: -moz-flex;
       display: -moz-box;
-      img, object, svg {
+      img {
+
+      }
+      object, svg {
         z-index: 2999;
         position: absolute;
         width: auto;
@@ -449,12 +452,31 @@ $color_2: #FFFFFF;
       }
       .hb-right {
         padding-top: 0px;
-        img, object, svg {
+         object, svg {
           margin-right: auto;
           margin-top: 50px !important;
         }
       }
     }
+  }
+}
+.hbRightImg1 {
+  margin: 120px auto 0 !important;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: initial;
+  }
+  @media screen and (max-width: 500px) {
+    margin: 180px auto 0 !important;
+  }
+  @media screen and (max-width: 430px) {
+    margin: 140px auto 0 !important;
+  }
+}
+.hbRightImg {
+  display: initial;
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 @media screen and (max-width: 1024px) {
