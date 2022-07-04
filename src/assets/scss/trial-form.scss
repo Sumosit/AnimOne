@@ -781,7 +781,8 @@ $color_8: #E66407;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('src/assets/images/trial-form-bg.svg') no-repeat center center;
+    background: url(../../assets/images/trial-form-bg.svg) 0 0 / no-repeat center center;
+    background: url('../../assets/images/trial-form-bg.svg') no-repeat center center;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -800,17 +801,15 @@ $color_8: #E66407;
     background: -o-linear-gradient(left, #181B2A 0%, rgba(24, 27, 42, 0.93) 100%);
     background: linear-gradient(90deg, #181B2A 0%, rgba(24, 27, 42, 0.93) 100%);
     background: -webkit-linear-gradient(90deg, #181B2A 0%, rgba(24, 27, 42, 0.93) 100%);
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    background: #181B2A; /* Old browsers */
+    background: -moz-linear-gradient(left, #181B2A 0%, rgba(24, 27, 42, 0.93) 100%); /* FF3.6+ */
+    background: -ms-linear-gradient(left, #181B2A 0%, rgba(24, 27, 42, 0.93) 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='##181B2A', endColorstr='#ff7701',GradientType=0 ); /* IE6-9 */
+
   }
 }
 .form-segments-filled-1 {
   .form-segment {
-    background: #B4B5BD;
     background: #B4B5BD;
     &:nth-child(1) {
       background: #FF524A;
