@@ -1,3 +1,11 @@
+$color_1: rgba(255, 255, 255, 0.9);
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .mobile-menu {
   z-index: 5000;
   position: fixed;
@@ -7,78 +15,73 @@
   height: 100vh;
   padding: 16px;
   background: #181C28;
-  color: rgba(255, 255, 255, 0.9);
+  color: $color_1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
   display: -ms-flex;
   display: -moz-flex;
   display: -moz-box;
   flex-direction: column;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -moz-box-orient: vertical;
   -webkit-box-orient: vertical;
-
   .mm-header {
     padding-bottom: 16px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.02em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
     border-bottom: 1px solid #53586D;
-
     a {
       margin-left: auto;
       padding: 8px 16px;
     }
-
-    .mmh-close {}
-
     .mmh-logo {
       margin-left: 16px;
     }
-
     .mmh-trial-button {
       margin-left: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      display: -webkit-flex;
       display: -ms-flex;
       display: -moz-flex;
       display: -moz-box;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       -webkit-justify-content: center;
       font-weight: 600;
       font-size: 14px;
       line-height: 140%;
-
       .button-primary {
         padding: 8px 16px;
       }
     }
   }
-
   .mm-links {
     width: 100%;
     padding: 24px 0;
     border-bottom: 1px solid #53586D;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
     flex-direction: column;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
     align-self: center;
     -webkit-align-self: center;
-
     .mm-link {
       padding: 12px 0;
       text-align: center;
@@ -87,19 +90,20 @@
       line-height: 28px;
     }
   }
-
   .mm-lang {
     padding: 24px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     -webkit-justify-content: center;
     gap: 40.5px;
     border-bottom: 1px solid #53586D;
-
     span {
       cursor: pointer;
       font-weight: 400;
@@ -107,35 +111,29 @@
       line-height: 120%;
     }
   }
-
   .mm-contacts {
     margin-top: 40px;
-
     .mm-contact {
       margin-top: 12px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      display: -webkit-flex;
       display: -ms-flex;
       display: -moz-flex;
       display: -moz-box;
       flex-direction: column;
-      -webkit-flex-direction: column;
       -ms-flex-direction: column;
-      -moz-box-orient: vertical;
       -webkit-box-orient: vertical;
       text-align: center;
-
       &:nth-child(1) {
         margin-top: 0;
       }
-
       .mmc-title {
         font-weight: 400;
         font-size: 12px;
         line-height: 120%;
         text-transform: uppercase;
       }
-
       .mmc-content {
         font-weight: 400;
         font-size: 18px;

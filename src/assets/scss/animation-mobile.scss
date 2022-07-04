@@ -1,36 +1,38 @@
+$color_1: #1E2230;
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .animation-mobile {
   display: none;
-  @media screen and (max-width: 1440px) {
-    display: contents;
-  }
-
   .with-you {
     padding: 60px 0 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
     flex-direction: column;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     -webkit-align-items: center;
+    -webkit-box-shadow: 4px 0px 25px rgba(0, 0, 0, 0.1), 0px 4px 25px rgba(0, 0, 0, 0.1);
     box-shadow: 4px 0px 25px rgba(0, 0, 0, 0.1), 0px 4px 25px rgba(0, 0, 0, 0.1);
-    @media screen and (max-width: 1440px) {
-    }
-
     span {
       &:nth-child(1) {
         font-weight: 800;
         font-size: 48px;
         line-height: 100%;
         text-align: center;
-        color: #1E2230;
+        color: $color_1;
       }
-
       &:nth-child(2) {
         width: 912px;
         margin-top: 16px;
@@ -38,145 +40,163 @@
         font-size: 18px;
         line-height: 150%;
         text-align: center;
-        color: #1E2230;
-        @media screen and (max-width: 912px) {
-          width: 100%;
-        }
+        color: $color_1;
       }
     }
   }
-
   .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
     flex-direction: column;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     -webkit-align-items: center;
     margin-top: 60px;
     background: #E9EDF3;
-    @media screen and (max-width: 768px) {
-      margin-top: 40px;
-    }
-
     .option {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      display: -webkit-flex;
       display: -ms-flex;
       display: -moz-flex;
       display: -moz-box;
       padding: 0 0 24px 0;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
       flex-direction: row-reverse;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       -webkit-align-items: center;
-
       &:nth-child(1) {
         img {
           margin-top: -22px;
           margin-left: 15px;
         }
-
         span {
-          padding: 0 30px
+          padding: 0 30px;
+        }
+        margin-top: 84px;
+        >div {
+          margin-left: 0;
+          span {
+            padding-left: 0;
+          }
         }
       }
-
-      &:nth-child(1) {
-        margin-top: 84px;
-      }
-
       &:nth-child(2) {
         padding: 0 0 20px 0;
       }
-
       &:last-child {
         padding: 0 0 84px 0;
       }
-
-      @media screen and (max-width: 768px) {
-        flex-direction: column;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        -moz-box-orient: vertical;
-        -webkit-box-orient: vertical;
-      }
-      @media screen and (max-width: 390px) {
-      }
-
       img {
+        -webkit-box-flex: 70%;
+        -ms-flex: 70%;
         flex: 70%;
       }
-
       div {
         margin-left: 20px;
         width: 400px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        display: -webkit-flex;
         display: -ms-flex;
         display: -moz-flex;
         display: -moz-box;
         flex-direction: column;
-        -webkit-flex-direction: column;
         -ms-flex-direction: column;
-        -moz-box-orient: vertical;
         -webkit-box-orient: vertical;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         -webkit-align-items: center;
-        @media screen and (max-width: 768px) {
-          width: 100%;
-          margin-left: initial;
-        }
       }
-
-      &:nth-child(1) > div {
-        margin-left: 0;
-
-        span {
-          padding-left: 0;
-        }
-      }
-
       span {
         width: 100%;
         text-align: left;
-        @media screen and (max-width: 768px) {
-          flex-direction: column;
-          -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-          -moz-box-orient: vertical;
-          -webkit-box-orient: vertical;
-          text-align: center;
-          align-items: center;
-          -webkit-align-items: center;
-        }
-
         &:nth-child(1) {
           margin-top: 24px;
           font-weight: 800;
           font-size: 36px;
           line-height: 100%;
-          color: #1E2230;
-          @media screen and (max-width: 1440px) {
-            margin-top: initial;
-          }
+          color: $color_1;
         }
-
         &:nth-child(2) {
           white-space: break-spaces;
           margin-top: 8px;
           font-weight: 400;
           font-size: 16px;
           line-height: 140%;
-          color: #1E2230;
-          @media screen and (max-width: 912px) {
+          color: $color_1;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1440px) {
+  .animation-mobile {
+    display: contents;
+    .options {
+      .option {
+        span {
+          &:nth-child(1) {
+            margin-top: initial;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 912px) {
+  .animation-mobile {
+    .with-you {
+      span {
+        &:nth-child(2) {
+          width: 100%;
+        }
+      }
+    }
+    .options {
+      .option {
+        span {
+          &:nth-child(2) {
             width: 100%;
           }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .animation-mobile {
+    .options {
+      margin-top: 40px;
+      .option {
+        flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        div {
+          width: 100%;
+          margin-left: initial;
+        }
+        span {
+          flex-direction: column;
+          -ms-flex-direction: column;
+          -webkit-box-orient: vertical;
+          text-align: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-align-items: center;
         }
       }
     }

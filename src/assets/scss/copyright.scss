@@ -1,150 +1,165 @@
+$color_1: #FFFFFF;
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .copyright {
-  //margin-top: 120px;
   padding: 24px 0 43px 0;
   border-top: 1px solid #53586D;
-  color: #FFFFFF;
+  color: $color_1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
   display: -ms-flex;
   display: -moz-flex;
   display: -moz-box;
   flex-direction: row;
-  -webkit-flex-direction: row;
   -ms-flex-direction: row;
-  -moz-box-orient: horizontal;
   -webkit-box-orient: horizontal;
   gap: 30px;
-  @media screen and (max-width: 1440px) {
-    padding: 24px 16px 16px;
-    width: 100%;
-    text-align: center;
-  }
-  @media screen and (max-width: 1100px) {
-    padding: 24px 0 16px;
-  }
-  @media screen and (max-width: 800px) {
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    -moz-box-orient: vertical;
-    -webkit-box-orient: vertical;
-    align-items: flex-start;
-    -webkit-align-items: flex-start;
-  }
-
   .copyright-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
     flex-direction: column;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     -webkit-align-items: flex-start;
     text-align: left;
-    @media screen and (max-width: 800px) {
-      text-align: left;
-      align-items: flex-start;
-      -webkit-align-items: flex-start;
-    }
-
     span {
       &:nth-child(1) {
         font-weight: 800;
         font-size: 20px;
         line-height: 28px;
       }
-
       &:nth-child(2) {
         margin-top: 8px;
         font-weight: 600;
         font-size: 14px;
         line-height: 140%;
+        -webkit-text-decoration-line: underline;
         text-decoration-line: underline;
       }
-
       &:nth-child(3) {
         margin-top: 28px;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
-        @media screen and (max-width: 800px) {
-          display: none;
-        }
       }
     }
   }
-
   .copyright-right {
     margin-left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: -moz-box;
     flex-direction: column;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
     gap: 4px;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
     -webkit-align-items: flex-end;
     text-align: right;
-    @media screen and (max-width: 800px) {
-      margin-left: initial;
-      text-align: left;
-      align-items: flex-start;
-      -webkit-align-items: flex-start;
-      gap: 8px;
-    }
-
     span {
       &:nth-child(1) {
         font-weight: 400;
         font-size: 12px;
         line-height: 140%;
-        @media screen and (max-width: 800px) {
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 140%;
-        }
       }
-
       &:nth-child(2) {
         font-weight: 800;
         font-size: 14px;
         line-height: 100%;
-        @media screen and (max-width: 800px) {
-          font-weight: 800;
-          font-size: 16px;
-          line-height: 100%;
-        }
       }
-
       &:nth-child(3) {
         font-weight: 400;
         font-size: 14px;
         line-height: 120%;
+        -webkit-text-decoration-line: underline;
         text-decoration-line: underline;
-        @media screen and (max-width: 800px) {
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 120%;
-        }
       }
-
       &:nth-child(4) {
         margin-top: 24px;
         display: none;
         font-weight: 400;
         font-size: 12px;
         line-height: 140%;
-        @media screen and (max-width: 800px) {
+      }
+    }
+  }
+}
+@media screen and (max-width: 1440px) {
+  .copyright {
+    padding: 24px 16px 16px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .copyright {
+    padding: 24px 0 16px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .copyright {
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    .copyright-left {
+      text-align: left;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-align-items: flex-start;
+      span {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+    .copyright-right {
+      margin-left: initial;
+      text-align: left;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-align-items: flex-start;
+      gap: 8px;
+      span {
+        &:nth-child(1) {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+        }
+        &:nth-child(2) {
+          font-weight: 800;
+          font-size: 16px;
+          line-height: 100%;
+        }
+        &:nth-child(3) {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 120%;
+        }
+        &:nth-child(4) {
           display: initial;
         }
       }
