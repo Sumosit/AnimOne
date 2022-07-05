@@ -39,6 +39,7 @@ $color_1: #1E2230;
     }
   }
   .options {
+    padding: 0 12px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -97,7 +98,7 @@ $color_1: #1E2230;
         -ms-flex: 70%;
         flex: 70%;
       }
-      div {
+      > div {
         margin-left: 20px;
         width: 400px;
         display: -webkit-box;
@@ -121,7 +122,7 @@ $color_1: #1E2230;
           margin-top: 24px;
           font-weight: 800;
           font-size: 36px;
-          line-height: 100%;
+          line-height: 110%;
           color: $color_1;
         }
         &:nth-child(2) {
