@@ -748,10 +748,11 @@ setTimeout(() => {
             // document.getElementById('with-you').classList.remove('opacity-1');
             // leftAnim.style.height = '1800px';
             // rightAnim.style.height = '1700px';
-            // if (scroll === 1) {
-            //   scroll = 0
-            //   withYou.style.position = 'sticky';
-            // }
+            console.log(123)
+            if (scroll === 1) {
+              scroll = 0;
+              withYou.style.position = 'sticky';
+            }
 
           }
 

@@ -29,7 +29,7 @@ setTimeout(() => {
       // console.log(hbRightImg.style.left)
       // console.log(hbRightImg.style.width)
       if (scrollY < maxScroll) {
-        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) + 20;
+        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) + 7;
       }
       // console.log(formula)
       if (formula !== 0) {
@@ -37,7 +37,7 @@ setTimeout(() => {
       }
     }
     else {
-      headerBg.style.height = headerField.getBoundingClientRect().height + 20 + 'px'
+      headerBg.style.height = headerField.getBoundingClientRect().height + 10 + 'px'
       // hbRightImg.style.position = 'initial'
     }
   }
@@ -57,7 +57,7 @@ qwe = setInterval(() => {
   if (t < 10) {
     var w = window.innerWidth;
     // console.log(w)
-    if (w > 768) {
+    if (w > 768 && hbRightImg) {
       let formula = 0;
       let scr = scrollY;
       let maxScroll = 400;
@@ -66,7 +66,7 @@ qwe = setInterval(() => {
 
       // 15 100%
       // ?  prev ? %
-      console.log(w)
+      // console.log(w)
       // console.log(hbRight.getBoundingClientRect().width)
       hbRightImg.style.position = 'absolute';
       hbRightImg.style.left = hbRight.getBoundingClientRect().x + 'px';
@@ -74,15 +74,17 @@ qwe = setInterval(() => {
       // console.log(hbRightImg.style.left)
       // console.log(hbRightImg.style.width)
       if (scrollY < maxScroll) {
-        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) + 20;
+        formula = ((((scrollY * 100) / maxScroll) * 15) / 100) * (-1) + 7;
       }
       // console.log(formula)
       if (formula !== 0) {
-        headerBg.style.height = headerField.getBoundingClientRect().height + 20 + 'px'
         hbRightImg.style.top = formula + '%';
       }
     }
     else {
+      if (hbRightImg) {
+        headerBg.style.height = headerField.getBoundingClientRect().height + 10 + 'px'
+      }
       // hbRightImg1.style.display = 'none'
     }
   }
