@@ -80,6 +80,9 @@ qwe = setInterval(() => {
       if (formula !== 0) {
         hbRightImg.style.top = formula + '%';
       }
+      if (hbRightImg) {
+        headerBg.style.height = 691 + 'px'
+      }
     }
     else {
       if (hbRightImg) {
